@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Venda e instalação de piscinas de fibra, vinil e alvenaria, produtos para piscina e manutenção em São Paulo e região. Peça orçamento pelo WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Meliah Piscinas">
+<meta property="og:description" content="Piscinas, produtos e manutenção. Peça orçamento pelo WhatsApp.">
+<meta property="og:locale" content="pt_BR">
+<!-- Dados da empresa para o Google. TROCAR telefone, endereço e site pelos reais (ver README, seção 5). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Meliah Piscinas",
+  "legalName": "MELIAH PISCINAS COMERCIO E SERVICOS LTDA - ME",
+  "taxID": "06.120.369/0001-14",
+  "description": "Venda e instalação de piscinas, produtos para piscina e manutenção.",
+  "url": "https://www.meliahpiscinas.com.br",
+  "telephone": "+55-11-90000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Exemplo, 123",
+    "addressLocality": "São Paulo",
+    "addressRegion": "SP",
+    "postalCode": "00000-000",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "08:00","closes": "18:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": "Saturday","opens": "08:00","closes": "13:00"}
+  ]
+}
+</script>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Meliah Piscinas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: borda de piscina — faixa de azulejos no topo de cada seção, marcadores de profundidade como títulos */
+:root{
+  --tile:#0A4F78; --water:#1FA4CC; --water-soft:#DDF1F7; --coping:#E7E1D6;
+  --buoy:#E0533A; --bg:#F6FAFB; --surface:#FFFFFF; --fg:#0F2733; --muted:#4E6672; --line:#CFDDE3;
+  --on-tile:#F2FAFD; --ok:#1F8A5B;
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --tile:#0E3A55; --water:#4CC3E6; --water-soft:#12303D; --coping:#2A3237;
+  --buoy:#FF7A5F; --bg:#0A161C; --surface:#10222B; --fg:#E4F1F5; --muted:#9DB4BE; --line:#22404D;
+  --on-tile:#E8F7FC; --ok:#4CC98F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --tile:#0E3A55; --water:#4CC3E6; --water-soft:#12303D; --coping:#2A3237;
+  --buoy:#FF7A5F; --bg:#0A161C; --surface:#10222B; --fg:#E4F1F5; --muted:#9DB4BE; --line:#22404D;
+  --on-tile:#E8F7FC; --ok:#4CC98F; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+.search{width:100%;max-width:360px;font:inherit;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--fg);margin-left:auto}
+.shop-tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.shop-tools .filters{margin:0}
+.no-res{grid-column:1/-1;color:var(--muted);padding:24px 0}
+.faq{display:grid;gap:0;border-top:2px solid var(--fg);max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";font:800 24px/1 var(--f-display);color:var(--water)}
+.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--muted);margin:8px 0 0;max-width:65ch}
+[id]{scroll-margin-top:72px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery figure{margin:0;position:relative;border-radius:12px;overflow:hidden;background:var(--coping)}
+.gallery .ph{aspect-ratio:4/3;width:100%;max-width:100%;display:block;object-fit:cover}
+.gallery figure:first-child{grid-column:span 2;grid-row:span 2}
+.gallery figure:first-child .ph{aspect-ratio:auto;height:100%;min-height:100%}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(4,25,36,.82));color:#F2FAFD;font-size:14px}
+.gallery figcaption b{display:block;font:800 20px/1.05 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.gallery .ex{position:absolute;top:10px;left:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--buoy);color:#fff;border-radius:4px;padding:2px 6px}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr}.gallery figure:first-child{grid-column:span 2;grid-row:auto}.gallery figure:first-child .ph{aspect-ratio:16/10;height:auto}}
+.legal{padding-block:40px 64px}
+.legal .wrap{max-width:780px}
+.legal h1{font:800 clamp(34px,5vw,52px)/1 var(--f-display);text-transform:uppercase;margin:16px 0 6px}
+.legal h2{font:800 22px/1.15 var(--f-display);text-transform:uppercase;letter-spacing:.02em;margin:30px 0 8px;color:var(--tile)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .legal h2{color:var(--water)}}
+:root[data-theme="dark"] .legal h2{color:var(--water)}
+.legal p,.legal li{max-width:68ch}
+.legal ul{padding-left:20px;display:grid;gap:6px}
+.legal .upd{color:var(--muted);font-size:14px;margin-top:0}
+.back{font-weight:700;color:var(--water);text-decoration:none}
+footer a{color:inherit}
+.wa-float{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:8;background:var(--ok);color:#fff;border-radius:999px;padding:12px 18px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--f-body);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--tile)}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--water);outline-offset:2px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* faixa de azulejo */
+.tiles{height:14px;background:
+  linear-gradient(90deg,var(--bg) 1px,transparent 1px) 0 0/14px 14px,
+  linear-gradient(var(--water),var(--tile))}
+.tiles.thin{height:8px;background-size:8px 8px,auto}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--tile);color:var(--on-tile)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;margin-right:auto}
+.brand b{font:800 28px/1 var(--f-display);letter-spacing:.02em;text-transform:uppercase}
+.brand span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+nav.links{display:flex;gap:18px;font-weight:600;font-size:15px}
+nav.links a{text-decoration:none;opacity:.9}
+nav.links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.cart-btn{display:flex;align-items:center;gap:8px;background:var(--on-tile);color:var(--tile);border:0;border-radius:999px;padding:8px 14px;font-weight:700}
+.cart-btn .count{background:var(--buoy);color:#fff;border-radius:999px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:12px;padding:0 6px}
+@media (max-width:640px){nav.links{order:3;width:100%;justify-content:space-between;font-size:14px}}
+
+/* hero */
+.hero{background:var(--tile);color:var(--on-tile);position:relative;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.35;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end;padding-block:56px 48px}
+.depth{font:800 clamp(56px,11vw,128px)/.85 var(--f-display);letter-spacing:.01em;text-transform:uppercase}
+.depth small{font-size:clamp(15px,2vw,22px);display:block;letter-spacing:.06em;margin-top:8px;opacity:.85}
+.hero h1{font:800 clamp(34px,5.4vw,58px)/1 var(--f-display);text-transform:uppercase;letter-spacing:.01em;margin-top:24px}
+.hero p{max-width:52ch;font-size:18px;opacity:.92;margin:14px 0 24px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:12px 18px;font-weight:700;text-decoration:none;border:2px solid transparent}
+.btn.primary{background:var(--buoy);color:#fff}
+.btn.ghost{border-color:currentColor}
+.btn.wa{background:var(--ok);color:#fff}
+.hero-card{background:var(--surface);color:var(--fg);border-radius:14px;padding:20px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.hero-card h3{font:800 22px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px}
+.hero-card p.sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.calc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.calc label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:grid;gap:4px}
+.calc input{width:100%;font:500 16px var(--f-mono);padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)}
+.calc-out{margin-top:14px;padding:12px 14px;background:var(--water-soft);border-radius:10px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.calc-out b{font:800 32px/1 var(--f-display)}
+.calc-out span{font-size:13px;color:var(--muted)}
+.rec{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+.rec-h{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+.rec ul{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:14px}
+.rec li{display:grid;grid-template-columns:2.2em 1fr auto;gap:6px;align-items:baseline}
+.rec li .q{font-family:var(--f-mono);color:var(--water);font-weight:500}
+.rec li .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--muted)}
+.rec-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;font-weight:600}
+.rec-total b{font-size:18px}
+.rec-add{width:100%;justify-content:center;margin-top:10px;border:0}
+.rec-add.done{background:var(--ok)}
+.rec-pump{margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.rec-pump .add{flex-shrink:0}
+.hero .rec-note{font-size:12px;opacity:1;color:var(--muted);margin:10px 0 0}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}}
+
+/* seções */
+section{padding-block:56px}
+.sec-head{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:28px}
+.marker{font:800 22px/1 var(--f-display);color:var(--water);border-left:6px solid var(--water);padding:6px 0 6px 12px;text-transform:uppercase;letter-spacing:.12em;padding-block:2px}
+.marker small{display:block;font-size:14px;letter-spacing:.12em;color:var(--muted);margin-top:6px}
+.sec-head h2{font:800 clamp(30px,4vw,42px)/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.sec-head p{color:var(--muted);margin:6px 0 0;max-width:60ch}
+
+/* piscinas */
+.pools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pool{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.pool .shape{aspect-ratio:16/9;max-width:100%;background:var(--coping);display:grid;place-items:center;padding:18px}
+.pool .shape svg{width:100%;height:100%}
+.pool .body{padding:18px;display:grid;gap:10px;flex:1;align-content:start}
+.pool h3{font:800 24px/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.pool dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:14px}
+.pool dt{color:var(--muted)}
+.pool dd{margin:0;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pool .btn{margin-top:auto;justify-content:center}
+.pool .foot{padding:0 18px 18px}
+@media (max-width:900px){.pools{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.pools{grid-template-columns:1fr}}
+
+/* loja */
+.shop-band{background:var(--water-soft)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:7px 14px;font-weight:600;font-size:14px}
+.chip[aria-pressed="true"]{background:var(--tile);color:var(--on-tile);border-color:var(--tile)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.prod{background:var(--surface);border-radius:12px;padding:14px;display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;border:1px solid var(--line)}
+.prod .pic{aspect-ratio:1;max-width:100%;border-radius:8px;background:var(--bg);display:grid;place-items:center}
+.prod .pic svg{width:58%;height:58%}
+.prod .cat{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.prod h3{font:600 16px/1.3 var(--f-body)}
+.prod .meta{font-size:13px;color:var(--muted)}
+.prod .buy{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.price{font:500 18px var(--f-mono);font-variant-numeric:tabular-nums}
+.add{background:var(--tile);color:var(--on-tile);border:0;border-radius:8px;padding:8px 12px;font-weight:700;font-size:14px}
+.add.done{background:var(--ok);color:#fff}
+@media (max-width:1000px){.products{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:720px){.products{grid-template-columns:repeat(2,1fr)}}
+
+/* serviços */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--fg)}
+.svc{padding:22px 22px 22px 0;border-bottom:1px solid var(--line)}
+.svc + .svc{padding-left:22px;border-left:1px solid var(--line)}
+.svc h3{font:800 24px/1.05 var(--f-display);text-transform:uppercase;margin-bottom:8px}
+.svc p{color:var(--muted);margin:0 0 10px;font-size:15px}
+.svc .from{font-family:var(--f-mono);font-size:14px}
+@media (max-width:760px){.services{grid-template-columns:1fr}.svc + .svc{padding-left:0;border-left:0}}
+
+/* contato */
+.contact{background:var(--tile);color:var(--on-tile)}
+.contact .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+.contact h2{font:800 clamp(30px,4vw,44px)/1 var(--f-display);text-transform:uppercase}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:20px 0 0}
+.contact dt{opacity:.75;font-size:13px;text-transform:uppercase;letter-spacing:.1em;padding-top:2px}
+.contact dd{margin:0;font-weight:600}
+.example{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--buoy);color:#fff;border-radius:4px;padding:2px 6px;margin-left:6px;vertical-align:middle}
+.copy{background:transparent;border:1px solid currentColor;color:inherit;border-radius:6px;padding:2px 8px;font-size:12px;margin-left:8px}
+@media (max-width:760px){.contact .grid{grid-template-columns:1fr}}
+footer{background:var(--fg);color:var(--bg);font-size:13px}
+footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
+
+/* carrinho */
+.drawer-bg{position:fixed;inset:0;background:rgba(5,20,28,.5);z-index:20}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--surface);color:var(--fg);z-index:21;display:flex;flex-direction:column;
+  padding:calc(18px + env(safe-area-inset-top,0px)) max(18px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) 18px;box-shadow:-10px 0 30px rgba(0,0,0,.2)}
+.drawer h2{font:800 30px/1 var(--f-display);text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.x{background:none;border:0;color:var(--fg);font-size:26px;line-height:1}
+.items{flex:1;overflow:auto;margin:16px 0;display:grid;gap:12px;align-content:start}
+.item{display:grid;grid-template-columns:1fr auto;gap:6px 10px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.item .n{font-weight:600;min-width:0}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:28px;height:28px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+.totals{display:grid;gap:6px;border-top:2px solid var(--fg);padding-top:12px}
+.totals .row{display:flex;justify-content:space-between}
+.totals .row.big{font:800 26px var(--f-display)}
+.drawer label{font-size:13px;color:var(--muted);display:grid;gap:4px;margin-top:10px}
+.drawer input,.drawer select{font:inherit;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%}
+.drawer .btn{justify-content:center;margin-top:12px;width:100%}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+@media (prefers-reduced-motion:reduce){.hero canvas{display:none}}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#inicio"><b>Meliah</b><span>Piscinas</span></a>
+  <nav class="links"><a href="#piscinas">Piscinas</a><a href="#loja">Loja</a><a href="#servicos">Serviços</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+  <button class="cart-btn" id="openCart" aria-label="Abrir carrinho">Carrinho <span class="count" id="cartCount">0</span></button>
+</div></header>
+
+<main id="home">
+<div class="hero" id="inicio">
+  <canvas id="caustics" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="depth">Meliah<small>PISCINAS · PRODUTOS · MANUTENÇÃO</small></div>
+      <h1>Sua piscina pronta, do projeto ao cloro de todo mês</h1>
+      <p>Vendemos e instalamos piscinas e entregamos os produtos para manter a água limpa. Peça orçamento pelo WhatsApp ou compre os produtos aqui mesmo.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#loja">Comprar produtos</a>
+        <a class="btn ghost" href="#piscinas">Ver piscinas</a>
+      </div>
+    </div>
+    <div class="hero-card" aria-labelledby="calcT">
+      <h3 id="calcT">Quantos litros tem sua piscina?</h3>
+      <p class="sub">Comprimento × largura × profundidade média. Você usa esse número para dosar os produtos.</p>
+      <div class="calc">
+        <label>Compr. (m)<input id="cL" type="number" step="0.1" min="0" value="6"></label>
+        <label>Largura (m)<input id="cW" type="number" step="0.1" min="0" value="3"></label>
+        <label>Prof. (m)<input id="cD" type="number" step="0.05" min="0" value="1.4"></label>
+      </div>
+      <div class="calc-out"><b class="mono" id="cOut">25.200 L</b><span id="cM3">25,2 m³ de água</span></div>
+      <div class="rec" aria-live="polite">
+        <div class="rec-h">Kit de 1 mês para essa piscina</div>
+        <ul id="recList"></ul>
+        <div class="rec-total"><span>Total do kit</span><b class="mono" id="recTot">R$ 0,00</b></div>
+        <button class="btn primary rec-add" id="addKit">Adicionar kit ao carrinho</button>
+        <div class="rec-pump" id="recPump"></div>
+        <p class="rec-note">Sugestão de quantidade para manutenção. Use sempre a dose indicada no rótulo de cada produto.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tiles"></div>
+
+<section id="piscinas"><div class="wrap">
+  <div class="sec-head">
+    <div class="marker">Modelos</div>
+    <div><h2>Piscinas</h2><p>Modelos mais pedidos. O valor final depende do terreno, do acesso para o caminhão e dos acessórios. Mande a medida do seu espaço e respondemos com o orçamento.</p></div>
+  </div>
+  <div class="pools" id="poolGrid"></div>
+</div></section>
+
+<section id="galeria" style="padding-top:0"><div class="wrap">
+  <div class="sec-head">
+    <div class="marker">Obras</div>
+    <div><h2>Galeria de obras</h2><p>Piscinas instaladas pela nossa equipe.</p></div>
+  </div>
+  <div class="gallery" id="galGrid"></div>
+</div></section>
+
+<div class="tiles thin"></div>
+<section id="loja" class="shop-band"><div class="wrap">
+  <div class="sec-head">
+    <div class="marker">Produtos</div>
+    <div><h2>Loja de produtos</h2><p>Adicione ao carrinho e finalize. O pedido chega pra gente pelo WhatsApp com a lista pronta e confirmamos entrega e pagamento (Pix ou cartão).</p></div>
+  </div>
+  <div class="shop-tools">
+    <div class="filters" id="filters" role="group" aria-label="Filtrar produtos"></div>
+    <input class="search" id="search" type="search" placeholder="Buscar produto (ex.: cloro, bomba)" aria-label="Buscar produto">
+  </div>
+  <div class="products" id="prodGrid"></div>
+</div></section>
+
+<section id="servicos"><div class="wrap">
+  <div class="sec-head">
+    <div class="marker">Equipe</div>
+    <div><h2>Serviços</h2><p>Equipe própria para instalar, limpar e consertar.</p></div>
+  </div>
+  <div class="services">
+    <div class="svc"><h3>Instalação</h3><p>Escavação, nivelamento, assentamento da piscina, casa de máquinas e hidráulica.</p><div class="from">Orçamento após visita</div></div>
+    <div class="svc"><h3>Manutenção mensal</h3><p>Visitas semanais com aspiração, escovação, análise de pH e cloro e dosagem dos produtos.</p><div class="from">a partir de R$ 280/mês</div></div>
+    <div class="svc"><h3>Água verde?</h3><p>Tratamento de choque, limpeza do filtro e recuperação da água em até 72 horas.</p><div class="from">a partir de R$ 350</div></div>
+  </div>
+</div></section>
+
+<section id="duvidas" style="padding-top:0"><div class="wrap">
+  <div class="sec-head">
+    <div class="marker">Ajuda</div>
+    <div><h2>Dúvidas frequentes</h2></div>
+  </div>
+  <div class="faq">
+    <details><summary>Vocês entregam em quais cidades?</summary><p>Entregamos em São Paulo e região. Informe seu CEP no carrinho e confirmamos o prazo pelo WhatsApp.</p></details>
+    <details><summary>Quanto tempo demora a entrega dos produtos?</summary><p>Pedidos confirmados até as 14h saem no mesmo dia útil para a região. Para outras cidades, informamos o prazo junto com o frete.</p></details>
+    <details><summary>Quais as formas de pagamento?</summary><p>Pix, cartão de crédito, cartão de débito e dinheiro na entrega. Piscinas podem ser parceladas no cartão.</p></details>
+    <details><summary>A piscina tem garantia?</summary><p>Sim. A garantia de fábrica vale para a estrutura da piscina, e a instalação feita pela nossa equipe tem garantia própria. Os prazos vêm no orçamento.</p></details>
+    <details><summary>Minha água está verde. O que faço?</summary><p>Mande uma foto pelo WhatsApp com as medidas da piscina. Indicamos os produtos certos ou agendamos o tratamento de choque com nossa equipe.</p></details>
+    <details><summary>Preciso de licença para instalar a piscina?</summary><p>Na maioria das casas não. Em condomínios, consulte as regras do condomínio antes. Na visita técnica avaliamos o terreno e o acesso.</p></details>
+  </div>
+</div></section>
+</main>
+
+<section id="privacidade" class="legal" hidden><div class="wrap">
+  <a class="back" href="#inicio">← Voltar ao site</a>
+  <h1>Política de Privacidade</h1>
+  <p class="upd">Última atualização: 20 de outubro de 2026</p>
+  <p>Esta política explica quais dados pessoais a <strong>MELIAH PISCINAS COMÉRCIO E SERVIÇOS LTDA – ME</strong>, CNPJ 06.120.369/0001-14 ("Meliah"), coleta quando você usa este site, faz pedidos ou pede orçamentos, e como esses dados são tratados, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 – LGPD).</p>
+
+  <h2>1. Quem é responsável pelos seus dados</h2>
+  <p>A Meliah é a controladora dos dados pessoais tratados por meio deste site. Para qualquer assunto sobre seus dados, fale com nosso encarregado (DPO) pelo e-mail <span class="mono">privacidade@meliahpiscinas.com.br</span><span class="example">exemplo</span> ou pelo WhatsApp informado em Contato.</p>
+
+  <h2>2. Quais dados coletamos</h2>
+  <ul>
+    <li><strong>Dados que você nos envia:</strong> nome, telefone/WhatsApp, CEP e endereço de entrega, forma de pagamento escolhida, medidas e fotos do local da piscina, e o conteúdo das mensagens trocadas conosco.</li>
+    <li><strong>Dados do pedido:</strong> produtos, quantidades, valores e histórico de compras e serviços.</li>
+    <li><strong>Dados guardados no seu navegador:</strong> os itens do carrinho ficam salvos apenas no seu aparelho (armazenamento local do navegador). Eles não são enviados para nós até você enviar o pedido.</li>
+  </ul>
+  <p>Não coletamos dados de cartão neste site. Quando o pagamento é por cartão, os dados são tratados pela empresa de pagamento ou pela maquininha usada no atendimento.</p>
+
+  <h2>3. Para que usamos os dados</h2>
+  <ul>
+    <li>Responder pedidos de orçamento e dúvidas (procedimentos preliminares a contrato, art. 7º, V, da LGPD).</li>
+    <li>Processar pedidos, entregar produtos e prestar serviços de instalação e manutenção (execução de contrato, art. 7º, V).</li>
+    <li>Emitir nota fiscal e cumprir obrigações fiscais e legais (cumprimento de obrigação legal, art. 7º, II).</li>
+    <li>Atender garantia, trocas e devoluções, e exercer nossos direitos em eventuais processos (art. 7º, V e VI).</li>
+    <li>Enviar ofertas e lembretes de manutenção, somente se você autorizar. Você pode cancelar a qualquer momento (consentimento, art. 7º, I).</li>
+  </ul>
+
+  <h2>4. Com quem compartilhamos</h2>
+  <p>Compartilhamos apenas o necessário com: transportadoras e entregadores (nome, endereço e telefone para a entrega); empresas de pagamento; contador e órgãos públicos, quando exigido por lei; e provedores de tecnologia que usamos para atender você, como o WhatsApp. Não vendemos seus dados.</p>
+
+  <h2>5. Por quanto tempo guardamos</h2>
+  <p>Guardamos os dados enquanto durar o atendimento ou a relação comercial e, depois, pelo prazo exigido por lei (por exemplo, documentos fiscais por no mínimo 5 anos) ou necessário para garantia e defesa de direitos. Depois disso, os dados são apagados ou anonimizados.</p>
+
+  <h2>6. Seus direitos</h2>
+  <p>Pelo art. 18 da LGPD, você pode pedir a qualquer momento: confirmação de que tratamos seus dados; acesso aos dados; correção de dados incompletos ou errados; anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade; informação sobre com quem compartilhamos; e revogação do consentimento. Responderemos em até 15 dias. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+  <h2>7. Segurança</h2>
+  <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acesso não autorizado, perda ou vazamento. Se ocorrer um incidente que possa causar risco relevante, avisaremos você e a ANPD.</p>
+
+  <h2>8. Mudanças nesta política</h2>
+  <p>Podemos atualizar esta política. A data da última versão fica sempre no topo desta página.</p>
+</div></section>
+
+<section id="trocas" class="legal" hidden><div class="wrap">
+  <a class="back" href="#inicio">← Voltar ao site</a>
+  <h1>Política de Trocas e Devoluções</h1>
+  <p class="upd">Última atualização: 20 de outubro de 2026</p>
+  <p>Esta política vale para produtos e serviços comprados da <strong>MELIAH PISCINAS COMÉRCIO E SERVIÇOS LTDA – ME</strong>, CNPJ 06.120.369/0001-14, e segue o Código de Defesa do Consumidor (Lei nº 8.078/1990).</p>
+
+  <h2>1. Desistência da compra (direito de arrependimento)</h2>
+  <p>Compras feitas pelo site, WhatsApp ou telefone podem ser canceladas em até <strong>7 dias corridos</strong> a partir do recebimento do produto ou da assinatura do contrato, sem precisar de motivo (art. 49 do CDC). Devolvemos o valor total pago, incluindo o frete, pela mesma forma de pagamento.</p>
+  <p>Para pedir, fale com a gente pelo WhatsApp ou e-mail informando o número do pedido. Combinamos a retirada ou o envio sem custo para você.</p>
+
+  <h2>2. Produto com defeito</h2>
+  <p>Se o produto apresentar defeito, você pode reclamar em até:</p>
+  <ul>
+    <li><strong>30 dias</strong> para produtos não duráveis, como cloro, algicida, clarificante e reguladores de pH;</li>
+    <li><strong>90 dias</strong> para produtos duráveis, como bombas, filtros, aspiradores, peneiras e a própria piscina.</li>
+  </ul>
+  <p>O prazo conta da entrega ou, se o defeito for oculto, do momento em que ele aparecer (art. 26 do CDC). Temos até 30 dias para resolver. Se não resolvermos nesse prazo, você escolhe entre troca por outro produto, devolução do valor ou abatimento no preço (art. 18). Esses prazos somam-se à garantia do fabricante, quando houver.</p>
+
+  <h2>3. Produto errado ou danificado na entrega</h2>
+  <p>Confira o pedido na entrega. Se vier errado, com embalagem violada ou vazando, recuse ou fale com a gente em até 7 dias, com foto. Fazemos a troca sem custo.</p>
+
+  <h2>4. Produtos químicos: cuidados na devolução</h2>
+  <p>Por segurança, não transfira, misture ou dilua o produto antes de devolver. Mantenha-o na embalagem original, bem fechado, longe de crianças e do sol, até a retirada.</p>
+
+  <h2>5. Piscinas e serviços</h2>
+  <p>Para piscinas e serviços de instalação, o direito de arrependimento de 7 dias vale para contratos fechados fora da loja e conta a partir da assinatura. Se você desistir depois que a obra começar, os valores de serviços já executados e de materiais feitos sob medida para você serão tratados conforme o contrato assinado. A garantia de estrutura, de instalação e de equipamentos vem descrita no orçamento e no contrato.</p>
+
+  <h2>6. Reembolso</h2>
+  <p>O reembolso é feito em até 10 dias úteis depois que recebermos o produto de volta: por Pix ou transferência para compras pagas assim, ou por estorno no cartão, que aparece na fatura conforme o prazo da operadora.</p>
+
+  <h2>7. Contato</h2>
+  <p>WhatsApp e endereço estão na seção Contato abaixo. Atendemos de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 13h.</p>
+</div></section>
+
+<div class="tiles"></div>
+<section id="contato" class="contact"><div class="wrap grid">
+  <div>
+    <h2>Fale com a Meliah</h2>
+    <p>Mande foto e medidas do espaço para orçamento de piscina. Para produtos, finalize pelo carrinho.</p>
+    <a class="btn wa" id="waMain" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </div>
+  <dl>
+    <dt>WhatsApp</dt><dd><span id="phoneTxt">(11) 90000-0000</span><span class="example">exemplo</span><button class="copy" data-copy="phoneTxt">copiar</button></dd>
+    <dt>Endereço</dt><dd>Rua Exemplo, 123 – São Paulo/SP<span class="example">exemplo</span></dd>
+    <dt>Horário</dt><dd>Seg a sex 8h–18h · Sáb 8h–13h</dd>
+    <dt>E-mail</dt><dd><span id="mailTxt">contato@meliahpiscinas.com.br</span><span class="example">exemplo</span><button class="copy" data-copy="mailTxt">copiar</button></dd>
+  </dl>
+</div></section>
+<footer><div class="wrap">
+  <span>MELIAH PISCINAS COMÉRCIO E SERVIÇOS LTDA – ME · CNPJ 06.120.369/0001-14</span>
+  <span class="flinks"><a href="#privacidade">Política de Privacidade</a> · <a href="#trocas">Trocas e Devoluções</a></span>
+  <span>Preços de exemplo, sujeitos a alteração.</span>
+</div></footer>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener">WhatsApp</a>
+<div class="drawer-bg" id="drawerBg" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Carrinho">
+  <h2>Carrinho <button class="x" id="closeCart" aria-label="Fechar">×</button></h2>
+  <div class="items" id="items"></div>
+  <div id="checkout">
+    <div class="totals">
+      <div class="row"><span>Subtotal</span><span class="mono" id="sub">R$ 0,00</span></div>
+      <div class="row"><span>Entrega</span><span class="mono" id="ship">—</span></div>
+      <div class="row big"><span>Total</span><span class="mono" id="tot">R$ 0,00</span></div>
+    </div>
+    <label for="cName">Seu nome<input id="cName" placeholder="Ex.: Ana Souza"></label>
+    <label for="cCep">CEP para entrega<input id="cCep" inputmode="numeric" placeholder="00000-000"></label>
+    <label for="cPay">Pagamento<select id="cPay"><option>Pix</option><option>Cartão de crédito</option><option>Cartão de débito</option><option>Dinheiro na entrega</option></select></label>
+    <a class="btn wa" id="sendOrder" target="_blank" rel="noopener">Enviar pedido pelo WhatsApp</a>
+    <p class="note">Frete grátis acima de R$ 300 na região. Abaixo disso, R$ 20. Ao enviar, você concorda com a <a href="#privacidade" class="closeLink">Política de Privacidade</a> e a <a href="#trocas" class="closeLink">Política de Trocas</a>.</p>
+  </div>
+</aside>
+
+<script>
+const WA = "5511900000000"; // trocar pelo número real
+const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const waLink = t => "https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+
+/* calculadora */
+const cIn=["cL","cW","cD"].map(id=>document.getElementById(id));
+function calc(){const [l,w,d]=cIn.map(i=>parseFloat(i.value)||0);const m3=l*w*d;
+  document.getElementById("cOut").textContent=Math.round(m3*1000).toLocaleString("pt-BR")+" L";
+  document.getElementById("cM3").textContent=m3.toLocaleString("pt-BR",{maximumFractionDigits:1})+" m³ de água";
+  if(typeof renderRec==="function")renderRec(m3*1000);}
+cIn.forEach(i=>i.addEventListener("input",calc));
+
+/* piscinas */
+const pools=[
+ {n:"Fibra Retangular",shape:"rect",d:[["Medidas","6,00 × 3,00 m"],["Profund.","1,40 m"],["Volume","25.200 L"],["Instalação","3 a 5 dias"]],from:"a partir de R$ 18.900"},
+ {n:"Fibra com Prainha",shape:"beach",d:[["Medidas","7,00 × 3,20 m"],["Profund.","0,40 / 1,40 m"],["Volume","28.000 L"],["Instalação","4 a 6 dias"]],from:"a partir de R$ 24.500"},
+ {n:"Vinil sob medida",shape:"free",d:[["Medidas","no seu projeto"],["Profund.","1,20 a 1,80 m"],["Bolsa","vinil 0,8 mm"],["Instalação","15 a 25 dias"]],from:"orçamento por m²"}
+];
+const shapes={
+ rect:'<svg viewBox="0 0 160 90"><rect x="10" y="12" width="140" height="66" rx="4" fill="var(--tile)"/><rect x="16" y="18" width="128" height="54" rx="2" fill="var(--water)"/><path d="M24 40 q12 -6 24 0 t24 0 t24 0 t24 0" stroke="var(--on-tile)" stroke-width="2" fill="none" opacity=".6"/></svg>',
+ beach:'<svg viewBox="0 0 160 90"><rect x="10" y="12" width="140" height="66" rx="4" fill="var(--tile)"/><rect x="16" y="18" width="128" height="54" rx="2" fill="var(--water)"/><rect x="16" y="18" width="34" height="54" fill="var(--water-soft)" opacity=".75"/><path d="M60 46 q12 -6 24 0 t24 0 t24 0" stroke="var(--on-tile)" stroke-width="2" fill="none" opacity=".6"/></svg>',
+ free:'<svg viewBox="0 0 160 90"><path d="M20 30 C30 6 80 10 100 20 C130 30 150 40 140 62 C130 84 70 82 40 74 C14 66 12 46 20 30Z" fill="var(--tile)"/><path d="M27 32 C36 14 80 18 98 26 C124 35 140 44 132 60 C123 76 72 74 44 67 C22 61 20 46 27 32Z" fill="var(--water)"/></svg>'
+};
+document.getElementById("poolGrid").innerHTML=pools.map(p=>`
+ <article class="pool"><div class="shape">${shapes[p.shape]}</div>
+ <div class="body"><h3>${p.n}</h3><dl>${p.d.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join("")}</dl>
+ <div class="mono" style="font-weight:500">${p.from}</div></div>
+ <div class="foot"><a class="btn wa" style="width:100%;justify-content:center" target="_blank" rel="noopener" href="${waLink("Olá! Quero um orçamento da piscina "+p.n+".")}">Pedir orçamento</a></div></article>`).join("");
+
+/* galeria
+   TROCAR: em "foto" coloque o caminho da imagem real (ex.: "fotos/obra-1.jpg").
+   Enquanto "foto" estiver vazio, aparece uma ilustração marcada como EXEMPLO. */
+const GALERIA=[
+ {titulo:"Fibra 8 × 4 m com prainha",local:"Alphaville – Barueri/SP",foto:"",forma:"beach",deck:"#D6CBB5",grama:"#7FA65A"},
+ {titulo:"Vinil sob medida",local:"Granja Viana – Cotia/SP",foto:"",forma:"free",deck:"#CFC6B8",grama:"#6E9A4E"},
+ {titulo:"Fibra 6 × 3 m",local:"Zona Sul – São Paulo/SP",foto:"",forma:"rect",deck:"#E2D9C8",grama:"#88AE60"},
+ {titulo:"Alvenaria com cascata",local:"Atibaia/SP",foto:"",forma:"l",deck:"#C9BBA2",grama:"#76A055"},
+ {titulo:"Fibra 5 × 2,5 m",local:"Santo André/SP",foto:"",forma:"rect",deck:"#D9D0C0",grama:"#82A85B"},
+ {titulo:"Reforma e troca de vinil",local:"Morumbi – São Paulo/SP",foto:"",forma:"round",deck:"#D4C7AE",grama:"#719C51"}
+];
+function cena(g,i){
+  const pool={
+    rect:'<rect x="70" y="60" width="260" height="140" rx="6" fill="#0A4F78"/><rect x="78" y="68" width="244" height="124" rx="3" fill="#23A9D4"/>',
+    beach:'<rect x="60" y="55" width="280" height="150" rx="6" fill="#0A4F78"/><rect x="68" y="63" width="264" height="134" rx="3" fill="#23A9D4"/><rect x="68" y="63" width="70" height="134" fill="#9FDCEF"/>',
+    free:'<path d="M80 110 C90 50 210 45 260 70 C330 100 345 140 320 180 C290 225 160 220 110 200 C60 180 70 140 80 110Z" fill="#0A4F78"/><path d="M92 112 C101 62 208 58 254 80 C318 108 330 142 308 176 C282 212 162 208 116 190 C76 174 84 140 92 112Z" fill="#23A9D4"/>',
+    l:'<path d="M60 60h280v150H200v-70H60z" fill="#0A4F78"/><path d="M68 68h264v134H208v-70H68z" fill="#23A9D4"/>',
+    round:'<circle cx="200" cy="135" r="88" fill="#0A4F78"/><circle cx="200" cy="135" r="80" fill="#23A9D4"/>'
+  }[g.forma];
+  let waves="";for(let k=0;k<4;k++){const y=95+k*28;waves+=`<path d="M100 ${y} q15 -7 30 0 t30 0 t30 0 t30 0 t30 0 t30 0" stroke="#E6F7FC" stroke-width="2" fill="none" opacity=".45"/>`;}
+  return `<svg class="ph" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de exemplo: ${g.titulo}">
+   <rect width="400" height="300" fill="${g.grama}"/><rect x="30" y="25" width="340" height="215" rx="8" fill="${g.deck}"/>
+   <g stroke="#00000014">${Array.from({length:12},(_,k)=>`<line x1="${30+k*30}" y1="25" x2="${30+k*30}" y2="240"/>`).join("")}</g>
+   ${pool}${waves}
+   <circle cx="${i%2?350:52}" cy="${i%2?60:255}" r="26" fill="#E0533A"/><circle cx="${i%2?350:52}" cy="${i%2?60:255}" r="4" fill="#fff"/>
+   <rect x="${i%2?40:300}" y="250" width="48" height="16" rx="3" fill="#F2F2EE"/></svg>`;
+}
+document.getElementById("galGrid").innerHTML=GALERIA.map((g,i)=>`<figure>
+  ${g.foto?`<img class="ph" src="${g.foto}" alt="${g.titulo} – ${g.local}" loading="lazy">`:cena(g,i)+'<span class="ex">foto de exemplo</span>'}
+  <figcaption><b>${g.titulo}</b>${g.local}</figcaption></figure>`).join("");
+
+/* produtos */
+const icons={
+ balde:'<svg viewBox="0 0 60 60"><path d="M12 16h36l-4 38H16z" fill="var(--water)"/><rect x="10" y="12" width="40" height="7" rx="2" fill="var(--tile)"/><rect x="18" y="28" width="24" height="12" rx="2" fill="var(--surface)"/></svg>',
+ frasco:'<svg viewBox="0 0 60 60"><rect x="24" y="4" width="12" height="8" rx="2" fill="var(--tile)"/><path d="M18 14h24l4 8v32H14V22z" fill="var(--water)"/><rect x="20" y="28" width="20" height="14" rx="2" fill="var(--surface)"/></svg>',
+ pastilha:'<svg viewBox="0 0 60 60"><ellipse cx="30" cy="38" rx="20" ry="8" fill="var(--tile)"/><rect x="10" y="24" width="40" height="14" fill="var(--water-soft)"/><ellipse cx="30" cy="24" rx="20" ry="8" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/></svg>',
+ kit:'<svg viewBox="0 0 60 60"><rect x="10" y="10" width="40" height="44" rx="4" fill="var(--tile)"/><rect x="16" y="16" width="8" height="26" rx="3" fill="#F2D54A"/><rect x="26" y="16" width="8" height="26" rx="3" fill="var(--buoy)"/><rect x="36" y="16" width="8" height="26" rx="3" fill="var(--water)"/></svg>',
+ equip:'<svg viewBox="0 0 60 60"><circle cx="30" cy="34" r="18" fill="var(--tile)"/><circle cx="30" cy="34" r="8" fill="var(--water)"/><rect x="26" y="4" width="8" height="14" fill="var(--muted)"/></svg>',
+ rede:'<svg viewBox="0 0 60 60"><path d="M10 14h30v22a15 15 0 0 1-30 0z" fill="var(--water-soft)" stroke="var(--tile)" stroke-width="3"/><path d="M17 14v28M25 14v32M33 14v28M10 24h30M10 34h30" stroke="var(--tile)" stroke-width="1.5"/><rect x="38" y="10" width="20" height="5" rx="2" fill="var(--muted)"/></svg>'
+};
+const products=[
+ {id:"clg10",n:"Cloro granulado estabilizado 10 kg",cat:"Tratamento",m:"Uso diário e choque",p:289.9,i:"balde"},
+ {id:"clg25",n:"Cloro granulado 2,5 kg",cat:"Tratamento",m:"Para piscinas pequenas",p:84.9,i:"balde"},
+ {id:"past",n:"Pastilha de cloro 200 g (pote c/ 5)",cat:"Tratamento",m:"Para clorador flutuante",p:59.9,i:"pastilha"},
+ {id:"alg",n:"Algicida de manutenção 1 L",cat:"Tratamento",m:"Evita água verde",p:32.9,i:"frasco"},
+ {id:"clar",n:"Clarificante 1 L",cat:"Tratamento",m:"Água turva → cristalina",p:29.9,i:"frasco"},
+ {id:"phm",n:"Elevador de pH (barrilha) 2 kg",cat:"Equilíbrio",m:"Sobe pH e alcalinidade",p:38.9,i:"balde"},
+ {id:"phme",n:"Redutor de pH 1 L",cat:"Equilíbrio",m:"Baixa pH alto",p:27.9,i:"frasco"},
+ {id:"kit",n:"Estojo de teste pH e cloro",cat:"Equilíbrio",m:"Teste por gotas",p:44.9,i:"kit"},
+ {id:"pen",n:"Peneira cata-folha com cabo",cat:"Limpeza",m:"Cabo telescópico 3 m",p:79.9,i:"rede"},
+ {id:"asp",n:"Aspirador de 8 rodas",cat:"Limpeza",m:"Para fibra e vinil",p:119.9,i:"rede"},
+ {id:"bomba14",n:"Motobomba 1/4 CV",cat:"Equipamentos",m:"Até 18.000 L",p:749,i:"equip"},
+ {id:"bomba",n:"Motobomba 1/2 CV",cat:"Equipamentos",m:"Até 32.000 L",p:1149,i:"equip"},
+ {id:"bomba34",n:"Motobomba 3/4 CV",cat:"Equipamentos",m:"Até 50.000 L",p:1489,i:"equip"},
+ {id:"bomba1",n:"Motobomba 1 CV",cat:"Equipamentos",m:"Até 75.000 L",p:1790,i:"equip"},
+ {id:"areia",n:"Areia para filtro 25 kg",cat:"Equipamentos",m:"Troca a cada 2 anos",p:69.9,i:"balde"}
+];
+const cats=["Todos",...new Set(products.map(p=>p.cat))];
+let filter="Todos";
+const fEl=document.getElementById("filters");
+function renderFilters(){fEl.innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c===filter}" data-c="${c}">${c}</button>`).join("");}
+fEl.addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;filter=b.dataset.c;renderFilters();renderProducts();});
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+document.getElementById("search").addEventListener("input",renderProducts);
+function renderProducts(){const q=norm(document.getElementById("search").value.trim());
+  const list=products.filter(p=>(filter==="Todos"||p.cat===filter)&&(!q||norm(p.n+" "+p.m+" "+p.cat).includes(q)));
+  document.getElementById("prodGrid").innerHTML=list.length?list.map(p=>`
+ <article class="prod"><div class="pic">${icons[p.i]}</div><div class="cat">${p.cat}</div>
+ <div><h3>${p.n}</h3><div class="meta">${p.m}</div></div>
+ <div class="buy"><span class="price">${brl(p.p)}</span><button class="add" data-id="${p.id}">Adicionar</button></div></article>`).join("")
+  :`<div class="no-res">Nenhum produto encontrado. Não achou o que procura? <a target="_blank" rel="noopener" href="${waLink("Olá! Procuro: "+document.getElementById("search").value)}">Pergunte no WhatsApp</a>.</div>`;}
+renderFilters();renderProducts();
+
+/* carrinho */
+let cart={};
+try{cart=JSON.parse(localStorage.getItem("meliah-cart")||"{}")||{}}catch(e){cart={}}
+const save=()=>{try{localStorage.setItem("meliah-cart",JSON.stringify(cart))}catch(e){}};
+const byId=id=>products.find(p=>p.id===id);
+document.getElementById("prodGrid").addEventListener("click",e=>{const b=e.target.closest(".add");if(!b)return;
+  cart[b.dataset.id]=(cart[b.dataset.id]||0)+1;save();renderCart();b.textContent="Adicionado ✓";b.classList.add("done");
+  setTimeout(()=>{b.textContent="Adicionar";b.classList.remove("done")},1200);});
+function totals(){const sub=Object.entries(cart).reduce((s,[id,q])=>s+byId(id).p*q,0);const ship=sub===0?0:(sub>=300?0:20);return{sub,ship,tot:sub+ship};}
+function renderCart(){
+  const ids=Object.keys(cart).filter(id=>byId(id));const n=ids.reduce((s,id)=>s+cart[id],0);
+  document.getElementById("cartCount").textContent=n;
+  const box=document.getElementById("items");
+  box.innerHTML=ids.length?ids.map(id=>{const p=byId(id);return `<div class="item"><span class="n">${p.n}</span><span class="mono">${brl(p.p*cart[id])}</span>
+    <div class="qty"><button data-d="-1" data-id="${id}" aria-label="Diminuir">−</button><span class="mono">${cart[id]}</span><button data-d="1" data-id="${id}" aria-label="Aumentar">+</button></div><span></span></div>`}).join("")
+    :`<div class="empty">Seu carrinho está vazio.<br>Escolha produtos na loja.</div>`;
+  document.getElementById("checkout").hidden=!ids.length;
+  const t=totals();document.getElementById("sub").textContent=brl(t.sub);
+  document.getElementById("ship").textContent=t.ship?brl(t.ship):"Grátis";document.getElementById("tot").textContent=brl(t.tot);
+  updateOrderLink();
+}
+function updateOrderLink(){const t=totals();
+  const lines=Object.keys(cart).filter(id=>byId(id)).map(id=>`• ${cart[id]}x ${byId(id).n} — ${brl(byId(id).p*cart[id])}`);
+  const msg=`Olá, Meliah! Quero fazer este pedido:\n${lines.join("\n")}\n\nSubtotal: ${brl(t.sub)}\nEntrega: ${t.ship?brl(t.ship):"Grátis"}\nTotal: ${brl(t.tot)}\n\nNome: ${document.getElementById("cName").value||"-"}\nCEP: ${document.getElementById("cCep").value||"-"}\nPagamento: ${document.getElementById("cPay").value}`;
+  document.getElementById("sendOrder").href=waLink(msg);}
+["cName","cCep","cPay"].forEach(id=>document.getElementById(id).addEventListener("input",updateOrderLink));
+document.getElementById("items").addEventListener("click",e=>{const b=e.target.closest("[data-d]");if(!b)return;
+  const id=b.dataset.id;cart[id]+=+b.dataset.d;if(cart[id]<=0)delete cart[id];save();renderCart();});
+const dr=document.getElementById("drawer"),bg=document.getElementById("drawerBg");
+const open=v=>{dr.hidden=bg.hidden=!v;};
+document.getElementById("openCart").onclick=()=>open(true);
+document.getElementById("closeCart").onclick=()=>open(false);
+bg.onclick=()=>open(false);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")open(false)});
+renderCart();
+
+/* recomendação da calculadora
+   AJUSTAR: quantidades por faixa de volume conforme o rótulo dos produtos vendidos */
+const KIT_RULES=[
+ {ate:15000, itens:{clg25:1,alg:1,clar:1,phm:1,kit:1}},
+ {ate:35000, itens:{clg10:1,alg:2,clar:1,phm:1,kit:1}},
+ {ate:60000, itens:{clg10:2,alg:3,clar:2,phm:2,kit:1}},
+ {ate:Infinity, itens:{clg10:3,alg:4,clar:2,phm:3,kit:1}}
+];
+const PUMP_RULES=[{ate:18000,id:"bomba14"},{ate:32000,id:"bomba"},{ate:50000,id:"bomba34"},{ate:75000,id:"bomba1"}];
+let currentKit={};
+function renderRec(litros){
+  const list=document.getElementById("recList"),pump=document.getElementById("recPump"),btn=document.getElementById("addKit");
+  if(!(litros>0)){list.innerHTML='<li><span></span><span>Preencha as medidas acima.</span><span></span></li>';
+    document.getElementById("recTot").textContent=brl(0);btn.disabled=true;pump.hidden=true;currentKit={};return;}
+  btn.disabled=false;
+  currentKit=KIT_RULES.find(r=>litros<=r.ate).itens;
+  let tot=0;
+  list.innerHTML=Object.entries(currentKit).map(([id,q])=>{const p=byId(id);tot+=p.p*q;
+    return `<li><span class="q">${q}×</span><span>${p.n}</span><span class="v">${brl(p.p*q)}</span></li>`}).join("");
+  document.getElementById("recTot").textContent=brl(tot);
+  const pr=PUMP_RULES.find(r=>litros<=r.ate);pump.hidden=false;
+  pump.innerHTML=pr?`<span>Para ${Math.round(litros).toLocaleString("pt-BR")} L, a <b>${byId(pr.id).n.replace("Motobomba ","bomba de ")}</b> atende.</span><button class="add" data-pump="${pr.id}">+ ${brl(byId(pr.id).p)}</button>`
+    :`<span>Piscina acima de 75.000 L precisa de bomba dimensionada no projeto.</span><a class="add" style="text-decoration:none" target="_blank" rel="noopener" href="${waLink("Olá! Minha piscina tem "+Math.round(litros).toLocaleString("pt-BR")+" L. Qual bomba e filtro vocês indicam?")}">Consultar</a>`;
+}
+document.getElementById("addKit").addEventListener("click",e=>{
+  Object.entries(currentKit).forEach(([id,q])=>{cart[id]=(cart[id]||0)+q});save();renderCart();
+  const b=e.currentTarget;b.textContent="Kit adicionado ✓";b.classList.add("done");
+  setTimeout(()=>{b.textContent="Adicionar kit ao carrinho";b.classList.remove("done")},1500);});
+document.getElementById("recPump").addEventListener("click",e=>{const b=e.target.closest("[data-pump]");if(!b)return;
+  cart[b.dataset.pump]=(cart[b.dataset.pump]||0)+1;save();renderCart();b.textContent="Adicionada ✓";b.classList.add("done");});
+calc();
+
+/* páginas de política: #privacidade e #trocas */
+const LEGAL=["privacidade","trocas"];
+function route(){const h=location.hash.slice(1);const legal=LEGAL.includes(h);
+  document.getElementById("home").hidden=legal;
+  LEGAL.forEach(id=>document.getElementById(id).hidden=id!==h);
+  if(legal){scrollTo(0,0);}else if(h){const el=document.getElementById(h);if(el)el.scrollIntoView();}}
+addEventListener("hashchange",route);route();
+document.querySelectorAll(".closeLink").forEach(a=>a.addEventListener("click",()=>open(false)));
+
+document.getElementById("waMain").href=document.getElementById("waFloat").href=waLink("Olá, Meliah! Vim pelo site.");
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
+  const t=document.getElementById(b.dataset.copy).textContent;
+  navigator.clipboard?.writeText(t).then(()=>{b.textContent="copiado"},()=>{const r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.copy));getSelection().removeAllRanges();getSelection().addRange(r);});
+}));
+
+/* reflexo da água no hero */
+(function(){const c=document.getElementById("caustics");if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const x=c.getContext("2d");let w,h;function rs(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight}rs();addEventListener("resize",rs);
+ let t=0;(function draw(){x.clearRect(0,0,w,h);x.strokeStyle="rgba(140,220,245,.55)";x.lineWidth=1.5;
+  for(let r=0;r<h+40;r+=26){x.beginPath();for(let i=0;i<=w;i+=12){const y=r+Math.sin(i*.018+t+r*.05)*7+Math.sin(i*.007-t*.6)*5;i?x.lineTo(i,y):x.moveTo(i,y)}x.stroke()}
+  t+=.012;requestAnimationFrame(draw)})();})();
+</script>
+
+</body>
+</html>

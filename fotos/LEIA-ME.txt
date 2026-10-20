@@ -1,0 +1,4 @@
+Coloque aqui as fotos reais das obras (jpg, ate 300 KB cada).
+Depois preencha o campo "foto" na lista GALERIA dentro do index.html.
+Exemplo: foto:"fotos/obra-alphaville.jpg"
+Veja o README.md, secao 3.6.
