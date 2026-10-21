@@ -238,12 +238,22 @@ function telaInativo(){
   <button class="btn" id="bsair">Sair</button></div></div></div>`;
   $("#bsair").onclick = sair;
 }
+function telaErro(err){
+  const perm = /permission denied/i.test(err.message||"");
+  $("#screen").innerHTML = `<div class="center"><div class="login"><div class="band"><b>Meliah</b><span>Gestão</span></div>
+  <div style="padding:22px 24px;display:grid;gap:12px"><div class="msg err">${perm
+    ? "O banco de dados está sem as permissões necessárias. No Supabase, abra o SQL Editor e rode de novo o arquivo <b>supabase/schema.sql</b> (versão mais recente). Depois saia e entre de novo."
+    : "Não foi possível carregar seu perfil."}<br><br><span class="mono" style="font-size:12px">${esc(err.message)}</span></div>
+  <button class="btn" id="bsair">Sair</button></div></div></div>`;
+  $("#bsair").onclick = sair;
+}
 async function sair(){ await sb.auth.signOut(); telaLogin(); }
 
 async function iniciar(){
   const {data:{session}} = await sb.auth.getSession();
   if (!session) return telaLogin();
-  const {data:perfil} = await sb.from("perfis").select("*").eq("id", session.user.id).maybeSingle();
+  const {data:perfil, error} = await sb.from("perfis").select("*").eq("id", session.user.id).maybeSingle();
+  if (error) return telaErro(error);
   me = perfil || {email:session.user.email, ativo:false};
   if (!me.ativo) return telaInativo();
   montarApp();
