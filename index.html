@@ -3,37 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Venda e instalação de piscinas de fibra, vinil e alvenaria, produtos para piscina e manutenção em São Paulo e região. Peça orçamento pelo WhatsApp.">
+<meta name="description" content="Venda e instalação de piscinas de fibra, vinil e alvenaria, produtos para piscina e manutenção em Campinas e região. Peça orçamento pelo WhatsApp.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Meliah Piscinas">
-<meta property="og:description" content="Piscinas, produtos e manutenção. Peça orçamento pelo WhatsApp.">
+<meta property="og:title" content="Meliah Piscinas | Campinas e região">
+<meta property="og:description" content="Piscinas, produtos e manutenção em Campinas e região. Peça orçamento pelo WhatsApp.">
 <meta property="og:locale" content="pt_BR">
-<!-- Dados da empresa para o Google. TROCAR telefone, endereço e site pelos reais (ver README, seção 5). -->
+<!-- Dados da empresa para o Google. TROCAR "telephone" e "url" pelos reais (ver README, seção 5). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Store",
+  "@type": "HomeAndConstructionBusiness",
   "name": "Meliah Piscinas",
   "legalName": "MELIAH PISCINAS COMERCIO E SERVICOS LTDA - ME",
   "taxID": "06.120.369/0001-14",
-  "description": "Venda e instalação de piscinas, produtos para piscina e manutenção.",
+  "description": "Venda e instalação de piscinas, produtos para piscina e manutenção em Campinas e região.",
   "url": "https://www.meliahpiscinas.com.br",
-  "telephone": "+55-11-90000-0000",
+  "telephone": "+55-19-00000-0000",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Rua Exemplo, 123",
-    "addressLocality": "São Paulo",
+    "streetAddress": "Av. Orosimbo Maia, 1806",
+    "addressLocality": "Campinas",
     "addressRegion": "SP",
-    "postalCode": "00000-000",
+    "postalCode": "13024-045",
     "addressCountry": "BR"
   },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Campinas"
+    },
+    {
+      "@type": "City",
+      "name": "Valinhos"
+    },
+    {
+      "@type": "City",
+      "name": "Vinhedo"
+    },
+    {
+      "@type": "City",
+      "name": "Paulínia"
+    },
+    {
+      "@type": "City",
+      "name": "Hortolândia"
+    },
+    {
+      "@type": "City",
+      "name": "Sumaré"
+    },
+    {
+      "@type": "City",
+      "name": "Jaguariúna"
+    },
+    {
+      "@type": "City",
+      "name": "Indaiatuba"
+    }
+  ],
   "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "08:00","closes": "18:00"},
-    {"@type": "OpeningHoursSpecification","dayOfWeek": "Saturday","opens": "08:00","closes": "13:00"}
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "13:00"
+    }
   ]
 }
 </script>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<script src="config.js"></script>
 <title>Meliah Piscinas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -194,6 +245,7 @@ section{padding-block:56px}
 .price{font:500 18px var(--f-mono);font-variant-numeric:tabular-nums}
 .add{background:var(--tile);color:var(--on-tile);border:0;border-radius:8px;padding:8px 12px;font-weight:700;font-size:14px}
 .add.done{background:var(--ok);color:#fff}
+.esg{font-size:13px;font-weight:700;color:var(--buoy);text-transform:uppercase;letter-spacing:.06em}
 @media (max-width:1000px){.products{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:720px){.products{grid-template-columns:repeat(2,1fr)}}
 
@@ -212,7 +264,8 @@ section{padding-block:56px}
 .contact h2{font:800 clamp(30px,4vw,44px)/1 var(--f-display);text-transform:uppercase}
 .contact dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:20px 0 0}
 .contact dt{opacity:.75;font-size:13px;text-transform:uppercase;letter-spacing:.1em;padding-top:2px}
-.contact dd{margin:0;font-weight:600}
+.contact dd{margin:0;font-weight:600;min-width:0;overflow-wrap:anywhere}
+.contact .grid>*{min-width:0}
 .example{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--buoy);color:#fff;border-radius:4px;padding:2px 6px;margin-left:6px;vertical-align:middle}
 .copy{background:transparent;border:1px solid currentColor;color:inherit;border-radius:6px;padding:2px 8px;font-size:12px;margin-left:8px}
 @media (max-width:760px){.contact .grid{grid-template-columns:1fr}}
@@ -254,7 +307,7 @@ footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-betw
   <canvas id="caustics" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
-      <div class="depth">Meliah<small>PISCINAS · PRODUTOS · MANUTENÇÃO</small></div>
+      <div class="depth">Meliah<small>PISCINAS · PRODUTOS · MANUTENÇÃO · CAMPINAS E REGIÃO</small></div>
       <h1>Sua piscina pronta, do projeto ao cloro de todo mês</h1>
       <p>Vendemos e instalamos piscinas e entregamos os produtos para manter a água limpa. Peça orçamento pelo WhatsApp ou compre os produtos aqui mesmo.</p>
       <div class="cta-row">
@@ -331,7 +384,7 @@ footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-betw
     <div><h2>Dúvidas frequentes</h2></div>
   </div>
   <div class="faq">
-    <details><summary>Vocês entregam em quais cidades?</summary><p>Entregamos em São Paulo e região. Informe seu CEP no carrinho e confirmamos o prazo pelo WhatsApp.</p></details>
+    <details><summary>Vocês entregam em quais cidades?</summary><p>Atendemos Campinas e região: Valinhos, Vinhedo, Paulínia, Hortolândia, Sumaré, Jaguariúna e Indaiatuba. Informe seu CEP no carrinho e confirmamos o prazo pelo WhatsApp.</p></details>
     <details><summary>Quanto tempo demora a entrega dos produtos?</summary><p>Pedidos confirmados até as 14h saem no mesmo dia útil para a região. Para outras cidades, informamos o prazo junto com o frete.</p></details>
     <details><summary>Quais as formas de pagamento?</summary><p>Pix, cartão de crédito, cartão de débito e dinheiro na entrega. Piscinas podem ser parceladas no cartão.</p></details>
     <details><summary>A piscina tem garantia?</summary><p>Sim. A garantia de fábrica vale para a estrutura da piscina, e a instalação feita pela nossa equipe tem garantia própria. Os prazos vêm no orçamento.</p></details>
@@ -425,8 +478,9 @@ footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-betw
     <a class="btn wa" id="waMain" target="_blank" rel="noopener">Chamar no WhatsApp</a>
   </div>
   <dl>
-    <dt>WhatsApp</dt><dd><span id="phoneTxt">(11) 90000-0000</span><span class="example">exemplo</span><button class="copy" data-copy="phoneTxt">copiar</button></dd>
-    <dt>Endereço</dt><dd>Rua Exemplo, 123 – São Paulo/SP<span class="example">exemplo</span></dd>
+    <dt>WhatsApp</dt><dd><span id="phoneTxt">(19) 90000-0000</span><span class="example">exemplo</span><button class="copy" data-copy="phoneTxt">copiar</button></dd>
+    <dt>Atendimento</dt><dd>Vamos até você em Campinas e região</dd>
+    <dt>Sede</dt><dd>Av. Orosimbo Maia, 1806 – Cambuí, Campinas/SP · CEP 13024-045</dd>
     <dt>Horário</dt><dd>Seg a sex 8h–18h · Sáb 8h–13h</dd>
     <dt>E-mail</dt><dd><span id="mailTxt">contato@meliahpiscinas.com.br</span><span class="example">exemplo</span><button class="copy" data-copy="mailTxt">copiar</button></dd>
   </dl>
@@ -449,6 +503,7 @@ footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-betw
       <div class="row big"><span>Total</span><span class="mono" id="tot">R$ 0,00</span></div>
     </div>
     <label for="cName">Seu nome<input id="cName" placeholder="Ex.: Ana Souza"></label>
+    <label for="cTel">Seu WhatsApp<input id="cTel" type="tel" inputmode="tel" placeholder="(19) 99999-9999"></label>
     <label for="cCep">CEP para entrega<input id="cCep" inputmode="numeric" placeholder="00000-000"></label>
     <label for="cPay">Pagamento<select id="cPay"><option>Pix</option><option>Cartão de crédito</option><option>Cartão de débito</option><option>Dinheiro na entrega</option></select></label>
     <a class="btn wa" id="sendOrder" target="_blank" rel="noopener">Enviar pedido pelo WhatsApp</a>
@@ -457,7 +512,9 @@ footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-betw
 </aside>
 
 <script>
-const WA = "5511900000000"; // trocar pelo número real
+const CFG = window.MELIAH_CONFIG || {};  // config.js (ver README)
+const WA = String(CFG.whatsapp || "5519900000000").replace(/\D/g,""); // trocar pelo número real no config.js
+const escH = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 const waLink = t => "https://wa.me/"+WA+"?text="+encodeURIComponent(t);
 
@@ -490,12 +547,12 @@ document.getElementById("poolGrid").innerHTML=pools.map(p=>`
    TROCAR: em "foto" coloque o caminho da imagem real (ex.: "fotos/obra-1.jpg").
    Enquanto "foto" estiver vazio, aparece uma ilustração marcada como EXEMPLO. */
 const GALERIA=[
- {titulo:"Fibra 8 × 4 m com prainha",local:"Alphaville – Barueri/SP",foto:"",forma:"beach",deck:"#D6CBB5",grama:"#7FA65A"},
- {titulo:"Vinil sob medida",local:"Granja Viana – Cotia/SP",foto:"",forma:"free",deck:"#CFC6B8",grama:"#6E9A4E"},
- {titulo:"Fibra 6 × 3 m",local:"Zona Sul – São Paulo/SP",foto:"",forma:"rect",deck:"#E2D9C8",grama:"#88AE60"},
- {titulo:"Alvenaria com cascata",local:"Atibaia/SP",foto:"",forma:"l",deck:"#C9BBA2",grama:"#76A055"},
- {titulo:"Fibra 5 × 2,5 m",local:"Santo André/SP",foto:"",forma:"rect",deck:"#D9D0C0",grama:"#82A85B"},
- {titulo:"Reforma e troca de vinil",local:"Morumbi – São Paulo/SP",foto:"",forma:"round",deck:"#D4C7AE",grama:"#719C51"}
+ {titulo:"Fibra 8 × 4 m com prainha",local:"Barão Geraldo – Campinas/SP",foto:"",forma:"beach",deck:"#D6CBB5",grama:"#7FA65A"},
+ {titulo:"Vinil sob medida",local:"Sousas – Campinas/SP",foto:"",forma:"free",deck:"#CFC6B8",grama:"#6E9A4E"},
+ {titulo:"Fibra 6 × 3 m",local:"Valinhos/SP",foto:"",forma:"rect",deck:"#E2D9C8",grama:"#88AE60"},
+ {titulo:"Alvenaria com cascata",local:"Vinhedo/SP",foto:"",forma:"l",deck:"#C9BBA2",grama:"#76A055"},
+ {titulo:"Fibra 5 × 2,5 m",local:"Paulínia/SP",foto:"",forma:"rect",deck:"#D9D0C0",grama:"#82A85B"},
+ {titulo:"Reforma e troca de vinil",local:"Cambuí – Campinas/SP",foto:"",forma:"round",deck:"#D4C7AE",grama:"#719C51"}
 ];
 function cena(g,i){
   const pool={
@@ -526,7 +583,7 @@ const icons={
  equip:'<svg viewBox="0 0 60 60"><circle cx="30" cy="34" r="18" fill="var(--tile)"/><circle cx="30" cy="34" r="8" fill="var(--water)"/><rect x="26" y="4" width="8" height="14" fill="var(--muted)"/></svg>',
  rede:'<svg viewBox="0 0 60 60"><path d="M10 14h30v22a15 15 0 0 1-30 0z" fill="var(--water-soft)" stroke="var(--tile)" stroke-width="3"/><path d="M17 14v28M25 14v32M33 14v28M10 24h30M10 34h30" stroke="var(--tile)" stroke-width="1.5"/><rect x="38" y="10" width="20" height="5" rx="2" fill="var(--muted)"/></svg>'
 };
-const products=[
+let products=[
  {id:"clg10",n:"Cloro granulado estabilizado 10 kg",cat:"Tratamento",m:"Uso diário e choque",p:289.9,i:"balde"},
  {id:"clg25",n:"Cloro granulado 2,5 kg",cat:"Tratamento",m:"Para piscinas pequenas",p:84.9,i:"balde"},
  {id:"past",n:"Pastilha de cloro 200 g (pote c/ 5)",cat:"Tratamento",m:"Para clorador flutuante",p:59.9,i:"pastilha"},
@@ -543,19 +600,19 @@ const products=[
  {id:"bomba1",n:"Motobomba 1 CV",cat:"Equipamentos",m:"Até 75.000 L",p:1790,i:"equip"},
  {id:"areia",n:"Areia para filtro 25 kg",cat:"Equipamentos",m:"Troca a cada 2 anos",p:69.9,i:"balde"}
 ];
-const cats=["Todos",...new Set(products.map(p=>p.cat))];
+const cats=()=>["Todos",...new Set(products.map(p=>p.cat))];
 let filter="Todos";
 const fEl=document.getElementById("filters");
-function renderFilters(){fEl.innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c===filter}" data-c="${c}">${c}</button>`).join("");}
+function renderFilters(){fEl.innerHTML=cats().map(c=>`<button class="chip" aria-pressed="${c===filter}" data-c="${c}">${c}</button>`).join("");}
 fEl.addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;filter=b.dataset.c;renderFilters();renderProducts();});
 const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
 document.getElementById("search").addEventListener("input",renderProducts);
 function renderProducts(){const q=norm(document.getElementById("search").value.trim());
   const list=products.filter(p=>(filter==="Todos"||p.cat===filter)&&(!q||norm(p.n+" "+p.m+" "+p.cat).includes(q)));
   document.getElementById("prodGrid").innerHTML=list.length?list.map(p=>`
- <article class="prod"><div class="pic">${icons[p.i]}</div><div class="cat">${p.cat}</div>
- <div><h3>${p.n}</h3><div class="meta">${p.m}</div></div>
- <div class="buy"><span class="price">${brl(p.p)}</span><button class="add" data-id="${p.id}">Adicionar</button></div></article>`).join("")
+ <article class="prod"><div class="pic">${icons[p.i]||icons.balde}</div><div class="cat">${escH(p.cat)}</div>
+ <div><h3>${escH(p.n)}</h3><div class="meta">${escH(p.m)}</div></div>
+ <div class="buy"><span class="price">${brl(p.p)}</span>${p.ok===false?'<span class="esg">Esgotado</span>':`<button class="add" data-id="${escH(p.id)}">Adicionar</button>`}</div></article>`).join("")
   :`<div class="no-res">Nenhum produto encontrado. Não achou o que procura? <a target="_blank" rel="noopener" href="${waLink("Olá! Procuro: "+document.getElementById("search").value)}">Pergunte no WhatsApp</a>.</div>`;}
 renderFilters();renderProducts();
 
@@ -567,12 +624,12 @@ const byId=id=>products.find(p=>p.id===id);
 document.getElementById("prodGrid").addEventListener("click",e=>{const b=e.target.closest(".add");if(!b)return;
   cart[b.dataset.id]=(cart[b.dataset.id]||0)+1;save();renderCart();b.textContent="Adicionado ✓";b.classList.add("done");
   setTimeout(()=>{b.textContent="Adicionar";b.classList.remove("done")},1200);});
-function totals(){const sub=Object.entries(cart).reduce((s,[id,q])=>s+byId(id).p*q,0);const ship=sub===0?0:(sub>=300?0:20);return{sub,ship,tot:sub+ship};}
+function totals(){const sub=Object.entries(cart).filter(([id])=>byId(id)).reduce((s,[id,q])=>s+byId(id).p*q,0);const ship=sub===0?0:(sub>=300?0:20);return{sub,ship,tot:sub+ship};}
 function renderCart(){
   const ids=Object.keys(cart).filter(id=>byId(id));const n=ids.reduce((s,id)=>s+cart[id],0);
   document.getElementById("cartCount").textContent=n;
   const box=document.getElementById("items");
-  box.innerHTML=ids.length?ids.map(id=>{const p=byId(id);return `<div class="item"><span class="n">${p.n}</span><span class="mono">${brl(p.p*cart[id])}</span>
+  box.innerHTML=ids.length?ids.map(id=>{const p=byId(id);return `<div class="item"><span class="n">${escH(p.n)}</span><span class="mono">${brl(p.p*cart[id])}</span>
     <div class="qty"><button data-d="-1" data-id="${id}" aria-label="Diminuir">−</button><span class="mono">${cart[id]}</span><button data-d="1" data-id="${id}" aria-label="Aumentar">+</button></div><span></span></div>`}).join("")
     :`<div class="empty">Seu carrinho está vazio.<br>Escolha produtos na loja.</div>`;
   document.getElementById("checkout").hidden=!ids.length;
@@ -582,9 +639,9 @@ function renderCart(){
 }
 function updateOrderLink(){const t=totals();
   const lines=Object.keys(cart).filter(id=>byId(id)).map(id=>`• ${cart[id]}x ${byId(id).n} — ${brl(byId(id).p*cart[id])}`);
-  const msg=`Olá, Meliah! Quero fazer este pedido:\n${lines.join("\n")}\n\nSubtotal: ${brl(t.sub)}\nEntrega: ${t.ship?brl(t.ship):"Grátis"}\nTotal: ${brl(t.tot)}\n\nNome: ${document.getElementById("cName").value||"-"}\nCEP: ${document.getElementById("cCep").value||"-"}\nPagamento: ${document.getElementById("cPay").value}`;
+  const msg=`Olá, Meliah! Quero fazer este pedido:\n${lines.join("\n")}\n\nSubtotal: ${brl(t.sub)}\nEntrega: ${t.ship?brl(t.ship):"Grátis"}\nTotal: ${brl(t.tot)}\n\nNome: ${document.getElementById("cName").value||"-"}\nWhatsApp: ${document.getElementById("cTel").value||"-"}\nCEP: ${document.getElementById("cCep").value||"-"}\nPagamento: ${document.getElementById("cPay").value}`;
   document.getElementById("sendOrder").href=waLink(msg);}
-["cName","cCep","cPay"].forEach(id=>document.getElementById(id).addEventListener("input",updateOrderLink));
+["cName","cTel","cCep","cPay"].forEach(id=>document.getElementById(id).addEventListener("input",updateOrderLink));
 document.getElementById("items").addEventListener("click",e=>{const b=e.target.closest("[data-d]");if(!b)return;
   const id=b.dataset.id;cart[id]+=+b.dataset.d;if(cart[id]<=0)delete cart[id];save();renderCart();});
 const dr=document.getElementById("drawer"),bg=document.getElementById("drawerBg");
@@ -610,14 +667,14 @@ function renderRec(litros){
   if(!(litros>0)){list.innerHTML='<li><span></span><span>Preencha as medidas acima.</span><span></span></li>';
     document.getElementById("recTot").textContent=brl(0);btn.disabled=true;pump.hidden=true;currentKit={};return;}
   btn.disabled=false;
-  currentKit=KIT_RULES.find(r=>litros<=r.ate).itens;
+  currentKit=Object.fromEntries(Object.entries(KIT_RULES.find(r=>litros<=r.ate).itens).filter(([id])=>byId(id)&&byId(id).ok!==false));
   let tot=0;
   list.innerHTML=Object.entries(currentKit).map(([id,q])=>{const p=byId(id);tot+=p.p*q;
-    return `<li><span class="q">${q}×</span><span>${p.n}</span><span class="v">${brl(p.p*q)}</span></li>`}).join("");
+    return `<li><span class="q">${q}×</span><span>${escH(p.n)}</span><span class="v">${brl(p.p*q)}</span></li>`}).join("");
   document.getElementById("recTot").textContent=brl(tot);
-  const pr=PUMP_RULES.find(r=>litros<=r.ate);pump.hidden=false;
+  const pr0=PUMP_RULES.find(r=>litros<=r.ate);const pr=pr0&&byId(pr0.id)&&byId(pr0.id).ok!==false?pr0:null;pump.hidden=false;
   pump.innerHTML=pr?`<span>Para ${Math.round(litros).toLocaleString("pt-BR")} L, a <b>${byId(pr.id).n.replace("Motobomba ","bomba de ")}</b> atende.</span><button class="add" data-pump="${pr.id}">+ ${brl(byId(pr.id).p)}</button>`
-    :`<span>Piscina acima de 75.000 L precisa de bomba dimensionada no projeto.</span><a class="add" style="text-decoration:none" target="_blank" rel="noopener" href="${waLink("Olá! Minha piscina tem "+Math.round(litros).toLocaleString("pt-BR")+" L. Qual bomba e filtro vocês indicam?")}">Consultar</a>`;
+    :`<span>${pr0?"Consulte a bomba ideal para "+Math.round(litros).toLocaleString("pt-BR")+" L.":"Piscina acima de 75.000 L precisa de bomba dimensionada no projeto."}</span><a class="add" style="text-decoration:none" target="_blank" rel="noopener" href="${waLink("Olá! Minha piscina tem "+Math.round(litros).toLocaleString("pt-BR")+" L. Qual bomba e filtro vocês indicam?")}">Consultar</a>`;
 }
 document.getElementById("addKit").addEventListener("click",e=>{
   Object.entries(currentKit).forEach(([id,q])=>{cart[id]=(cart[id]||0)+q});save();renderCart();
@@ -626,6 +683,38 @@ document.getElementById("addKit").addEventListener("click",e=>{
 document.getElementById("recPump").addEventListener("click",e=>{const b=e.target.closest("[data-pump]");if(!b)return;
   cart[b.dataset.pump]=(cart[b.dataset.pump]||0)+1;save();renderCart();b.textContent="Adicionada ✓";b.classList.add("done");});
 calc();
+
+/* sistema de gestão (Supabase): catálogo real e registro dos pedidos.
+   Só funciona quando o config.js está preenchido; sem ele o site usa a lista acima. */
+async function apiRpc(fn, body){
+  const r = await fetch(CFG.supabaseUrl.replace(/\/$/,"")+"/rest/v1/rpc/"+fn, {method:"POST",
+    headers:Object.assign({"Content-Type":"application/json","apikey":CFG.supabaseAnonKey},
+      /^eyJ/.test(CFG.supabaseAnonKey)?{"Authorization":"Bearer "+CFG.supabaseAnonKey}:{}),  // chave antiga (anon) também vai no Authorization
+    body:JSON.stringify(body||{})});
+  if(!r.ok) throw new Error(await r.text()); return r.json();
+}
+const ONLINE = !!(CFG.supabaseUrl && CFG.supabaseAnonKey);
+if (ONLINE) {
+  apiRpc("produtos_site").then(rows=>{
+    if(!Array.isArray(rows)||!rows.length) return;
+    products = rows.map(r=>({id:r.id,n:r.nome,cat:r.categoria,m:r.descricao||"",p:Number(r.preco),i:r.icone,ok:r.disponivel}));
+    if(!cats().includes(filter)) filter="Todos";
+    renderFilters();renderProducts();renderCart();calc();
+  }).catch(e=>console.warn("Catálogo do sistema indisponível, usando a lista do site.",e));
+  document.getElementById("sendOrder").addEventListener("click",async e=>{
+    const ids=Object.keys(cart).filter(id=>byId(id)); if(!ids.length) return;
+    e.preventDefault();
+    const w=window.open("","_blank");   // abre já, para o navegador não bloquear
+    let numero=null;
+    try{ numero = await apiRpc("registrar_pedido_site",{p:{nome:document.getElementById("cName").value||"Cliente do site",
+      telefone:document.getElementById("cTel").value, cep:document.getElementById("cCep").value, forma_pagamento:document.getElementById("cPay").value,
+      itens:ids.map(id=>({produto_id:id,quantidade:cart[id]}))}}); }catch(err){ console.warn("Pedido não registrado no sistema",err); }
+    updateOrderLink();
+    let href=document.getElementById("sendOrder").href;
+    if(numero){ href=href.replace(encodeURIComponent("Quero fazer este pedido:"),encodeURIComponent("Quero fazer o pedido nº "+numero+":")); cart={};save();renderCart();open(false); }
+    if(w) w.location.href=href; else location.href=href;
+  });
+}
 
 /* páginas de política: #privacidade e #trocas */
 const LEGAL=["privacidade","trocas"];
