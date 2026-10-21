@@ -85,6 +85,7 @@
 </script>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script src="config.js"></script>
+<script src="comum.js"></script>
 <title>Meliah Piscinas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,7 +95,7 @@
 :root{
   --tile:#0A4F78; --water:#1FA4CC; --water-soft:#DDF1F7; --coping:#E7E1D6;
   --buoy:#E0533A; --bg:#F6FAFB; --surface:#FFFFFF; --fg:#0F2733; --muted:#4E6672; --line:#CFDDE3;
-  --on-tile:#F2FAFD; --ok:#1F8A5B;
+  --on-tile:#F2FAFD; --ok:#1F8A5B; --bad:#C2412D; --bad-soft:#FBE6E2;
   --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
   --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -102,11 +103,11 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --tile:#0E3A55; --water:#4CC3E6; --water-soft:#12303D; --coping:#2A3237;
   --buoy:#FF7A5F; --bg:#0A161C; --surface:#10222B; --fg:#E4F1F5; --muted:#9DB4BE; --line:#22404D;
-  --on-tile:#E8F7FC; --ok:#4CC98F; color-scheme:dark}}
+  --on-tile:#E8F7FC; --ok:#4CC98F; --bad:#FF8A73; --bad-soft:#3A1A14; color-scheme:dark}}
 :root[data-theme="dark"]{
   --tile:#0E3A55; --water:#4CC3E6; --water-soft:#12303D; --coping:#2A3237;
   --buoy:#FF7A5F; --bg:#0A161C; --surface:#10222B; --fg:#E4F1F5; --muted:#9DB4BE; --line:#22404D;
-  --on-tile:#E8F7FC; --ok:#4CC98F; color-scheme:dark}
+  --on-tile:#E8F7FC; --ok:#4CC98F; --bad:#FF8A73; --bad-soft:#3A1A14; color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 .search{width:100%;max-width:360px;font:inherit;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--fg);margin-left:auto}
@@ -278,7 +279,7 @@ footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-betw
   padding:calc(18px + env(safe-area-inset-top,0px)) max(18px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) 18px;box-shadow:-10px 0 30px rgba(0,0,0,.2)}
 .drawer h2{font:800 30px/1 var(--f-display);text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
 .x{background:none;border:0;color:var(--fg);font-size:26px;line-height:1}
-.items{flex:1;overflow:auto;margin:16px 0;display:grid;gap:12px;align-content:start}
+.items{flex:none;margin:16px 0;display:grid;gap:12px;align-content:start}
 .item{display:grid;grid-template-columns:1fr auto;gap:6px 10px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .item .n{font-weight:600;min-width:0}
 .qty{display:flex;align-items:center;gap:6px}
@@ -292,15 +293,60 @@ footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-betw
 .drawer .btn{justify-content:center;margin-top:12px;width:100%}
 .note{font-size:12px;color:var(--muted);margin-top:8px}
 @media (prefers-reduced-motion:reduce){.hero canvas{display:none}}
+/* formulários, checkout e diálogos */
+nav.links{flex-wrap:wrap;row-gap:4px}
+.aviso{background:var(--buoy);color:#fff;text-align:center;font-weight:600;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+.drawer{overflow:auto;overscroll-behavior:contain}
+.drawer>*{flex-shrink:0}
+.drawer .items{flex:none}
+.fbox{display:grid;gap:10px}
+.fbox label{font-size:13px;color:var(--muted);display:grid;gap:4px;font-weight:600;margin:0}
+.fbox label small{font-weight:400}
+.fbox input,.fbox select,.fbox textarea{font:inherit;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
+.fbox textarea{min-height:64px;resize:vertical}
+.fbox input[aria-invalid="true"],.fbox select[aria-invalid="true"]{border-color:var(--bad);background:var(--bad-soft)}
+.fbox fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0;display:grid;gap:8px;min-width:0}
+.fbox legend{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:0 4px}
+.two-in{display:grid;grid-template-columns:1fr 1fr;gap:8px}.two-in.city{grid-template-columns:minmax(0,1fr) 64px}
+.hint{font-size:12px;font-weight:500;color:var(--muted)}.hint[data-erro="1"]{color:var(--bad);font-weight:600}
+.ferr{background:var(--bad-soft);color:var(--bad);border-radius:8px;padding:10px 12px;font-size:14px;font-weight:600}
+.ferr a{color:inherit}
+.fok{background:var(--water-soft);color:var(--fg);border-radius:8px;padding:10px 12px;font-size:14px}
+.drawer .btn{justify-content:center;width:100%}
+.drawer .btn:disabled,.fbox .btn:disabled{opacity:.6;cursor:progress}
+.okbox{display:grid;gap:12px;margin-top:8px}
+.okbox h3{font:800 28px/1.05 var(--f-display);text-transform:uppercase;color:var(--ok);margin:0}
+.pixbox{border:2px dashed var(--water);border-radius:10px;padding:12px;display:grid;gap:6px}
+.pixbox b.mono{word-break:break-all;font-size:15px}
+.btn.line{border:2px solid var(--tile);color:var(--tile);background:transparent;justify-content:center}
+.cform{background:var(--surface);color:var(--fg);border-radius:12px;padding:16px;margin-top:20px}
+.cform h3{font:800 20px var(--f-display);text-transform:uppercase;margin:0}
+.contact .cform .btn{justify-content:center}
+.tform{grid-template-columns:140px minmax(0,1fr) auto;align-items:end;max-width:620px;margin:16px 0}
+@media (max-width:560px){.tform{grid-template-columns:1fr}}
+.track{display:grid;gap:14px;margin-top:16px;max-width:640px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding-bottom:14px;position:relative;color:var(--muted)}
+.steps li::before{content:"";width:16px;height:16px;border-radius:50%;border:3px solid var(--line);background:var(--bg);margin-top:3px;box-sizing:border-box}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:7px;top:22px;bottom:2px;width:2px;background:var(--line)}
+.steps li.feito{color:var(--fg)} .steps li.feito::before{background:var(--ok);border-color:var(--ok)}
+.steps li.atual{color:var(--fg);font-weight:700} .steps li.atual::before{background:var(--water);border-color:var(--water)}
+.sdlg{border:0;border-radius:14px;padding:18px;width:min(480px,calc(100% - 24px));background:var(--surface);color:var(--fg);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.sdlg::backdrop{background:rgba(5,20,28,.55)}
+.sdlg .dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.sdlg h3{font:800 24px var(--f-display);text-transform:uppercase;margin:0}
+.sdlg .sub{margin:0;color:var(--muted)}
+.sdlg .btn{justify-content:center}
 </style>
 
 </head>
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="#inicio"><b>Meliah</b><span>Piscinas</span></a>
-  <nav class="links"><a href="#piscinas">Piscinas</a><a href="#loja">Loja</a><a href="#servicos">Serviços</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+  <nav class="links"><a href="#piscinas">Piscinas</a><a href="#loja">Loja</a><a href="#servicos">Serviços</a><a href="#contato">Contato</a><a href="#acompanhar">Meu pedido</a></nav>
   <button class="cart-btn" id="openCart" aria-label="Abrir carrinho">Carrinho <span class="count" id="cartCount">0</span></button>
 </div></header>
+<div class="aviso" id="avisoSite" role="status" hidden></div>
 
 <main id="home">
 <div class="hero" id="inicio">
@@ -470,12 +516,34 @@ footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-betw
   <p>WhatsApp e endereço estão na seção Contato abaixo. Atendemos de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 13h.</p>
 </div></section>
 
+<section id="acompanhar" class="legal" hidden><div class="wrap">
+  <a class="back" href="#inicio">← Voltar ao site</a>
+  <h1>Acompanhar pedido</h1>
+  <p>Informe o número do pedido e o WhatsApp usado na compra.</p>
+  <form id="fTrack" class="tform fbox" novalidate>
+    <label>Nº do pedido<input id="tNum" inputmode="numeric" maxlength="9" placeholder="Ex.: 12"></label>
+    <label>WhatsApp<input id="tTel" data-mask="tel" type="tel" inputmode="tel" placeholder="(19) 99999-9999"></label>
+    <button class="btn primary" type="submit">Consultar</button>
+  </form>
+  <div class="ferr" id="tErr" role="alert" hidden></div>
+  <div id="tRes" aria-live="polite"></div>
+</div></section>
+
 <div class="tiles"></div>
 <section id="contato" class="contact"><div class="wrap grid">
   <div>
     <h2>Fale com a Meliah</h2>
     <p>Mande foto e medidas do espaço para orçamento de piscina. Para produtos, finalize pelo carrinho.</p>
     <a class="btn wa" id="waMain" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    <form id="fContato" class="cform fbox" novalidate>
+      <h3>Ou deixe uma mensagem</h3>
+      <label>Seu nome *<input id="ctNome" maxlength="120" autocomplete="name"></label>
+      <label>WhatsApp *<input id="ctTel" data-mask="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(19) 99999-9999"></label>
+      <label>Mensagem *<textarea id="ctMsg" maxlength="2000" placeholder="Como podemos ajudar?"></textarea></label>
+      <div class="ferr" id="ctErr" role="alert" hidden></div>
+      <div class="fok" id="ctOk" role="status" hidden></div>
+      <button class="btn primary" type="submit">Enviar mensagem</button>
+    </form>
   </div>
   <dl>
     <dt>WhatsApp</dt><dd><span id="phoneTxt">(19) 90000-0000</span><span class="example">exemplo</span><button class="copy" data-copy="phoneTxt">copiar</button></dd>
@@ -491,29 +559,56 @@ footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-betw
   <span>Preços de exemplo, sujeitos a alteração.</span>
 </div></footer>
 
+<dialog id="dlgOrc" class="sdlg" aria-labelledby="dlgOrcT">
+  <div class="dh"><h3 id="dlgOrcT">Pedir orçamento</h3><button type="button" class="x" data-close aria-label="Fechar">×</button></div>
+  <form id="fOrc" class="fbox" novalidate>
+    <p class="sub" id="orcRef"></p>
+    <label>Seu nome *<input id="oNome" maxlength="120" autocomplete="name"></label>
+    <label>WhatsApp *<input id="oTel" data-mask="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(19) 99999-9999"></label>
+    <div class="two-in"><label>CEP<input id="oCep" data-mask="cep" inputmode="numeric" placeholder="00000-000"></label><label>Cidade<input id="oCidade" maxlength="80"></label></div>
+    <span class="hint" id="oCepMsg" hidden></span>
+    <label>Conte sobre o espaço<textarea id="oMsg" maxlength="2000" placeholder="Medidas do terreno, se já tem piscina, prazo desejado…"></textarea></label>
+    <div class="ferr" id="oErr" role="alert" hidden></div>
+    <button class="btn primary" type="submit">Enviar pedido de orçamento</button>
+  </form>
+  <div id="oOk" hidden></div>
+</dialog>
 <a class="wa-float" id="waFloat" target="_blank" rel="noopener">WhatsApp</a>
 <div class="drawer-bg" id="drawerBg" hidden></div>
 <aside class="drawer" id="drawer" hidden aria-label="Carrinho">
   <h2>Carrinho <button class="x" id="closeCart" aria-label="Fechar">×</button></h2>
   <div class="items" id="items"></div>
-  <div id="checkout">
+  <form id="checkout" class="fbox" novalidate>
     <div class="totals">
       <div class="row"><span>Subtotal</span><span class="mono" id="sub">R$ 0,00</span></div>
       <div class="row"><span>Entrega</span><span class="mono" id="ship">—</span></div>
       <div class="row big"><span>Total</span><span class="mono" id="tot">R$ 0,00</span></div>
     </div>
-    <label for="cName">Seu nome<input id="cName" placeholder="Ex.: Ana Souza"></label>
-    <label for="cTel">Seu WhatsApp<input id="cTel" type="tel" inputmode="tel" placeholder="(19) 99999-9999"></label>
-    <label for="cCep">CEP para entrega<input id="cCep" inputmode="numeric" placeholder="00000-000"></label>
-    <label for="cPay">Pagamento<select id="cPay"><option>Pix</option><option>Cartão de crédito</option><option>Cartão de débito</option><option>Dinheiro na entrega</option></select></label>
-    <a class="btn wa" id="sendOrder" target="_blank" rel="noopener">Enviar pedido pelo WhatsApp</a>
-    <p class="note">Frete grátis acima de R$ 300 na região. Abaixo disso, R$ 20. Ao enviar, você concorda com a <a href="#privacidade" class="closeLink">Política de Privacidade</a> e a <a href="#trocas" class="closeLink">Política de Trocas</a>.</p>
-  </div>
+    <div class="ferr" id="pausa" hidden>No momento não estamos recebendo pedidos pelo site. Fale com a gente pelo WhatsApp.</div>
+    <fieldset><legend>Seus dados</legend>
+      <label>Nome completo *<input id="cName" autocomplete="name" maxlength="120" placeholder="Ex.: Ana Souza"></label>
+      <label>WhatsApp *<input id="cTel" data-mask="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(19) 99999-9999"></label>
+      <label>CPF ou CNPJ <small>(opcional, para a nota fiscal)</small><input id="cDoc" data-mask="doc" inputmode="numeric" placeholder="000.000.000-00"><span class="hint" id="cDocMsg"></span></label>
+    </fieldset>
+    <fieldset><legend>Endereço de entrega</legend>
+      <label>CEP *<input id="cCep" data-mask="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000"><span class="hint" id="cCepMsg" hidden></span></label>
+      <label>Rua / avenida *<input id="cRua" autocomplete="address-line1" maxlength="150"></label>
+      <div class="two-in"><label>Número *<input id="cNum" maxlength="20"></label><label>Complemento<input id="cComp" maxlength="80" placeholder="Apto, bloco"></label></div>
+      <label>Bairro<input id="cBairro" maxlength="80"></label>
+      <div class="two-in city"><label>Cidade *<input id="cCidade" maxlength="80"></label><label>UF<input id="cUf" maxlength="2"></label></div>
+    </fieldset>
+    <label>Pagamento<select id="cPay"><option value="pix">Pix</option><option value="credito">Cartão de crédito (enviamos o link)</option><option value="debito">Cartão de débito na entrega</option><option value="dinheiro">Dinheiro na entrega</option></select></label>
+    <label>Observação<textarea id="cObs" maxlength="500" placeholder="Ponto de referência, melhor horário…"></textarea></label>
+    <div class="ferr" id="coErr" role="alert" hidden></div>
+    <button type="submit" class="btn wa" id="sendOrder">Finalizar pedido</button>
+    <p class="note"><span id="freteNote">Frete grátis acima de R$ 300 na região. Abaixo disso, R$ 20.</span> Ao enviar, você concorda com a <a href="#privacidade" class="closeLink">Política de Privacidade</a> e a <a href="#trocas" class="closeLink">Política de Trocas</a>.</p>
+  </form>
+  <div id="confirmado" hidden></div>
 </aside>
 
 <script>
 const CFG = window.MELIAH_CONFIG || {};  // config.js (ver README)
-const WA = String(CFG.whatsapp || "5519900000000").replace(/\D/g,""); // trocar pelo número real no config.js
+let WA = String(CFG.whatsapp || "5519900000000").replace(/\D/g,""); // o número real vem do painel (Configurações) ou do config.js
 const escH = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 const waLink = t => "https://wa.me/"+WA+"?text="+encodeURIComponent(t);
@@ -541,7 +636,7 @@ document.getElementById("poolGrid").innerHTML=pools.map(p=>`
  <article class="pool"><div class="shape">${shapes[p.shape]}</div>
  <div class="body"><h3>${p.n}</h3><dl>${p.d.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join("")}</dl>
  <div class="mono" style="font-weight:500">${p.from}</div></div>
- <div class="foot"><a class="btn wa" style="width:100%;justify-content:center" target="_blank" rel="noopener" href="${waLink("Olá! Quero um orçamento da piscina "+p.n+".")}">Pedir orçamento</a></div></article>`).join("");
+ <div class="foot"><button type="button" class="btn wa" style="width:100%;justify-content:center" data-orc="${p.n}">Pedir orçamento</button></div></article>`).join("");
 
 /* galeria
    TROCAR: em "foto" coloque o caminho da imagem real (ex.: "fotos/obra-1.jpg").
@@ -621,31 +716,32 @@ let cart={};
 try{cart=JSON.parse(localStorage.getItem("meliah-cart")||"{}")||{}}catch(e){cart={}}
 const save=()=>{try{localStorage.setItem("meliah-cart",JSON.stringify(cart))}catch(e){}};
 const byId=id=>products.find(p=>p.id===id);
+let FRETE={valor:20,gratis:300}, CIDADES=[], ACEITA=true, PIX={chave:"",nome:""};
 document.getElementById("prodGrid").addEventListener("click",e=>{const b=e.target.closest(".add");if(!b)return;
   cart[b.dataset.id]=(cart[b.dataset.id]||0)+1;save();renderCart();b.textContent="Adicionado ✓";b.classList.add("done");
   setTimeout(()=>{b.textContent="Adicionar";b.classList.remove("done")},1200);});
-function totals(){const sub=Object.entries(cart).filter(([id])=>byId(id)).reduce((s,[id,q])=>s+byId(id).p*q,0);const ship=sub===0?0:(sub>=300?0:20);return{sub,ship,tot:sub+ship};}
+function totals(){const sub=Object.entries(cart).filter(([id])=>byId(id)).reduce((s,[id,q])=>s+byId(id).p*q,0);
+  const ship=sub===0?0:(sub>=FRETE.gratis?0:FRETE.valor);return{sub,ship,tot:sub+ship};}
+function textoFrete(){ if(!(FRETE.valor>0)) return "Frete grátis."; if(!(FRETE.gratis>0)) return "Frete de "+brl(FRETE.valor)+".";
+  return "Frete grátis acima de "+brl(FRETE.gratis)+". Abaixo disso, "+brl(FRETE.valor)+"."; }
 function renderCart(){
   const ids=Object.keys(cart).filter(id=>byId(id));const n=ids.reduce((s,id)=>s+cart[id],0);
   document.getElementById("cartCount").textContent=n;
   const box=document.getElementById("items");
-  box.innerHTML=ids.length?ids.map(id=>{const p=byId(id);return `<div class="item"><span class="n">${escH(p.n)}</span><span class="mono">${brl(p.p*cart[id])}</span>
-    <div class="qty"><button data-d="-1" data-id="${id}" aria-label="Diminuir">−</button><span class="mono">${cart[id]}</span><button data-d="1" data-id="${id}" aria-label="Aumentar">+</button></div><span></span></div>`}).join("")
-    :`<div class="empty">Seu carrinho está vazio.<br>Escolha produtos na loja.</div>`;
+  box.innerHTML=ids.length?ids.map(id=>{const p=byId(id);return `<div class="item"><span class="n">${escH(p.n)}${p.ok===false?' <span class="esg">esgotado</span>':""}</span><span class="mono">${brl(p.p*cart[id])}</span>
+    <div class="qty"><button type="button" data-d="-1" data-id="${escH(id)}" aria-label="Diminuir">−</button><span class="mono">${cart[id]}</span><button type="button" data-d="1" data-id="${escH(id)}" aria-label="Aumentar">+</button></div><span></span></div>`}).join("")
+    :(document.getElementById("confirmado").hidden?`<div class="empty">Seu carrinho está vazio.<br>Escolha produtos na loja.</div>`:"");
   document.getElementById("checkout").hidden=!ids.length;
+  if(ids.length) document.getElementById("confirmado").hidden=true;
   const t=totals();document.getElementById("sub").textContent=brl(t.sub);
   document.getElementById("ship").textContent=t.ship?brl(t.ship):"Grátis";document.getElementById("tot").textContent=brl(t.tot);
-  updateOrderLink();
+  document.getElementById("freteNote").textContent=textoFrete();
+  document.getElementById("pausa").hidden=ACEITA; document.getElementById("sendOrder").disabled=!ACEITA;
 }
-function updateOrderLink(){const t=totals();
-  const lines=Object.keys(cart).filter(id=>byId(id)).map(id=>`• ${cart[id]}x ${byId(id).n} — ${brl(byId(id).p*cart[id])}`);
-  const msg=`Olá, Meliah! Quero fazer este pedido:\n${lines.join("\n")}\n\nSubtotal: ${brl(t.sub)}\nEntrega: ${t.ship?brl(t.ship):"Grátis"}\nTotal: ${brl(t.tot)}\n\nNome: ${document.getElementById("cName").value||"-"}\nWhatsApp: ${document.getElementById("cTel").value||"-"}\nCEP: ${document.getElementById("cCep").value||"-"}\nPagamento: ${document.getElementById("cPay").value}`;
-  document.getElementById("sendOrder").href=waLink(msg);}
-["cName","cTel","cCep","cPay"].forEach(id=>document.getElementById(id).addEventListener("input",updateOrderLink));
 document.getElementById("items").addEventListener("click",e=>{const b=e.target.closest("[data-d]");if(!b)return;
-  const id=b.dataset.id;cart[id]+=+b.dataset.d;if(cart[id]<=0)delete cart[id];save();renderCart();});
+  const id=b.dataset.id;cart[id]=(cart[id]||0)+(+b.dataset.d);if(cart[id]<=0)delete cart[id];if(cart[id]>100)cart[id]=100;save();renderCart();});
 const dr=document.getElementById("drawer"),bg=document.getElementById("drawerBg");
-const open=v=>{dr.hidden=bg.hidden=!v;};
+const open=v=>{dr.hidden=bg.hidden=!v; if(v) document.getElementById("closeCart").focus();};
 document.getElementById("openCart").onclick=()=>open(true);
 document.getElementById("closeCart").onclick=()=>open(false);
 bg.onclick=()=>open(false);
@@ -684,52 +780,223 @@ document.getElementById("recPump").addEventListener("click",e=>{const b=e.target
   cart[b.dataset.pump]=(cart[b.dataset.pump]||0)+1;save();renderCart();b.textContent="Adicionada ✓";b.classList.add("done");});
 calc();
 
-/* sistema de gestão (Supabase): catálogo real e registro dos pedidos.
-   Só funciona quando o config.js está preenchido; sem ele o site usa a lista acima. */
-async function apiRpc(fn, body){
-  const r = await fetch(CFG.supabaseUrl.replace(/\/$/,"")+"/rest/v1/rpc/"+fn, {method:"POST",
-    headers:Object.assign({"Content-Type":"application/json","apikey":CFG.supabaseAnonKey},
-      /^eyJ/.test(CFG.supabaseAnonKey)?{"Authorization":"Bearer "+CFG.supabaseAnonKey}:{}),  // chave antiga (anon) também vai no Authorization
-    body:JSON.stringify(body||{})});
-  if(!r.ok) throw new Error(await r.text()); return r.json();
-}
+/* ============ ligação com o sistema de gestão (Supabase) ============
+   Funciona quando o config.js está preenchido. Sem ele, tudo vai pelo WhatsApp. */
+const $i=id=>document.getElementById(id);
 const ONLINE = !!(CFG.supabaseUrl && CFG.supabaseAnonKey);
-if (ONLINE) {
-  apiRpc("produtos_site").then(rows=>{
+const fTel = v => MC.formatar.tel(v);
+async function apiRpc(fn, body){
+  const ctrl=new AbortController(); const t=setTimeout(()=>ctrl.abort(),15000); let r;
+  try{
+    r = await fetch(CFG.supabaseUrl.replace(/\/$/,"")+"/rest/v1/rpc/"+fn, {method:"POST", signal:ctrl.signal,
+      headers:Object.assign({"Content-Type":"application/json","apikey":CFG.supabaseAnonKey},
+        /^eyJ/.test(CFG.supabaseAnonKey)?{"Authorization":"Bearer "+CFG.supabaseAnonKey}:{}),  // chave antiga (anon) também vai no Authorization
+      body:JSON.stringify(body||{})});
+  }catch(e){ throw Object.assign(new Error("Não foi possível conectar agora. Verifique sua internet."),{rede:true}); }
+  finally{ clearTimeout(t); }
+  const txt=await r.text(); let j=null; try{ j=JSON.parse(txt); }catch(_){}
+  if(!r.ok) throw Object.assign(new Error((j&&j.message)||"O servidor não respondeu como esperado. Tente de novo em instantes."),{rede:r.status>=500});
+  return j;
+}
+MC.ligarMascaras(document);
+// ao corrigir um campo, tira o destaque vermelho dele
+document.addEventListener("input",e=>{ if(e.target.getAttribute && e.target.getAttribute("aria-invalid")) e.target.removeAttribute("aria-invalid"); });
+function erroCampo(boxId, msg, campoId){
+  const box=$i(boxId); box.innerHTML=msg; box.hidden=false;
+  box.closest("form")?.querySelectorAll("[aria-invalid]").forEach(x=>x.removeAttribute("aria-invalid"));
+  if(campoId){ const el=$i(campoId); el.setAttribute("aria-invalid","true"); el.focus(); } else box.scrollIntoView({block:"nearest"});
+}
+function limparErro(boxId){ const box=$i(boxId); box.hidden=true; box.closest("form")?.querySelectorAll("[aria-invalid]").forEach(x=>x.removeAttribute("aria-invalid")); }
+const cidadeAtendida = c => !CIDADES.length || CIDADES.some(x=>norm(x)===norm(String(c).trim()));
+const listaCidades = () => CIDADES.length>1 ? CIDADES.slice(0,-1).join(", ")+" e "+CIDADES[CIDADES.length-1] : CIDADES.join("");
+
+/* ---------- checkout ---------- */
+MC.ligarCep($i("cCep"),{logradouro:$i("cRua"),bairro:$i("cBairro"),cidade:$i("cCidade"),uf:$i("cUf"),numero:$i("cNum")},$i("cCepMsg"),()=>verificarCidade());
+function verificarCidade(){
+  const c=$i("cCidade").value.trim(), m=$i("cCepMsg");
+  if(c && !cidadeAtendida(c)){ m.hidden=false; m.dataset.erro="1";
+    m.innerHTML=`Ainda não entregamos em ${escH(c)}. Atendemos ${escH(listaCidades())}. <a target="_blank" rel="noopener" href="${waLink("Olá! Moro em "+c+". Vocês conseguem entregar aqui?")}">Pergunte no WhatsApp</a>.`; return false; }
+  if(m.dataset.erro==="1" && /entregamos/.test(m.textContent)){ m.hidden=true; m.dataset.erro=""; }
+  if(/entregamos/.test($i("coErr").textContent)) limparErro("coErr");
+  return true;
+}
+$i("cCidade").addEventListener("change",verificarCidade);
+$i("cDoc").addEventListener("input",()=>{ const v=$i("cDoc").value, m=$i("cDocMsg"), t=MC.tipoDoc(v);
+  if(!MC.digitos(v)){ m.textContent=""; m.dataset.erro=""; return; }
+  m.textContent = t ? (MC.docValido(v)?t+" válido ✓":t+" inválido, confira os números") : "CPF tem 11 números e CNPJ tem 14"; m.dataset.erro = t&&MC.docValido(v)?"":"1"; });
+const dadosCheckout = () => ({nome:$i("cName").value.trim(), telefone:$i("cTel").value, cpf_cnpj:$i("cDoc").value, cep:$i("cCep").value,
+  logradouro:$i("cRua").value.trim(), numero:$i("cNum").value.trim(), complemento:$i("cComp").value.trim(), bairro:$i("cBairro").value.trim(),
+  cidade:$i("cCidade").value.trim(), uf:$i("cUf").value.trim().toUpperCase(), forma_pagamento:$i("cPay").value, observacao:$i("cObs").value.trim()});
+function validarCheckout(d){
+  if(!ACEITA) return ["No momento não estamos recebendo pedidos pelo site. Fale com a gente pelo WhatsApp."];
+  if(d.nome.length<3) return ["Informe seu nome completo.","cName"];
+  if(!MC.telValido(d.telefone)) return ["Informe um WhatsApp válido com DDD, por exemplo (19) 99999-9999.","cTel"];
+  if(MC.digitos(d.cpf_cnpj) && !MC.docValido(d.cpf_cnpj)) return ["CPF ou CNPJ inválido. Confira os números ou deixe em branco.","cDoc"];
+  if(!MC.cepValido(d.cep)) return ["Informe o CEP com 8 números.","cCep"];
+  if(!d.logradouro) return ["Informe a rua ou avenida.","cRua"];
+  if(!d.numero) return ["Informe o número (use \"s/n\" se não tiver).","cNum"];
+  if(!d.cidade) return ["Informe a cidade.","cCidade"];
+  if(!cidadeAtendida(d.cidade)) return [`Ainda não entregamos em ${escH(d.cidade)}. Atendemos ${escH(listaCidades())}. <a target="_blank" rel="noopener" href="${waLink("Olá! Moro em "+d.cidade+". Vocês conseguem entregar aqui?")}">Fale com a gente no WhatsApp</a>.`,"cCidade"];
+  return null;
+}
+const NOMES_PAG={pix:"Pix",credito:"Cartão de crédito",debito:"Cartão de débito",dinheiro:"Dinheiro na entrega"};
+function textoPedido(d, numero, t, itens){
+  const end=[d.logradouro,d.numero,d.complemento,d.bairro,d.cidade+(d.uf?"/"+d.uf:"")].filter(Boolean).join(", ");
+  return `Olá, Meliah! ${numero?"Acabei de fazer o pedido nº "+numero+" pelo site":"Quero fazer este pedido"}:\n`+
+    itens.map(i=>`• ${i.quantidade}x ${i.descricao} — ${brl(i.total)}`).join("\n")+
+    `\n\nEntrega: ${t.ship?brl(t.ship):"Grátis"}\nTotal: ${brl(t.tot)}\nPagamento: ${NOMES_PAG[d.forma_pagamento]}\n\nNome: ${d.nome}\nWhatsApp: ${fTel(d.telefone)}${MC.digitos(d.cpf_cnpj)?"\nCPF/CNPJ: "+MC.formatar.doc(d.cpf_cnpj):""}\nEndereço: ${end} – CEP ${MC.formatar.cep(d.cep)}${d.observacao?"\nObs.: "+d.observacao:""}`;
+}
+$i("checkout").addEventListener("submit", async e=>{
+  e.preventDefault(); limparErro("coErr");
+  const ids=Object.keys(cart).filter(id=>byId(id));
+  if(!ids.length) return;
+  const esg=ids.map(byId).filter(p=>p.ok===false);
+  if(esg.length) return erroCampo("coErr",`${escH(esg.map(p=>p.n).join(", "))} esgotou. Remova do carrinho para continuar.`);
+  const d=dadosCheckout(), er=validarCheckout(d);
+  if(er) return erroCampo("coErr",er[0],er[1]);
+  const t=totals(), itensLocal=ids.map(id=>({descricao:byId(id).n,quantidade:cart[id],total:Math.round(byId(id).p*cart[id]*100)/100}));
+  if(!ONLINE){   // sem sistema: pedido segue pelo WhatsApp
+    window.open(waLink(textoPedido(d,null,t,itensLocal)),"_blank","noopener");
+    return erroCampo("coErr",'<span style="color:var(--fg);font-weight:500">Abrimos o WhatsApp com o seu pedido. Envie a mensagem para concluir.</span>');
+  }
+  const b=$i("sendOrder"); b.disabled=true; b.textContent="Enviando pedido…";
+  try{
+    const r=await apiRpc("registrar_pedido_site",{p:{...d, itens:ids.map(id=>({produto_id:id,quantidade:cart[id]}))}});
+    try{ localStorage.setItem("meliah-ultimo-pedido",JSON.stringify({id:r.id,tel:MC.digitos(d.telefone)})); }catch(_){}
+    cart={}; save(); mostrarConfirmacao(r,d); renderCart();
+  }catch(err){
+    let msg=escH(err.message);
+    if(err.rede) msg+=` Você pode <a target="_blank" rel="noopener" href="${waLink(textoPedido(d,null,t,itensLocal))}">enviar o pedido pelo WhatsApp</a>.`;
+    erroCampo("coErr",msg);
+    if(/esgotou|não está mais disponível/.test(err.message)) carregarCatalogo();
+  }finally{ b.disabled=!ACEITA; b.textContent="Finalizar pedido"; }
+});
+function mostrarConfirmacao(r,d){
+  const c=$i("confirmado"); const t={ship:Number(r.frete),tot:Number(r.total)};
+  const pix = d.forma_pagamento==="pix" && r.pix_chave;
+  c.innerHTML=`<div class="okbox"><h3>Pedido nº ${r.id} recebido!</h3>
+    <p>Total <b class="mono">${brl(Number(r.total))}</b> (entrega ${Number(r.frete)?brl(Number(r.frete)):"grátis"}). Vamos confirmar a entrega pelo WhatsApp <b>${escH(fTel(d.telefone))}</b>.</p>
+    ${pix?`<div class="pixbox"><span>Pague com Pix para agilizar:</span><b class="mono" id="pixChave">${escH(r.pix_chave)}</b><span class="hint">${escH(r.pix_nome||"")} · valor ${brl(Number(r.total))}</span><button type="button" class="btn line" id="copPix">Copiar chave Pix</button><span class="hint">Depois envie o comprovante pelo WhatsApp.</span></div>`:""}
+    <a class="btn wa" target="_blank" rel="noopener" href="${waLink(textoPedido(d,r.id,t,r.itens))}">Avisar a loja no WhatsApp</a>
+    <a class="btn line" href="#acompanhar" id="irTrack">Acompanhar pedido</a>
+    <p class="note">Guarde o número do pedido: <b>${r.id}</b>.</p></div>`;
+  c.hidden=false; $i("checkout").hidden=true;
+  $i("irTrack").onclick=()=>{ open(false); setTimeout(()=>{ $i("tNum").value=r.id; $i("tTel").value=fTel(d.telefone); consultar(); },50); };
+  const cp=$i("copPix"); if(cp) cp.onclick=()=>copiar(r.pix_chave, cp, $i("pixChave"));
+  ["cName","cTel","cDoc","cCep","cRua","cNum","cComp","cBairro","cCidade","cUf","cObs"].forEach(id=>$i(id).value="");
+}
+function copiar(texto, btn, alvo){
+  const ok=()=>{ const o=btn.textContent; btn.textContent="Copiado ✓"; setTimeout(()=>btn.textContent=o,1800); };
+  const manual=()=>{ if(!alvo) return; const r=document.createRange(); r.selectNodeContents(alvo); getSelection().removeAllRanges(); getSelection().addRange(r); btn.textContent="Selecionado: use Ctrl+C"; };
+  try{ navigator.clipboard.writeText(texto).then(ok,manual); }catch(_){ manual(); }
+}
+
+/* ---------- acompanhar pedido ---------- */
+const ETAPAS=[["recebido","Pedido recebido"],["confirmado","Pedido confirmado"],["separando","Separando os produtos"],["em_rota","Saiu para entrega"],["entregue","Entregue"]];
+async function consultar(){
+  limparErro("tErr"); $i("tRes").innerHTML="";
+  const n=parseInt(MC.digitos($i("tNum").value)), tel=$i("tTel").value;
+  if(!n) return erroCampo("tErr","Informe o número do pedido.","tNum");
+  if(!MC.telValido(tel)) return erroCampo("tErr","Informe o WhatsApp usado no pedido, com DDD.","tTel");
+  if(!ONLINE) return erroCampo("tErr",`O acompanhamento online ainda não está ativo. <a target="_blank" rel="noopener" href="${waLink("Olá! Quero saber do meu pedido nº "+n+".")}">Pergunte no WhatsApp</a>.`);
+  const b=$i("fTrack").querySelector("button"); b.disabled=true; b.textContent="Consultando…";
+  try{
+    const r=await apiRpc("consultar_pedido",{p_id:n,p_telefone:MC.digitos(tel)});
+    const idx=ETAPAS.findIndex(x=>x[0]===r.etapa);
+    $i("tRes").innerHTML=`<div class="track"><h2 class="mono" style="font-size:20px">Pedido nº ${r.id} · ${new Date(r.criado_em).toLocaleDateString("pt-BR")}</h2>
+      ${r.etapa==="cancelado"?`<div class="ferr">Este pedido foi cancelado. Se tiver dúvidas, <a target="_blank" rel="noopener" href="${waLink("Olá! Sobre o meu pedido nº "+r.id+".")}">fale com a gente</a>.</div>`:
+      `<ol class="steps">${ETAPAS.map((x,i)=>`<li class="${i<idx?"feito":i===idx?"atual":""}"><span>${x[1]}${i===idx&&r.atualizado_em?` <span class="hint">· ${new Date(r.atualizado_em).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}</span>`:""}</span></li>`).join("")}</ol>`}
+      ${r.pagamento==="pago"?'<div class="fok">Pagamento confirmado ✓</div>':r.pagamento==="aguardando"?`<div class="fok">Aguardando pagamento${PIX.chave?` · Pix: <b class="mono">${escH(PIX.chave)}</b>`:""}</div>`:""}
+      <div>${(r.itens||[]).map(i=>`<div class="li" style="display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed var(--line)"><span>${i.quantidade}× ${escH(i.descricao)}</span><span class="mono">${brl(Number(i.total))}</span></div>`).join("")}
+      <div style="display:flex;justify-content:space-between;padding-top:6px;font-weight:700"><span>Total (com entrega ${Number(r.frete)?brl(Number(r.frete)):"grátis"})</span><span class="mono">${brl(Number(r.total))}</span></div></div>
+      <a class="btn wa" target="_blank" rel="noopener" href="${waLink("Olá! Sobre o meu pedido nº "+r.id+".")}">Falar sobre este pedido</a></div>`;
+  }catch(err){ erroCampo("tErr",escH(err.message)); }
+  finally{ b.disabled=false; b.textContent="Consultar"; }
+}
+$i("fTrack").addEventListener("submit",e=>{e.preventDefault();consultar();});
+
+/* ---------- pedir orçamento ---------- */
+const dlg=$i("dlgOrc");
+MC.ligarCep($i("oCep"),{cidade:$i("oCidade")},$i("oCepMsg"));
+function abrirOrcamento(ref){
+  $i("orcRef").textContent = ref ? "Modelo: "+ref : "Conte o que você precisa e respondemos pelo WhatsApp.";
+  dlg.dataset.ref=ref||""; $i("fOrc").hidden=false; $i("oOk").hidden=true; limparErro("oErr");
+  if(dlg.showModal) dlg.showModal(); else dlg.setAttribute("open",""); setTimeout(()=>$i("oNome").focus(),30);
+}
+dlg.querySelector("[data-close]").onclick=()=>dlg.close();
+dlg.addEventListener("click",e=>{ if(e.target===dlg) dlg.close(); });
+document.getElementById("poolGrid").addEventListener("click",e=>{ const b=e.target.closest("[data-orc]"); if(b) abrirOrcamento(b.dataset.orc); });
+$i("fOrc").addEventListener("submit",async e=>{
+  e.preventDefault(); limparErro("oErr");
+  const d={tipo:"orcamento",nome:$i("oNome").value.trim(),telefone:$i("oTel").value,cep:$i("oCep").value,cidade:$i("oCidade").value.trim(),referencia:dlg.dataset.ref||"",mensagem:$i("oMsg").value.trim()};
+  if(d.nome.length<2) return erroCampo("oErr","Informe seu nome.","oNome");
+  if(!MC.telValido(d.telefone)) return erroCampo("oErr","Informe um WhatsApp válido com DDD.","oTel");
+  if(MC.digitos(d.cep) && !MC.cepValido(d.cep)) return erroCampo("oErr","CEP incompleto. Use os 8 números ou deixe em branco.","oCep");
+  const txt=`Olá, Meliah! Quero um orçamento${d.referencia?" da piscina "+d.referencia:""}.\nNome: ${d.nome}${d.cidade?"\nCidade: "+d.cidade:""}${d.mensagem?"\n"+d.mensagem:""}`;
+  if(!ONLINE){ window.open(waLink(txt),"_blank","noopener"); dlg.close(); return; }
+  const b=$i("fOrc").querySelector("button[type=submit]"); b.disabled=true; b.textContent="Enviando…";
+  try{
+    const id=await apiRpc("registrar_solicitacao",{p:d});
+    $i("fOrc").hidden=true; $i("oOk").hidden=false;
+    $i("oOk").innerHTML=`<div class="okbox"><h3>Recebemos!</h3><p>Seu pedido de orçamento nº ${id} chegou para a equipe. Vamos responder no WhatsApp <b>${escH(fTel(d.telefone))}</b> em horário comercial.</p><a class="btn wa" target="_blank" rel="noopener" href="${waLink(txt+"\n(Pedido de orçamento nº "+id+")")}">Quer adiantar? Chame no WhatsApp</a></div>`;
+    $i("fOrc").reset();
+  }catch(err){ erroCampo("oErr",escH(err.message)+(err.rede?` <a target="_blank" rel="noopener" href="${waLink(txt)}">Enviar pelo WhatsApp</a>.`:"")); }
+  finally{ b.disabled=false; b.textContent="Enviar pedido de orçamento"; }
+});
+
+/* ---------- mensagem de contato ---------- */
+$i("fContato").addEventListener("submit",async e=>{
+  e.preventDefault(); limparErro("ctErr"); $i("ctOk").hidden=true;
+  const d={tipo:"contato",nome:$i("ctNome").value.trim(),telefone:$i("ctTel").value,mensagem:$i("ctMsg").value.trim()};
+  if(d.nome.length<2) return erroCampo("ctErr","Informe seu nome.","ctNome");
+  if(!MC.telValido(d.telefone)) return erroCampo("ctErr","Informe um WhatsApp válido com DDD.","ctTel");
+  if(d.mensagem.length<3) return erroCampo("ctErr","Escreva sua mensagem.","ctMsg");
+  const txt=`Olá, Meliah! Sou ${d.nome}.\n${d.mensagem}`;
+  if(!ONLINE){ window.open(waLink(txt),"_blank","noopener"); return; }
+  const b=$i("fContato").querySelector("button"); b.disabled=true; b.textContent="Enviando…";
+  try{ await apiRpc("registrar_solicitacao",{p:d}); $i("fContato").reset(); const ok=$i("ctOk"); ok.textContent="Mensagem enviada! Vamos responder no seu WhatsApp em horário comercial."; ok.hidden=false; }
+  catch(err){ erroCampo("ctErr",escH(err.message)+(err.rede?` <a target="_blank" rel="noopener" href="${waLink(txt)}">Enviar pelo WhatsApp</a>.`:"")); }
+  finally{ b.disabled=false; b.textContent="Enviar mensagem"; }
+});
+
+/* ---------- catálogo e configurações vindos do painel ---------- */
+function aplicarWhats(){
+  $i("waMain").href=$i("waFloat").href=waLink("Olá, Meliah! Vim pelo site.");
+}
+function aplicarConfig(c){
+  if(!c) return;
+  const w=MC.digitos(c.whatsapp);
+  if(w.length>=12){ WA=w; const loc=w.replace(/^55/,""); $i("phoneTxt").textContent=fTel(loc); $i("phoneTxt").nextElementSibling?.classList.contains("example") && $i("phoneTxt").nextElementSibling.remove(); }
+  FRETE={valor:Number(c.frete_valor),gratis:Number(c.frete_gratis_acima)};
+  CIDADES=Array.isArray(c.cidades)?c.cidades:[]; ACEITA=c.aceita_pedidos!==false; PIX={chave:c.pix_chave||"",nome:c.pix_nome||""};
+  const av=$i("avisoSite"); av.textContent=c.aviso||""; av.hidden=!c.aviso;
+  aplicarWhats(); renderCart();
+}
+function carregarCatalogo(){
+  return apiRpc("produtos_site").then(rows=>{
     if(!Array.isArray(rows)||!rows.length) return;
     products = rows.map(r=>({id:r.id,n:r.nome,cat:r.categoria,m:r.descricao||"",p:Number(r.preco),i:r.icone,ok:r.disponivel}));
     if(!cats().includes(filter)) filter="Todos";
     renderFilters();renderProducts();renderCart();calc();
   }).catch(e=>console.warn("Catálogo do sistema indisponível, usando a lista do site.",e));
-  document.getElementById("sendOrder").addEventListener("click",async e=>{
-    const ids=Object.keys(cart).filter(id=>byId(id)); if(!ids.length) return;
-    e.preventDefault();
-    const w=window.open("","_blank");   // abre já, para o navegador não bloquear
-    let numero=null;
-    try{ numero = await apiRpc("registrar_pedido_site",{p:{nome:document.getElementById("cName").value||"Cliente do site",
-      telefone:document.getElementById("cTel").value, cep:document.getElementById("cCep").value, forma_pagamento:document.getElementById("cPay").value,
-      itens:ids.map(id=>({produto_id:id,quantidade:cart[id]}))}}); }catch(err){ console.warn("Pedido não registrado no sistema",err); }
-    updateOrderLink();
-    let href=document.getElementById("sendOrder").href;
-    if(numero){ href=href.replace(encodeURIComponent("Quero fazer este pedido:"),encodeURIComponent("Quero fazer o pedido nº "+numero+":")); cart={};save();renderCart();open(false); }
-    if(w) w.location.href=href; else location.href=href;
-  });
+}
+aplicarWhats();
+if (ONLINE) {
+  carregarCatalogo();
+  apiRpc("config_publica").then(aplicarConfig).catch(e=>console.warn("Configurações do sistema indisponíveis.",e));
 }
 
-/* páginas de política: #privacidade e #trocas */
-const LEGAL=["privacidade","trocas"];
-function route(){const h=location.hash.slice(1);const legal=LEGAL.includes(h);
-  document.getElementById("home").hidden=legal;
-  LEGAL.forEach(id=>document.getElementById(id).hidden=id!==h);
-  if(legal){scrollTo(0,0);}else if(h){const el=document.getElementById(h);if(el)el.scrollIntoView();}}
+/* ---------- páginas: #privacidade, #trocas, #acompanhar ---------- */
+const PAGINAS=["privacidade","trocas","acompanhar"];
+function route(){const h=location.hash.slice(1);const pag=PAGINAS.includes(h);
+  if(pag) open(false);
+  document.getElementById("home").hidden=pag;
+  PAGINAS.forEach(id=>document.getElementById(id).hidden=id!==h);
+  if(h==="acompanhar" && !$i("tNum").value){ try{ const u=JSON.parse(localStorage.getItem("meliah-ultimo-pedido")||"null"); if(u){ $i("tNum").value=u.id; $i("tTel").value=fTel(u.tel); } }catch(_){} }
+  if(pag){scrollTo(0,0);}else if(h){const el=document.getElementById(h);if(el)el.scrollIntoView();}}
 addEventListener("hashchange",route);route();
 document.querySelectorAll(".closeLink").forEach(a=>a.addEventListener("click",()=>open(false)));
-
-document.getElementById("waMain").href=document.getElementById("waFloat").href=waLink("Olá, Meliah! Vim pelo site.");
-document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
-  const t=document.getElementById(b.dataset.copy).textContent;
-  navigator.clipboard?.writeText(t).then(()=>{b.textContent="copiado"},()=>{const r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.copy));getSelection().removeAllRanges();getSelection().addRange(r);});
-}));
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>copiar(document.getElementById(b.dataset.copy).textContent,b,document.getElementById(b.dataset.copy))));
 
 /* reflexo da água no hero */
 (function(){const c=document.getElementById("caustics");if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
