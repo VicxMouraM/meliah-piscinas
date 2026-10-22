@@ -1,5 +1,5 @@
 /* =====================================================================
-   MELIAH PISCINAS – funções comuns do site e do painel
+   VICXMOURA PISCINAS – funções comuns do site e do painel
    Máscaras (telefone, CEP, CPF/CNPJ), validações e busca de endereço pelo CEP.
    ===================================================================== */
 (function (global) {

@@ -1,5 +1,5 @@
 -- =====================================================================
---  MELIAH PISCINAS – Produtos iniciais (os mesmos do site, preços de EXEMPLO)
+--  VICXMOURA PISCINAS – Produtos iniciais (os mesmos do site, preços de EXEMPLO)
 --  Rode DEPOIS do schema.sql. Não apaga nada: se o código já existir, pula.
 --  O estoque começa em zero. Lance a contagem inicial no painel:
 --  Estoque → produto → "Entrada".

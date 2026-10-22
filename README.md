@@ -1,19 +1,21 @@
-# Meliah Piscinas – Site e Sistema de Gestão
+# VicxMoura Piscinas – Site e Sistema de Gestão
 
-**MELIAH PISCINAS COMÉRCIO E SERVIÇOS LTDA – ME** · CNPJ 06.120.369/0001-14
-Sede: Av. Orosimbo Maia, 1806 – Cambuí, Campinas/SP · CEP 13024-045
+**VICXMOURA PISCINAS COMÉRCIO E SERVIÇOS LTDA** · CNPJ 00.000.000/0000-00
+Sede: Av. das Águas, 1000 – Jardim Exemplo, São Paulo/SP · CEP 13000-000
+
+> **Todos os dados da empresa são fictícios** (razão social, CNPJ, endereço, telefone, e-mails, preços e obras da galeria). O rodapé do site avisa que é uma demonstração. Para usar com uma empresa de verdade, troque esses dados (seção 2) e remova o aviso do rodapé.
 
 O pacote tem duas partes que conversam entre si:
 
 1. **O site** (`index.html`): catálogo de piscinas, loja com carrinho, checkout completo, acompanhamento de pedido, pedido de orçamento, contato, galeria e políticas.
 2. **O sistema de gestão** (`admin/`): área com login para a equipe. Vendas e entregas, pedidos e mensagens do site, estoque, clientes, orçamentos, mensalidades, agenda, financeiro e configurações do site.
 
-A Meliah **não tem caixa físico**: todas as vendas são online (site, WhatsApp, telefone, Instagram) com entrega no endereço do cliente.
+A VicxMoura **não tem caixa físico**: todas as vendas são online (site, WhatsApp, telefone, Instagram) com entrega no endereço do cliente.
 
 ## Arquivos do pacote
 
 ```
-meliah-piscinas/
+vicxmoura-piscinas/
 ├── index.html                 ← o site
 ├── config.exemplo.js          ← modelo do config.js (endereço e chave do Supabase, seção 7.5)
 ├── comum.js                   ← máscaras, validação de CPF/CNPJ e busca de CEP (site e sistema)
@@ -71,7 +73,8 @@ Sem o `config.js` preenchido, o site continua funcionando sozinho: pedidos, orç
 - [ ] Fotos reais na galeria (3.4)
 - [ ] Respostas das Dúvidas frequentes (3.5)
 - [ ] Revisão das políticas por um advogado ou contador (3.6)
-- [ ] Telefone e domínio no bloco de dados para o Google (5)
+- [ ] Telefone, endereço e domínio no bloco de dados para o Google (5)
+- [ ] Razão social, CNPJ e endereço reais no rodapé, nas políticas e na seção Contato, e remoção do aviso "dados fictícios" do rodapé (só se virar empresa de verdade)
 
 ---
 
@@ -80,7 +83,7 @@ Sem o `config.js` preenchido, o site continua funcionando sozinho: pedidos, orç
 A maior parte agora é feita **pelo sistema** (seção 6): produtos, preços, estoque, frete, cidades, WhatsApp, Pix e aviso do topo. No arquivo ficam só os textos fixos. Use um editor de texto (o VS Code é gratuito) ou o lápis do GitHub, e **Ctrl+F** para achar os trechos.
 
 ### 3.1 Telefone e e-mail exibidos na seção Contato
-Procure `contato@meliahpiscinas.com.br` e troque pelo e-mail real. Apague o `<span class="example">exemplo</span>` ao lado. O número de WhatsApp exibido é trocado sozinho pelo das **Configurações**.
+Procure `contato@vicxmourapiscinas.com.br` e troque pelo e-mail real. O endereço fictício da sede fica logo acima (procure `Av. das Águas`). Apague o `<span class="example">exemplo</span>` ao lado. O número de WhatsApp exibido é trocado sozinho pelo das **Configurações**.
 
 ### 3.2 Kit da calculadora e bombas
 Procure `const KIT_RULES=[`:
@@ -95,7 +98,7 @@ Procure `const KIT_RULES=[`:
 Procure `const pools=[`. Cada piscina tem nome (`n`), formato do desenho (`shape`: `rect`, `beach` ou `free`), características (`d`) e o texto de preço (`from`). O nome vai junto no pedido de orçamento.
 
 ### 3.4 Fotos da galeria
-Procure `const GALERIA=[`. Coloque a foto em `fotos/` (nome sem espaço nem acento) e preencha `foto:"fotos/nome.jpg"`. A etiqueta "foto de exemplo" some sozinha. Use fotos horizontais de até 300 KB (o site squoosh.app reduz), só de obras da Meliah e com autorização do cliente.
+Procure `const GALERIA=[`. Coloque a foto em `fotos/` (nome sem espaço nem acento) e preencha `foto:"fotos/nome.jpg"`. A etiqueta "foto de exemplo" some sozinha. Use fotos horizontais de até 300 KB (o site squoosh.app reduz), só de obras da VicxMoura e com autorização do cliente.
 
 ### 3.5 Dúvidas frequentes
 Procure `<section id="duvidas"`. Cada pergunta é `<details><summary>Pergunta</summary><p>Resposta</p></details>`. As respostas atuais são modelos.
@@ -110,6 +113,13 @@ No topo do `index.html`, em `:root{`: `--tile` (azul escuro), `--water` (azul á
 
 ## 4. Colocar no ar e atualizar
 
+### Trocar de Meliah para VicxMoura (esta versão)
+1. **Banco:** no Supabase, rode o `supabase/schema.sql` novo (SQL Editor → New query → colar → Run). Ele não apaga dados; troca o nome do recebedor Pix para VicxMoura e limpa a chave Pix antiga, se for o CNPJ da Meliah.
+2. **Arquivos:** no GitHub, envie por cima `index.html`, `config.js`, `config.exemplo.js`, `comum.js`, `admin/index.html`, `supabase/` e `README.md`. O `config.js` deste pacote já vem com o endereço e a chave do seu Supabase (o nome da variável mudou para `LOJA_CONFIG`).
+3. **Configurações do painel:** confira o WhatsApp, a chave Pix e o aviso do topo, que podem ainda ter os dados antigos.
+4. **Nome do repositório (opcional):** em **Settings → General → Repository name**, troque `meliah-piscinas` por `vicxmoura-piscinas`. O endereço do site passa a ser `vicxmouram.github.io/vicxmoura-piscinas/`, e o endereço antigo para de funcionar.
+
+
 **Primeira vez:** suba **todo o conteúdo** da pasta na raiz do repositório do GitHub e ative **Settings → Pages → main / (root)**. O sistema fica em `seusite/admin/`.
 
 **Atualizar (como agora):**
@@ -117,13 +127,13 @@ No topo do `index.html`, em `:root{`: `--tile` (azul escuro), `--water` (azul á
 2. No GitHub, envie os arquivos novos por cima dos antigos (**Add file → Upload files**): `index.html`, `comum.js`, `admin/index.html` e `README.md`. O seu `config.js` continua como está (o pacote não traz um `config.js` para não sobrescrever o seu).
 3. Abra o site e o sistema e aperte **Ctrl+F5** para o navegador pegar a versão nova.
 
-**Domínio próprio:** registre `meliahpiscinas.com.br` no registro.br e configure em **Settings → Pages → Custom domain**.
+**Domínio próprio:** registre o domínio da empresa (ex.: `vicxmourapiscinas.com.br`) no registro.br e configure em **Settings → Pages → Custom domain**.
 
 ---
 
 ## 5. Informações para o Google (já incluídas)
 
-O topo do `index.html` tem a descrição para a busca, o cartão de compartilhamento (WhatsApp e Facebook) e a ficha da empresa (`application/ld+json`) com nome, CNPJ, endereço, cidades atendidas e horário. Falta trocar `telephone` (`+55-19-XXXXX-XXXX`) e `url` (o domínio). Esses dados precisam ser **idênticos** aos do Perfil da Empresa no Google. A área `admin/` não aparece no Google.
+O topo do `index.html` tem a descrição para a busca, o cartão de compartilhamento (WhatsApp e Facebook) e a ficha da empresa (`application/ld+json`) com nome, CNPJ, endereço, cidades atendidas e horário. Hoje ele traz os dados **fictícios** da VicxMoura. Para uma empresa real, troque `telephone` (`+55-19-XXXXX-XXXX`), `streetAddress`, `postalCode` e `url` (o domínio). Esses dados precisam ser **idênticos** aos do Perfil da Empresa no Google. A área `admin/` não aparece no Google.
 
 ---
 

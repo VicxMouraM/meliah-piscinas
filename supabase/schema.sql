@@ -1,5 +1,5 @@
 -- =====================================================================
---  MELIAH PISCINAS – Banco de dados do sistema de gestão  (versão 3)
+--  VICXMOURA PISCINAS – Banco de dados do sistema de gestão  (versão 3.1)
 --  Rode este arquivo inteiro no Supabase: SQL Editor → New query → Run
 --  Pode rodar de novo sem perder dados. Também atualiza um banco criado
 --  com a versão anterior (remove o caixa físico e adiciona as novidades).
@@ -47,12 +47,14 @@ end $$;
 -- 1. EQUIPE (perfis de quem acessa o painel)
 -- ---------------------------------------------------------------------
 create table if not exists public.perfis (
-  id         uuid primary key references auth.users(id) on delete cascade,
-  nome       text not null default '',
-  email      text,
-  papel      text not null default 'funcionario' check (papel in ('admin','funcionario')),
-  ativo      boolean not null default false,
-  criado_em  timestamptz not null default now()
+    id uuid primary key references auth.users (id) on delete cascade,
+    nome text not null default '',
+    email text,
+    papel text not null default 'funcionario' check (
+        papel in ('admin', 'funcionario')
+    ),
+    ativo boolean not null default false,
+    criado_em timestamptz not null default now()
 );
 
 create or replace function public.eh_equipe() returns boolean
@@ -77,7 +79,9 @@ begin
   on conflict (id) do nothing;
   return new;
 end $$;
+
 drop trigger if exists ao_criar_usuario on auth.users;
+
 create trigger ao_criar_usuario after insert on auth.users for each row execute function public.novo_usuario();
 
 -- ---------------------------------------------------------------------
@@ -87,47 +91,75 @@ create table if not exists public.config_site (
   id                  int primary key default 1 check (id = 1),
   whatsapp            text not null default '',
   pix_chave           text not null default '',
-  pix_nome            text not null default 'Meliah Piscinas',
+  pix_nome            text not null default 'VicxMoura Piscinas',
   frete_valor         numeric(12,2) not null default 20 check (frete_valor >= 0),
   frete_gratis_acima  numeric(12,2) not null default 300 check (frete_gratis_acima >= 0),
-  cidades             text[] not null default array['Campinas','Valinhos','Vinhedo','Paulínia','Hortolândia','Sumaré','Jaguariúna','Indaiatuba'],
+  cidades             text[] not null default array['São Paulo','Valinhos','Vinhedo','Paulínia','Hortolândia','Sumaré','Jaguariúna','Indaiatuba'],
   aceita_pedidos      boolean not null default true,
   aviso               text not null default '',
   atualizado_em       timestamptz not null default now()
 );
-insert into public.config_site(id) values (1) on conflict (id) do nothing;
+
+insert into
+    public.config_site (id)
+values (1) on conflict (id) do nothing;
+-- Troca de marca (Meliah → VicxMoura): ajusta o nome do Pix e remove dados reais antigos
+alter table public.config_site
+alter column pix_nome
+set default 'VicxMoura Piscinas';
+
+update public.config_site
+set
+    pix_nome = 'VicxMoura Piscinas'
+where
+    pix_nome ilike '%meliah%';
+
+update public.config_site
+set
+    pix_chave = ''
+where
+    regexp_replace(pix_chave, '\D', '', 'g') = '06120369000114';
 
 -- ---------------------------------------------------------------------
 -- 3. PRODUTOS E ESTOQUE
 -- ---------------------------------------------------------------------
 create table if not exists public.produtos (
-  id              text primary key check (id ~ '^[a-z0-9_-]{2,40}$'),
-  nome            text not null,
-  categoria       text not null default 'Outros',
-  descricao       text not null default '',
-  unidade         text not null default 'un',
-  preco_venda     numeric(12,2) not null default 0 check (preco_venda >= 0),
-  custo           numeric(12,2) not null default 0 check (custo >= 0),
-  estoque         numeric(12,3) not null default 0,
-  estoque_minimo  numeric(12,3) not null default 0,
-  icone           text not null default 'balde',
-  ativo           boolean not null default true,
-  no_site         boolean not null default true,
-  atualizado_em   timestamptz not null default now()
+    id text primary key check (id ~ '^[a-z0-9_-]{2,40}$'),
+    nome text not null,
+    categoria text not null default 'Outros',
+    descricao text not null default '',
+    unidade text not null default 'un',
+    preco_venda numeric(12, 2) not null default 0 check (preco_venda >= 0),
+    custo numeric(12, 2) not null default 0 check (custo >= 0),
+    estoque numeric(12, 3) not null default 0,
+    estoque_minimo numeric(12, 3) not null default 0,
+    icone text not null default 'balde',
+    ativo boolean not null default true,
+    no_site boolean not null default true,
+    atualizado_em timestamptz not null default now()
 );
 
 create table if not exists public.movimentos_estoque (
-  id           bigint generated always as identity primary key,
-  produto_id   text not null references public.produtos(id) on update cascade,
-  tipo         text not null check (tipo in ('entrada','saida','ajuste','venda','cancelamento')),
-  quantidade   numeric(12,3) not null check (quantidade <> 0),
-  custo_unit   numeric(12,2),
-  observacao   text not null default '',
-  venda_id     bigint,
-  usuario_id   uuid default auth.uid(),
-  criado_em    timestamptz not null default now()
+    id bigint generated always as identity primary key,
+    produto_id text not null references public.produtos (id) on update cascade,
+    tipo text not null check (
+        tipo in (
+            'entrada',
+            'saida',
+            'ajuste',
+            'venda',
+            'cancelamento'
+        )
+    ),
+    quantidade numeric(12, 3) not null check (quantidade <> 0),
+    custo_unit numeric(12, 2),
+    observacao text not null default '',
+    venda_id bigint,
+    usuario_id uuid default auth.uid (),
+    criado_em timestamptz not null default now()
 );
-create index if not exists mov_produto_idx on public.movimentos_estoque(produto_id, criado_em desc);
+
+create index if not exists mov_produto_idx on public.movimentos_estoque (produto_id, criado_em desc);
 
 create or replace function public.aplicar_movimento() returns trigger
 language plpgsql security definer set search_path = public as $$
@@ -139,29 +171,37 @@ begin
    where id = new.produto_id;
   return new;
 end $$;
+
 drop trigger if exists ao_movimentar on public.movimentos_estoque;
+
 create trigger ao_movimentar after insert on public.movimentos_estoque for each row execute function public.aplicar_movimento();
 
 -- ---------------------------------------------------------------------
 -- 4. CLIENTES E MENSALIDADES
 -- ---------------------------------------------------------------------
 create table if not exists public.clientes (
-  id             bigint generated always as identity primary key,
-  nome           text not null,
-  telefone       text not null default '',
-  email          text not null default '',
-  cpf_cnpj       text not null default '',
-  endereco       text not null default '',
-  bairro         text not null default '',
-  cidade         text not null default 'Campinas',
-  cep            text not null default '',
-  volume_litros  integer,
-  observacoes    text not null default '',
-  criado_em      timestamptz not null default now()
+    id bigint generated always as identity primary key,
+    nome text not null,
+    telefone text not null default '',
+    email text not null default '',
+    cpf_cnpj text not null default '',
+    endereco text not null default '',
+    bairro text not null default '',
+    cidade text not null default 'São Paulo',
+    cep text not null default '',
+    volume_litros integer,
+    observacoes text not null default '',
+    criado_em timestamptz not null default now()
 );
-alter table public.clientes add column if not exists numero text not null default '';
-alter table public.clientes add column if not exists complemento text not null default '';
-alter table public.clientes add column if not exists uf text not null default 'SP';
+
+alter table public.clientes
+add column if not exists numero text not null default '';
+
+alter table public.clientes
+add column if not exists complemento text not null default '';
+
+alter table public.clientes
+add column if not exists uf text not null default 'SP';
 
 -- Telefone, CEP e CPF/CNPJ ficam guardados só com números
 create or replace function public.normalizar_cliente() returns trigger
@@ -175,204 +215,387 @@ begin
   new.uf := upper(trim(new.uf));
   return new;
 end $$;
+
 drop trigger if exists ao_salvar_cliente on public.clientes;
+
 create trigger ao_salvar_cliente before insert or update on public.clientes for each row execute function public.normalizar_cliente();
 
 do $$ begin
   alter table public.clientes add constraint clientes_doc_valido check (cpf_cnpj = '' or public.valida_doc(cpf_cnpj)) not valid;
 exception when duplicate_object then null; end $$;
+
 do $$ begin
   alter table public.clientes add constraint clientes_tel_valido check (telefone = '' or length(telefone) between 10 and 11) not valid;
 exception when duplicate_object then null; end $$;
+
 do $$ begin
   alter table public.clientes add constraint clientes_cep_valido check (cep = '' or length(cep) = 8) not valid;
 exception when duplicate_object then null; end $$;
-create index if not exists clientes_tel_idx on public.clientes(telefone);
+
+create index if not exists clientes_tel_idx on public.clientes (telefone);
 -- Ajusta clientes antigos para o formato só com números (o que não for válido vai para as observações)
-update public.clientes set
-  observacoes = trim(observacoes || case when (length(so_digitos(telefone)) not between 10 and 11 and so_digitos(telefone) <> '')
-                                       or (so_digitos(cpf_cnpj) <> '' and not valida_doc(cpf_cnpj))
-                                       or (length(so_digitos(cep)) not in (0,8))
-                                     then ' [dados antigos: tel '||telefone||' doc '||cpf_cnpj||' cep '||cep||']' else '' end),
-  telefone = case when length(so_digitos(telefone)) between 10 and 11 then so_digitos(telefone) else '' end,
-  cpf_cnpj = case when valida_doc(cpf_cnpj) then so_digitos(cpf_cnpj) else '' end,
-  cep      = case when length(so_digitos(cep)) = 8 then so_digitos(cep) else '' end
-where telefone ~ '\D' or cpf_cnpj ~ '\D' or cep ~ '\D'
-   or (telefone <> '' and length(telefone) not between 10 and 11)
-   or (cpf_cnpj <> '' and not valida_doc(cpf_cnpj)) or (cep <> '' and length(cep) <> 8);
+update public.clientes
+set
+    observacoes = trim(
+        observacoes || case
+            when (
+                length(so_digitos (telefone)) not between 10 and 11
+                and so_digitos (telefone) <> ''
+            )
+            or (
+                so_digitos (cpf_cnpj) <> ''
+                and not valida_doc (cpf_cnpj)
+            )
+            or (
+                length(so_digitos (cep)) not in(0, 8)
+            ) then ' [dados antigos: tel ' || telefone || ' doc ' || cpf_cnpj || ' cep ' || cep || ']'
+            else ''
+        end
+    ),
+    telefone = case
+        when length(so_digitos (telefone)) between 10 and 11  then so_digitos (telefone)
+        else ''
+    end,
+    cpf_cnpj = case
+        when valida_doc (cpf_cnpj) then so_digitos (cpf_cnpj)
+        else ''
+    end,
+    cep = case
+        when length(so_digitos (cep)) = 8 then so_digitos (cep)
+        else ''
+    end
+where
+    telefone ~ '\D'
+    or cpf_cnpj ~ '\D'
+    or cep ~ '\D'
+    or (
+        telefone <> ''
+        and length(telefone) not between 10 and 11
+    )
+    or (
+        cpf_cnpj <> ''
+        and not valida_doc (cpf_cnpj)
+    )
+    or (
+        cep <> ''
+        and length(cep) <> 8
+    );
 
 create table if not exists public.contratos (
-  id               bigint generated always as identity primary key,
-  cliente_id       bigint not null references public.clientes(id),
-  descricao        text not null default 'Manutenção mensal',
-  valor_mensal     numeric(12,2) not null check (valor_mensal > 0),
-  dia_vencimento   int not null default 10 check (dia_vencimento between 1 and 28),
-  visitas          text not null default '1x por semana',
-  dia_visita       text not null default '',
-  inicio           date not null default current_date,
-  ativo            boolean not null default true,
-  observacoes      text not null default '',
-  criado_em        timestamptz not null default now()
+    id bigint generated always as identity primary key,
+    cliente_id bigint not null references public.clientes (id),
+    descricao text not null default 'Manutenção mensal',
+    valor_mensal numeric(12, 2) not null check (valor_mensal > 0),
+    dia_vencimento int not null default 10 check (
+        dia_vencimento between 1 and 28
+    ),
+    visitas text not null default '1x por semana',
+    dia_visita text not null default '',
+    inicio date not null default current_date,
+    ativo boolean not null default true,
+    observacoes text not null default '',
+    criado_em timestamptz not null default now()
 );
 
 -- ---------------------------------------------------------------------
 -- 5. VENDAS E FINANCEIRO (sem caixa físico: tudo é venda online)
 -- ---------------------------------------------------------------------
 create table if not exists public.vendas (
-  id               bigint generated always as identity primary key,
-  cliente_id       bigint references public.clientes(id),
-  cliente_nome     text not null default '',
-  canal            text not null default 'whatsapp',
-  subtotal         numeric(12,2) not null default 0,
-  desconto         numeric(12,2) not null default 0 check (desconto >= 0),
-  frete            numeric(12,2) not null default 0 check (frete >= 0),
-  total            numeric(12,2) not null default 0,
-  forma_pagamento  text not null,
-  status           text not null default 'paga',
-  observacao       text not null default '',
-  usuario_id       uuid default auth.uid(),
-  criado_em        timestamptz not null default now()
+    id bigint generated always as identity primary key,
+    cliente_id bigint references public.clientes (id),
+    cliente_nome text not null default '',
+    canal text not null default 'whatsapp',
+    subtotal numeric(12, 2) not null default 0,
+    desconto numeric(12, 2) not null default 0 check (desconto >= 0),
+    frete numeric(12, 2) not null default 0 check (frete >= 0),
+    total numeric(12, 2) not null default 0,
+    forma_pagamento text not null,
+    status text not null default 'paga',
+    observacao text not null default '',
+    usuario_id uuid default auth.uid (),
+    criado_em timestamptz not null default now()
 );
-alter table public.vendas add column if not exists entrega_status text not null default 'nao_se_aplica';
-alter table public.vendas add column if not exists entrega_cep text not null default '';
-alter table public.vendas add column if not exists entrega_endereco text not null default '';
-alter table public.vendas add column if not exists entrega_atualizada_em timestamptz;
+
+alter table public.vendas
+add column if not exists entrega_status text not null default 'nao_se_aplica';
+
+alter table public.vendas
+add column if not exists entrega_cep text not null default '';
+
+alter table public.vendas
+add column if not exists entrega_endereco text not null default '';
+
+alter table public.vendas
+add column if not exists entrega_atualizada_em timestamptz;
+
 alter table public.vendas alter column canal set default 'whatsapp';
-alter table public.vendas drop constraint if exists vendas_canal_check;
-alter table public.vendas add constraint vendas_canal_check check (canal in ('whatsapp','telefone','instagram','site','orcamento','servico','balcao','outro'));
-alter table public.vendas drop constraint if exists vendas_forma_pagamento_check;
-alter table public.vendas add constraint vendas_forma_pagamento_check check (forma_pagamento in ('pix','credito','debito','boleto','transferencia','dinheiro','a_prazo'));
-alter table public.vendas drop constraint if exists vendas_status_check;
-alter table public.vendas add constraint vendas_status_check check (status in ('paga','pendente','cancelada'));
-alter table public.vendas drop constraint if exists vendas_entrega_status_check;
-alter table public.vendas add constraint vendas_entrega_status_check check (entrega_status in ('nao_se_aplica','pendente','separando','em_rota','entregue','cancelada'));
-create index if not exists vendas_data_idx on public.vendas(criado_em desc);
+
+alter table public.vendas
+drop constraint if exists vendas_canal_check;
+
+alter table public.vendas
+add constraint vendas_canal_check check (
+    canal in (
+        'whatsapp',
+        'telefone',
+        'instagram',
+        'site',
+        'orcamento',
+        'servico',
+        'balcao',
+        'outro'
+    )
+);
+
+alter table public.vendas
+drop constraint if exists vendas_forma_pagamento_check;
+
+alter table public.vendas
+add constraint vendas_forma_pagamento_check check (
+    forma_pagamento in (
+        'pix',
+        'credito',
+        'debito',
+        'boleto',
+        'transferencia',
+        'dinheiro',
+        'a_prazo'
+    )
+);
+
+alter table public.vendas
+drop constraint if exists vendas_status_check;
+
+alter table public.vendas
+add constraint vendas_status_check check (
+    status in (
+        'paga',
+        'pendente',
+        'cancelada'
+    )
+);
+
+alter table public.vendas
+drop constraint if exists vendas_entrega_status_check;
+
+alter table public.vendas
+add constraint vendas_entrega_status_check check (
+    entrega_status in (
+        'nao_se_aplica',
+        'pendente',
+        'separando',
+        'em_rota',
+        'entregue',
+        'cancelada'
+    )
+);
+
+create index if not exists vendas_data_idx on public.vendas (criado_em desc);
 
 create table if not exists public.venda_itens (
-  id           bigint generated always as identity primary key,
-  venda_id     bigint not null references public.vendas(id) on delete cascade,
-  produto_id   text references public.produtos(id) on update cascade,
-  descricao    text not null,
-  quantidade   numeric(12,3) not null check (quantidade > 0),
-  preco_unit   numeric(12,2) not null check (preco_unit >= 0),
-  total        numeric(12,2) not null
+    id bigint generated always as identity primary key,
+    venda_id bigint not null references public.vendas (id) on delete cascade,
+    produto_id text references public.produtos (id) on update cascade,
+    descricao text not null,
+    quantidade numeric(12, 3) not null check (quantidade > 0),
+    preco_unit numeric(12, 2) not null check (preco_unit >= 0),
+    total numeric(12, 2) not null
 );
 
 create table if not exists public.lancamentos (
-  id               bigint generated always as identity primary key,
-  tipo             text not null check (tipo in ('receber','pagar')),
-  categoria        text not null default 'Outros',
-  descricao        text not null,
-  valor            numeric(12,2) not null check (valor > 0),
-  vencimento       date not null default current_date,
-  competencia      date,
-  status           text not null default 'aberto' check (status in ('aberto','pago','cancelado')),
-  pago_em          timestamptz,
-  forma_pagamento  text check (forma_pagamento in ('pix','credito','debito','dinheiro','boleto','transferencia')),
-  cliente_id       bigint references public.clientes(id),
-  venda_id         bigint references public.vendas(id),
-  contrato_id      bigint references public.contratos(id),
-  usuario_id       uuid default auth.uid(),
-  criado_em        timestamptz not null default now()
+    id bigint generated always as identity primary key,
+    tipo text not null check (tipo in ('receber', 'pagar')),
+    categoria text not null default 'Outros',
+    descricao text not null,
+    valor numeric(12, 2) not null check (valor > 0),
+    vencimento date not null default current_date,
+    competencia date,
+    status text not null default 'aberto' check (
+        status in ('aberto', 'pago', 'cancelado')
+    ),
+    pago_em timestamptz,
+    forma_pagamento text check (
+        forma_pagamento in (
+            'pix',
+            'credito',
+            'debito',
+            'dinheiro',
+            'boleto',
+            'transferencia'
+        )
+    ),
+    cliente_id bigint references public.clientes (id),
+    venda_id bigint references public.vendas (id),
+    contrato_id bigint references public.contratos (id),
+    usuario_id uuid default auth.uid (),
+    criado_em timestamptz not null default now()
 );
-create index if not exists lanc_venc_idx on public.lancamentos(status, vencimento);
-create index if not exists lanc_pago_idx on public.lancamentos(pago_em);
-create unique index if not exists uma_mensalidade_por_mes on public.lancamentos(contrato_id, competencia)
-  where contrato_id is not null and status <> 'cancelado';
+
+create index if not exists lanc_venc_idx on public.lancamentos (status, vencimento);
+
+create index if not exists lanc_pago_idx on public.lancamentos (pago_em);
+
+create unique index if not exists uma_mensalidade_por_mes on public.lancamentos (contrato_id, competencia)
+where
+    contrato_id is not null
+    and status <> 'cancelado';
 
 -- Remoção do caixa físico (versão anterior)
-drop policy if exists equipe_cria on public.lancamentos;   -- dependia de caixa_id; é recriada mais abaixo
+drop policy if exists equipe_cria on public.lancamentos;
+-- dependia de caixa_id; é recriada mais abaixo
 drop function if exists public.abrir_caixa(numeric);
-drop function if exists public.fechar_caixa(numeric, text);
-drop function if exists public.movimentar_caixa(text, numeric, text);
-drop function if exists public.resumo_caixa(bigint);
-drop function if exists public.caixa_aberto_id();
+
+drop function if exists public.fechar_caixa (numeric, text);
+
+drop function if exists public.movimentar_caixa (text, numeric, text);
+
+drop function if exists public.resumo_caixa (bigint);
+
+drop function if exists public.caixa_aberto_id ();
+
 alter table public.vendas drop column if exists caixa_id;
+
 alter table public.lancamentos drop column if exists caixa_id;
+
 drop table if exists public.caixas;
 
 -- ---------------------------------------------------------------------
 -- 6. ORÇAMENTOS E AGENDA
 -- ---------------------------------------------------------------------
 create table if not exists public.orcamentos (
-  id            bigint generated always as identity primary key,
-  cliente_id    bigint references public.clientes(id),
-  cliente_nome  text not null default '',
-  telefone      text not null default '',
-  titulo        text not null,
-  status        text not null default 'rascunho' check (status in ('rascunho','enviado','aprovado','recusado','convertido')),
-  validade      date not null default (current_date + 15),
-  desconto      numeric(12,2) not null default 0 check (desconto >= 0),
-  total         numeric(12,2) not null default 0,
-  condicoes     text not null default '',
-  venda_id      bigint references public.vendas(id),
-  usuario_id    uuid default auth.uid(),
-  criado_em     timestamptz not null default now()
+    id bigint generated always as identity primary key,
+    cliente_id bigint references public.clientes (id),
+    cliente_nome text not null default '',
+    telefone text not null default '',
+    titulo text not null,
+    status text not null default 'rascunho' check (
+        status in (
+            'rascunho',
+            'enviado',
+            'aprovado',
+            'recusado',
+            'convertido'
+        )
+    ),
+    validade date not null default(current_date + 15),
+    desconto numeric(12, 2) not null default 0 check (desconto >= 0),
+    total numeric(12, 2) not null default 0,
+    condicoes text not null default '',
+    venda_id bigint references public.vendas (id),
+    usuario_id uuid default auth.uid (),
+    criado_em timestamptz not null default now()
 );
 
 create table if not exists public.orcamento_itens (
-  id             bigint generated always as identity primary key,
-  orcamento_id   bigint not null references public.orcamentos(id) on delete cascade,
-  produto_id     text references public.produtos(id) on update cascade,
-  descricao      text not null,
-  quantidade     numeric(12,3) not null check (quantidade > 0),
-  preco_unit     numeric(12,2) not null check (preco_unit >= 0),
-  total          numeric(12,2) not null
+    id bigint generated always as identity primary key,
+    orcamento_id bigint not null references public.orcamentos (id) on delete cascade,
+    produto_id text references public.produtos (id) on update cascade,
+    descricao text not null,
+    quantidade numeric(12, 3) not null check (quantidade > 0),
+    preco_unit numeric(12, 2) not null check (preco_unit >= 0),
+    total numeric(12, 2) not null
 );
 
 create table if not exists public.agenda (
-  id            bigint generated always as identity primary key,
-  cliente_id    bigint references public.clientes(id),
-  contrato_id   bigint references public.contratos(id),
-  tipo          text not null default 'manutencao' check (tipo in ('manutencao','instalacao','tratamento','visita_tecnica','entrega','outro')),
-  data          date not null,
-  hora          time,
-  responsavel   text not null default '',
-  endereco      text not null default '',
-  status        text not null default 'agendado' check (status in ('agendado','concluido','cancelado')),
-  observacoes   text not null default '',
-  criado_em     timestamptz not null default now()
+    id bigint generated always as identity primary key,
+    cliente_id bigint references public.clientes (id),
+    contrato_id bigint references public.contratos (id),
+    tipo text not null default 'manutencao' check (
+        tipo in (
+            'manutencao',
+            'instalacao',
+            'tratamento',
+            'visita_tecnica',
+            'entrega',
+            'outro'
+        )
+    ),
+    data date not null,
+    hora time,
+    responsavel text not null default '',
+    endereco text not null default '',
+    status text not null default 'agendado' check (
+        status in (
+            'agendado',
+            'concluido',
+            'cancelado'
+        )
+    ),
+    observacoes text not null default '',
+    criado_em timestamptz not null default now()
 );
-create index if not exists agenda_data_idx on public.agenda(data);
+
+create index if not exists agenda_data_idx on public.agenda (data);
 
 -- ---------------------------------------------------------------------
 -- 7. O QUE CHEGA PELO SITE: pedidos e solicitações (orçamento / contato)
 -- ---------------------------------------------------------------------
 create table if not exists public.pedidos_site (
-  id               bigint generated always as identity primary key,
-  nome             text not null,
-  telefone         text not null default '',
-  cep              text not null default '',
-  forma_pagamento  text not null default 'pix',
-  itens            jsonb not null,
-  subtotal         numeric(12,2) not null,
-  frete            numeric(12,2) not null,
-  total            numeric(12,2) not null,
-  status           text not null default 'novo' check (status in ('novo','convertido','descartado')),
-  venda_id         bigint references public.vendas(id),
-  criado_em        timestamptz not null default now()
+    id bigint generated always as identity primary key,
+    nome text not null,
+    telefone text not null default '',
+    cep text not null default '',
+    forma_pagamento text not null default 'pix',
+    itens jsonb not null,
+    subtotal numeric(12, 2) not null,
+    frete numeric(12, 2) not null,
+    total numeric(12, 2) not null,
+    status text not null default 'novo' check (
+        status in (
+            'novo',
+            'convertido',
+            'descartado'
+        )
+    ),
+    venda_id bigint references public.vendas (id),
+    criado_em timestamptz not null default now()
 );
-alter table public.pedidos_site add column if not exists cpf_cnpj text not null default '';
-alter table public.pedidos_site add column if not exists logradouro text not null default '';
-alter table public.pedidos_site add column if not exists numero text not null default '';
-alter table public.pedidos_site add column if not exists complemento text not null default '';
-alter table public.pedidos_site add column if not exists bairro text not null default '';
-alter table public.pedidos_site add column if not exists cidade text not null default '';
-alter table public.pedidos_site add column if not exists uf text not null default '';
-alter table public.pedidos_site add column if not exists observacao text not null default '';
+
+alter table public.pedidos_site
+add column if not exists cpf_cnpj text not null default '';
+
+alter table public.pedidos_site
+add column if not exists logradouro text not null default '';
+
+alter table public.pedidos_site
+add column if not exists numero text not null default '';
+
+alter table public.pedidos_site
+add column if not exists complemento text not null default '';
+
+alter table public.pedidos_site
+add column if not exists bairro text not null default '';
+
+alter table public.pedidos_site
+add column if not exists cidade text not null default '';
+
+alter table public.pedidos_site
+add column if not exists uf text not null default '';
+
+alter table public.pedidos_site
+add column if not exists observacao text not null default '';
 
 create table if not exists public.solicitacoes_site (
-  id             bigint generated always as identity primary key,
-  tipo           text not null check (tipo in ('orcamento','contato')),
-  nome           text not null,
-  telefone       text not null,
-  cep            text not null default '',
-  cidade         text not null default '',
-  referencia     text not null default '',      -- ex.: modelo de piscina
-  mensagem       text not null default '',
-  status         text not null default 'nova' check (status in ('nova','respondida','convertida','descartada')),
-  orcamento_id   bigint references public.orcamentos(id),
-  criado_em      timestamptz not null default now()
+    id bigint generated always as identity primary key,
+    tipo text not null check (
+        tipo in ('orcamento', 'contato')
+    ),
+    nome text not null,
+    telefone text not null,
+    cep text not null default '',
+    cidade text not null default '',
+    referencia text not null default '', -- ex.: modelo de piscina
+    mensagem text not null default '',
+    status text not null default 'nova' check (
+        status in (
+            'nova',
+            'respondida',
+            'convertida',
+            'descartada'
+        )
+    ),
+    orcamento_id bigint references public.orcamentos (id),
+    criado_em timestamptz not null default now()
 );
 
 -- ---------------------------------------------------------------------
@@ -382,7 +605,8 @@ create table if not exists public.solicitacoes_site (
 -- Registrar venda.
 -- p = {cliente_id?, cliente_nome?, canal, desconto, frete, forma_pagamento, pago (true/false), vencimento?,
 --      observacao?, entrega?: {cep, endereco}, itens:[{produto_id?, descricao, quantidade, preco_unit}]}
-drop function if exists public.registrar_venda(jsonb);
+drop function if exists public.registrar_venda (jsonb);
+
 create function public.registrar_venda(p jsonb) returns bigint
 language plpgsql security definer set search_path = public as $$
 declare
@@ -513,7 +737,8 @@ begin
 end $$;
 
 -- Orçamento aprovado → venda
-drop function if exists public.converter_orcamento(bigint, text, date);
+drop function if exists public.converter_orcamento (bigint, text, date);
+
 create or replace function public.converter_orcamento(p_id bigint, p_forma text, p_pago boolean, p_vencimento date default null) returns bigint
 language plpgsql security definer set search_path = public as $$
 declare o record; v bigint;
@@ -542,12 +767,15 @@ begin
    where o.id = oid;
   return null;
 end $$;
+
 drop trigger if exists ao_mudar_item_orc on public.orcamento_itens;
+
 create trigger ao_mudar_item_orc after insert or update or delete on public.orcamento_itens
   for each row execute function public.recalcular_orcamento();
 
 -- Pedido do site → venda (cria ou reaproveita o cliente pelo telefone)
-drop function if exists public.converter_pedido_site(bigint, text, bigint);
+drop function if exists public.converter_pedido_site (bigint, text, bigint);
+
 create or replace function public.converter_pedido_site(p_id bigint, p_forma text, p_pago boolean, p_cliente_id bigint default null) returns bigint
 language plpgsql security definer set search_path = public as $$
 declare ps record; v bigint; v_cli bigint := p_cliente_id; v_end text;
@@ -561,7 +789,7 @@ begin
   if v_cli is null then
     insert into public.clientes(nome, telefone, cpf_cnpj, cep, endereco, numero, complemento, bairro, cidade, uf)
     values (ps.nome, ps.telefone, case when public.valida_doc(ps.cpf_cnpj) then ps.cpf_cnpj else '' end,
-            ps.cep, ps.logradouro, ps.numero, ps.complemento, ps.bairro, coalesce(nullif(ps.cidade,''),'Campinas'), coalesce(nullif(ps.uf,''),'SP'))
+            ps.cep, ps.logradouro, ps.numero, ps.complemento, ps.bairro, coalesce(nullif(ps.cidade,''),'São Paulo'), coalesce(nullif(ps.uf,''),'SP'))
     returning id into v_cli;
   end if;
   v_end := concat_ws(', ', nullif(ps.logradouro,''), nullif(ps.numero,''), nullif(ps.complemento,''), nullif(ps.bairro,''),
@@ -594,7 +822,8 @@ language sql stable security definer set search_path = public as $$
 $$;
 
 -- Registrar pedido do site. Tudo é validado e recalculado aqui; o navegador não decide preço nem frete.
-drop function if exists public.registrar_pedido_site(jsonb);
+drop function if exists public.registrar_pedido_site (jsonb);
+
 create function public.registrar_pedido_site(p jsonb) returns jsonb
 language plpgsql security definer set search_path = public as $$
 declare
@@ -690,7 +919,13 @@ end $$;
 -- 10. SEGURANÇA
 -- ---------------------------------------------------------------------
 grant usage on schema public to anon, authenticated;
-grant select, insert, update, delete on all tables in schema public to authenticated;
+
+grant
+select,
+insert
+,
+update,
+delete on all tables in schema public to authenticated;
 
 do $$
 declare t text;
@@ -720,61 +955,202 @@ end $$;
 
 -- Pedidos do site: equipe só pode descartar
 drop policy if exists equipe_descarta on public.pedidos_site;
-create policy equipe_descarta on public.pedidos_site for update to authenticated
-  using (public.eh_equipe() and status = 'novo') with check (public.eh_equipe() and status = 'descartado');
-revoke insert, update, delete on public.pedidos_site from authenticated;
+
+create policy equipe_descarta on public.pedidos_site for
+update to authenticated using (
+    public.eh_equipe ()
+    and status = 'novo'
+)
+with
+    check (
+        public.eh_equipe ()
+        and status = 'descartado'
+    );
+
+revoke
+insert
+,
+update,
+delete on public.pedidos_site
+from authenticated;
+
 grant update (status) on public.pedidos_site to authenticated;
 
 -- Solicitações: equipe marca como respondida/descartada e liga ao orçamento
 drop policy if exists equipe_trata on public.solicitacoes_site;
-create policy equipe_trata on public.solicitacoes_site for update to authenticated
-  using (public.eh_equipe()) with check (public.eh_equipe() and status in ('nova','respondida','convertida','descartada'));
-revoke insert, update, delete on public.solicitacoes_site from authenticated;
-grant update (status, orcamento_id) on public.solicitacoes_site to authenticated;
+
+create policy equipe_trata on public.solicitacoes_site for
+update to authenticated using (public.eh_equipe ())
+with
+    check (
+        public.eh_equipe ()
+        and status in (
+            'nova',
+            'respondida',
+            'convertida',
+            'descartada'
+        )
+    );
+
+revoke
+insert
+,
+update,
+delete on public.solicitacoes_site
+from authenticated;
+
+grant
+update (status, orcamento_id) on public.solicitacoes_site to authenticated;
 
 -- Configurações do site: só o administrador altera
 drop policy if exists admin_altera on public.config_site;
-create policy admin_altera on public.config_site for update to authenticated using (public.eh_admin()) with check (public.eh_admin());
-revoke insert, update, delete on public.config_site from authenticated;
-grant update (whatsapp, pix_chave, pix_nome, frete_valor, frete_gratis_acima, cidades, aceita_pedidos, aviso, atualizado_em)
-  on public.config_site to authenticated;
 
-revoke insert, update, delete on public.vendas, public.venda_itens from authenticated;
+create policy admin_altera on public.config_site for
+update to authenticated using (public.eh_admin ())
+with
+    check (public.eh_admin ());
+
+revoke
+insert
+,
+update,
+delete on public.config_site
+from authenticated;
+
+grant
+update (
+    whatsapp,
+    pix_chave,
+    pix_nome,
+    frete_valor,
+    frete_gratis_acima,
+    cidades,
+    aceita_pedidos,
+    aviso,
+    atualizado_em
+) on public.config_site to authenticated;
+
+revoke
+insert
+,
+update,
+delete on public.vendas,
+public.venda_itens
+from authenticated;
 
 drop policy if exists equipe_le on public.movimentos_estoque;
+
 drop policy if exists equipe_lanca on public.movimentos_estoque;
-create policy equipe_le on public.movimentos_estoque for select to authenticated using (public.eh_equipe());
-create policy equipe_lanca on public.movimentos_estoque for insert to authenticated
-  with check (public.eh_equipe() and tipo in ('entrada','saida','ajuste') and venda_id is null);
-revoke update, delete on public.movimentos_estoque from authenticated;
+
+create policy equipe_le on public.movimentos_estoque for
+select to authenticated using (public.eh_equipe ());
+
+create policy equipe_lanca on public.movimentos_estoque for
+insert
+    to authenticated
+with
+    check (
+        public.eh_equipe ()
+        and tipo in ('entrada', 'saida', 'ajuste')
+        and venda_id is null
+    );
+
+revoke
+update,
+delete on public.movimentos_estoque
+from authenticated;
 
 drop policy if exists equipe_le on public.lancamentos;
+
 drop policy if exists equipe_cria on public.lancamentos;
+
 drop policy if exists admin_altera on public.lancamentos;
-create policy equipe_le on public.lancamentos for select to authenticated using (public.eh_equipe());
-create policy equipe_cria on public.lancamentos for insert to authenticated
-  with check (public.eh_equipe() and status = 'aberto' and venda_id is null);
-create policy admin_altera on public.lancamentos for update to authenticated using (public.eh_admin()) with check (public.eh_admin());
+
+create policy equipe_le on public.lancamentos for
+select to authenticated using (public.eh_equipe ());
+
+create policy equipe_cria on public.lancamentos for
+insert
+    to authenticated
+with
+    check (
+        public.eh_equipe ()
+        and status = 'aberto'
+        and venda_id is null
+    );
+
+create policy admin_altera on public.lancamentos for
+update to authenticated using (public.eh_admin ())
+with
+    check (public.eh_admin ());
+
 revoke delete on public.lancamentos from authenticated;
 
 drop policy if exists ve_proprio on public.perfis;
-drop policy if exists admin_gerencia on public.perfis;
-create policy ve_proprio on public.perfis for select to authenticated using (id = auth.uid() or public.eh_admin());
-create policy admin_gerencia on public.perfis for update to authenticated using (public.eh_admin()) with check (public.eh_admin());
-revoke insert, delete on public.perfis from authenticated;
 
-revoke insert, update on public.produtos from authenticated;
-grant insert (id, nome, categoria, descricao, unidade, preco_venda, custo, estoque_minimo, icone, ativo, no_site)
-  on public.produtos to authenticated;
-grant update (nome, categoria, descricao, unidade, preco_venda, custo, estoque_minimo, icone, ativo, no_site, atualizado_em)
-  on public.produtos to authenticated;
+drop policy if exists admin_gerencia on public.perfis;
+
+create policy ve_proprio on public.perfis for
+select to authenticated using (
+        id = auth.uid ()
+        or public.eh_admin ()
+    );
+
+create policy admin_gerencia on public.perfis for
+update to authenticated using (public.eh_admin ())
+with
+    check (public.eh_admin ());
+
+revoke insert , delete on public.perfis from authenticated;
+
+revoke insert , update on public.produtos from authenticated;
+
+grant
+insert (
+        id,
+        nome,
+        categoria,
+        descricao,
+        unidade,
+        preco_venda,
+        custo,
+        estoque_minimo,
+        icone,
+        ativo,
+        no_site
+    ) on public.produtos to authenticated;
+
+grant
+update (
+    nome,
+    categoria,
+    descricao,
+    unidade,
+    preco_venda,
+    custo,
+    estoque_minimo,
+    icone,
+    ativo,
+    no_site,
+    atualizado_em
+) on public.produtos to authenticated;
 
 -- Quem pode chamar cada função
 revoke execute on all functions in schema public from public, anon;
+
 grant execute on function public.produtos_site(), public.config_publica(), public.registrar_pedido_site(jsonb),
   public.consultar_pedido(bigint, text), public.registrar_solicitacao(jsonb) to anon, authenticated;
-grant execute on function public.so_digitos(text), public.sem_acento(text), public.valida_doc(text),
-  public.eh_equipe(), public.eh_admin(), public.registrar_venda(jsonb), public.cancelar_venda(bigint, text),
-  public.baixar_lancamento(bigint, text), public.atualizar_entrega(bigint, text), public.gerar_mensalidades(date),
-  public.converter_orcamento(bigint, text, boolean, date), public.converter_pedido_site(bigint, text, boolean, bigint)
-  to authenticated;
+
+grant
+execute on function public.so_digitos (text),
+public.sem_acento (text),
+public.valida_doc (text),
+public.eh_equipe (),
+public.eh_admin (),
+public.registrar_venda (jsonb),
+public.cancelar_venda (bigint, text),
+public.baixar_lancamento (bigint, text),
+public.atualizar_entrega (bigint, text),
+public.gerar_mensalidades (date),
+public.converter_orcamento (bigint, text, boolean, date),
+public.converter_pedido_site (bigint, text, boolean, bigint) to authenticated;

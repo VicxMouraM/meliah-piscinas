@@ -1,36 +1,38 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Venda e instalação de piscinas de fibra, vinil e alvenaria, produtos para piscina e manutenção em Campinas e região. Peça orçamento pelo WhatsApp.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Meliah Piscinas | Campinas e região">
-<meta property="og:description" content="Piscinas, produtos e manutenção em Campinas e região. Peça orçamento pelo WhatsApp.">
-<meta property="og:locale" content="pt_BR">
-<!-- Dados da empresa para o Google. TROCAR "telephone" e "url" pelos reais (ver README, seção 5). -->
-<script type="application/ld+json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description"
+    content="Venda e instalação de piscinas de fibra, vinil e alvenaria, produtos para piscina e manutenção em São Paulo e região. Peça orçamento pelo WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VicxMoura Piscinas | São Paulo e região">
+  <meta property="og:description"
+    content="Piscinas, produtos e manutenção em São Paulo e região. Peça orçamento pelo WhatsApp.">
+  <meta property="og:locale" content="pt_BR">
+  <!-- Dados da empresa para o Google (FICTÍCIOS). Troque telefone, endereço e url pelos reais antes de usar com uma empresa de verdade (README, seção 5). -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  "name": "Meliah Piscinas",
-  "legalName": "MELIAH PISCINAS COMERCIO E SERVICOS LTDA - ME",
-  "taxID": "06.120.369/0001-14",
-  "description": "Venda e instalação de piscinas, produtos para piscina e manutenção em Campinas e região.",
-  "url": "https://www.meliahpiscinas.com.br",
+  "name": "VicxMoura Piscinas",
+  "legalName": "VICXMOURA PISCINAS COMERCIO E SERVICOS LTDA",
+  "description": "Venda e instalação de piscinas, produtos para piscina e manutenção em São Paulo e região.",
+  "url": "https://www.vicxmourapiscinas.com.br",
   "telephone": "+55-19-00000-0000",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Av. Orosimbo Maia, 1806",
-    "addressLocality": "Campinas",
+    "streetAddress": "Av. das Águas, 1000",
+    "addressLocality": "São Paulo",
     "addressRegion": "SP",
-    "postalCode": "13024-045",
+    "postalCode": "13000-000",
     "addressCountry": "BR"
   },
   "areaServed": [
     {
       "@type": "City",
-      "name": "Campinas"
+      "name": "São Paulo"
     },
     {
       "@type": "City",
@@ -83,928 +85,2388 @@
   ]
 }
 </script>
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<script src="config.js"></script>
-<script src="comum.js"></script>
-<title>Meliah Piscinas</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
-<style>
-/* Layout: borda de piscina — faixa de azulejos no topo de cada seção, marcadores de profundidade como títulos */
-:root{
-  --tile:#0A4F78; --water:#1FA4CC; --water-soft:#DDF1F7; --coping:#E7E1D6;
-  --buoy:#E0533A; --bg:#F6FAFB; --surface:#FFFFFF; --fg:#0F2733; --muted:#4E6672; --line:#CFDDE3;
-  --on-tile:#F2FAFD; --ok:#1F8A5B; --bad:#C2412D; --bad-soft:#FBE6E2;
-  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
-  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --tile:#0E3A55; --water:#4CC3E6; --water-soft:#12303D; --coping:#2A3237;
-  --buoy:#FF7A5F; --bg:#0A161C; --surface:#10222B; --fg:#E4F1F5; --muted:#9DB4BE; --line:#22404D;
-  --on-tile:#E8F7FC; --ok:#4CC98F; --bad:#FF8A73; --bad-soft:#3A1A14; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --tile:#0E3A55; --water:#4CC3E6; --water-soft:#12303D; --coping:#2A3237;
-  --buoy:#FF7A5F; --bg:#0A161C; --surface:#10222B; --fg:#E4F1F5; --muted:#9DB4BE; --line:#22404D;
-  --on-tile:#E8F7FC; --ok:#4CC98F; --bad:#FF8A73; --bad-soft:#3A1A14; color-scheme:dark}
-*{box-sizing:border-box}
-[hidden]{display:none!important}
-.search{width:100%;max-width:360px;font:inherit;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--fg);margin-left:auto}
-.shop-tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
-.shop-tools .filters{margin:0}
-.no-res{grid-column:1/-1;color:var(--muted);padding:24px 0}
-.faq{display:grid;gap:0;border-top:2px solid var(--fg);max-width:820px}
-.faq details{border-bottom:1px solid var(--line);padding:14px 0}
-.faq summary{font-weight:700;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
-.faq summary::after{content:"+";font:800 24px/1 var(--f-display);color:var(--water)}
-.faq details[open] summary::after{content:"−"}
-.faq p{color:var(--muted);margin:8px 0 0;max-width:65ch}
-[id]{scroll-margin-top:72px}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.gallery figure{margin:0;position:relative;border-radius:12px;overflow:hidden;background:var(--coping)}
-.gallery .ph{aspect-ratio:4/3;width:100%;max-width:100%;display:block;object-fit:cover}
-.gallery figure:first-child{grid-column:span 2;grid-row:span 2}
-.gallery figure:first-child .ph{aspect-ratio:auto;height:100%;min-height:100%}
-.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(4,25,36,.82));color:#F2FAFD;font-size:14px}
-.gallery figcaption b{display:block;font:800 20px/1.05 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
-.gallery .ex{position:absolute;top:10px;left:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--buoy);color:#fff;border-radius:4px;padding:2px 6px}
-@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr}.gallery figure:first-child{grid-column:span 2;grid-row:auto}.gallery figure:first-child .ph{aspect-ratio:16/10;height:auto}}
-.legal{padding-block:40px 64px}
-.legal .wrap{max-width:780px}
-.legal h1{font:800 clamp(34px,5vw,52px)/1 var(--f-display);text-transform:uppercase;margin:16px 0 6px}
-.legal h2{font:800 22px/1.15 var(--f-display);text-transform:uppercase;letter-spacing:.02em;margin:30px 0 8px;color:var(--tile)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .legal h2{color:var(--water)}}
-:root[data-theme="dark"] .legal h2{color:var(--water)}
-.legal p,.legal li{max-width:68ch}
-.legal ul{padding-left:20px;display:grid;gap:6px}
-.legal .upd{color:var(--muted);font-size:14px;margin-top:0}
-.back{font-weight:700;color:var(--water);text-decoration:none}
-footer a{color:inherit}
-.wa-float{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:8;background:var(--ok);color:#fff;border-radius:999px;padding:12px 18px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--f-body);overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--tile)}
-.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1,h2,h3{text-wrap:balance;margin:0}
-a{color:inherit}
-button{font:inherit;cursor:pointer}
-:focus-visible{outline:3px solid var(--water);outline-offset:2px}
-.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+  <style>
+    body {
+      margin: 0
+    }
 
-/* faixa de azulejo */
-.tiles{height:14px;background:
-  linear-gradient(90deg,var(--bg) 1px,transparent 1px) 0 0/14px 14px,
-  linear-gradient(var(--water),var(--tile))}
-.tiles.thin{height:8px;background-size:8px 8px,auto}
+    img {
+      max-width: 100%
+    }
 
-/* header */
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--tile);color:var(--on-tile)}
-header.top .wrap{display:flex;align-items:center;gap:16px;padding-block:10px;flex-wrap:wrap}
-.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;margin-right:auto}
-.brand b{font:800 28px/1 var(--f-display);letter-spacing:.02em;text-transform:uppercase}
-.brand span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
-nav.links{display:flex;gap:18px;font-weight:600;font-size:15px}
-nav.links a{text-decoration:none;opacity:.9}
-nav.links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
-.cart-btn{display:flex;align-items:center;gap:8px;background:var(--on-tile);color:var(--tile);border:0;border-radius:999px;padding:8px 14px;font-weight:700}
-.cart-btn .count{background:var(--buoy);color:#fff;border-radius:999px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:12px;padding:0 6px}
-@media (max-width:640px){nav.links{order:3;width:100%;justify-content:space-between;font-size:14px}}
+    [hidden] {
+      display: none !important
+    }
+  </style>
+  <script src="config.js"></script>
+  <script src="comum.js"></script>
+  <title>VicxMoura Piscinas</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+  <style>
+    /* Layout: borda de piscina — faixa de azulejos no topo de cada seção, marcadores de profundidade como títulos */
+    :root {
+      --tile: #0A4F78;
+      --water: #1FA4CC;
+      --water-soft: #DDF1F7;
+      --coping: #E7E1D6;
+      --buoy: #E0533A;
+      --bg: #F6FAFB;
+      --surface: #FFFFFF;
+      --fg: #0F2733;
+      --muted: #4E6672;
+      --line: #CFDDE3;
+      --on-tile: #F2FAFD;
+      --ok: #1F8A5B;
+      --bad: #C2412D;
+      --bad-soft: #FBE6E2;
+      --f-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+      --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    }
 
-/* hero */
-.hero{background:var(--tile);color:var(--on-tile);position:relative;overflow:hidden}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.35;pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end;padding-block:56px 48px}
-.depth{font:800 clamp(56px,11vw,128px)/.85 var(--f-display);letter-spacing:.01em;text-transform:uppercase}
-.depth small{font-size:clamp(15px,2vw,22px);display:block;letter-spacing:.06em;margin-top:8px;opacity:.85}
-.hero h1{font:800 clamp(34px,5.4vw,58px)/1 var(--f-display);text-transform:uppercase;letter-spacing:.01em;margin-top:24px}
-.hero p{max-width:52ch;font-size:18px;opacity:.92;margin:14px 0 24px}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:12px 18px;font-weight:700;text-decoration:none;border:2px solid transparent}
-.btn.primary{background:var(--buoy);color:#fff}
-.btn.ghost{border-color:currentColor}
-.btn.wa{background:var(--ok);color:#fff}
-.hero-card{background:var(--surface);color:var(--fg);border-radius:14px;padding:20px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
-.hero-card h3{font:800 22px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px}
-.hero-card p.sub{color:var(--muted);font-size:14px;margin:0 0 14px}
-.calc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.calc label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:grid;gap:4px}
-.calc input{width:100%;font:500 16px var(--f-mono);padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)}
-.calc-out{margin-top:14px;padding:12px 14px;background:var(--water-soft);border-radius:10px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
-.calc-out b{font:800 32px/1 var(--f-display)}
-.calc-out span{font-size:13px;color:var(--muted)}
-.rec{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
-.rec-h{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
-.rec ul{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:14px}
-.rec li{display:grid;grid-template-columns:2.2em 1fr auto;gap:6px;align-items:baseline}
-.rec li .q{font-family:var(--f-mono);color:var(--water);font-weight:500}
-.rec li .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--muted)}
-.rec-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;font-weight:600}
-.rec-total b{font-size:18px}
-.rec-add{width:100%;justify-content:center;margin-top:10px;border:0}
-.rec-add.done{background:var(--ok)}
-.rec-pump{margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.rec-pump .add{flex-shrink:0}
-.hero .rec-note{font-size:12px;opacity:1;color:var(--muted);margin:10px 0 0}
-@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}}
+    @media (prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) {
+        --tile: #0E3A55;
+        --water: #4CC3E6;
+        --water-soft: #12303D;
+        --coping: #2A3237;
+        --buoy: #FF7A5F;
+        --bg: #0A161C;
+        --surface: #10222B;
+        --fg: #E4F1F5;
+        --muted: #9DB4BE;
+        --line: #22404D;
+        --on-tile: #E8F7FC;
+        --ok: #4CC98F;
+        --bad: #FF8A73;
+        --bad-soft: #3A1A14;
+        color-scheme: dark
+      }
+    }
 
-/* seções */
-section{padding-block:56px}
-.sec-head{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:28px}
-.marker{font:800 22px/1 var(--f-display);color:var(--water);border-left:6px solid var(--water);padding:6px 0 6px 12px;text-transform:uppercase;letter-spacing:.12em;padding-block:2px}
-.marker small{display:block;font-size:14px;letter-spacing:.12em;color:var(--muted);margin-top:6px}
-.sec-head h2{font:800 clamp(30px,4vw,42px)/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
-.sec-head p{color:var(--muted);margin:6px 0 0;max-width:60ch}
+    :root[data-theme="dark"] {
+      --tile: #0E3A55;
+      --water: #4CC3E6;
+      --water-soft: #12303D;
+      --coping: #2A3237;
+      --buoy: #FF7A5F;
+      --bg: #0A161C;
+      --surface: #10222B;
+      --fg: #E4F1F5;
+      --muted: #9DB4BE;
+      --line: #22404D;
+      --on-tile: #E8F7FC;
+      --ok: #4CC98F;
+      --bad: #FF8A73;
+      --bad-soft: #3A1A14;
+      color-scheme: dark
+    }
 
-/* piscinas */
-.pools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.pool{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.pool .shape{aspect-ratio:16/9;max-width:100%;background:var(--coping);display:grid;place-items:center;padding:18px}
-.pool .shape svg{width:100%;height:100%}
-.pool .body{padding:18px;display:grid;gap:10px;flex:1;align-content:start}
-.pool h3{font:800 24px/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
-.pool dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:14px}
-.pool dt{color:var(--muted)}
-.pool dd{margin:0;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
-.pool .btn{margin-top:auto;justify-content:center}
-.pool .foot{padding:0 18px 18px}
-@media (max-width:900px){.pools{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.pools{grid-template-columns:1fr}}
+    * {
+      box-sizing: border-box
+    }
 
-/* loja */
-.shop-band{background:var(--water-soft)}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.chip{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:7px 14px;font-weight:600;font-size:14px}
-.chip[aria-pressed="true"]{background:var(--tile);color:var(--on-tile);border-color:var(--tile)}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.prod{background:var(--surface);border-radius:12px;padding:14px;display:grid;grid-template-rows:auto auto 1fr auto;gap:8px;border:1px solid var(--line)}
-.prod .pic{aspect-ratio:1;max-width:100%;border-radius:8px;background:var(--bg);display:grid;place-items:center}
-.prod .pic svg{width:58%;height:58%}
-.prod .cat{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.prod h3{font:600 16px/1.3 var(--f-body)}
-.prod .meta{font-size:13px;color:var(--muted)}
-.prod .buy{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.price{font:500 18px var(--f-mono);font-variant-numeric:tabular-nums}
-.add{background:var(--tile);color:var(--on-tile);border:0;border-radius:8px;padding:8px 12px;font-weight:700;font-size:14px}
-.add.done{background:var(--ok);color:#fff}
-.esg{font-size:13px;font-weight:700;color:var(--buoy);text-transform:uppercase;letter-spacing:.06em}
-@media (max-width:1000px){.products{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:720px){.products{grid-template-columns:repeat(2,1fr)}}
+    [hidden] {
+      display: none !important
+    }
 
-/* serviços */
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--fg)}
-.svc{padding:22px 22px 22px 0;border-bottom:1px solid var(--line)}
-.svc + .svc{padding-left:22px;border-left:1px solid var(--line)}
-.svc h3{font:800 24px/1.05 var(--f-display);text-transform:uppercase;margin-bottom:8px}
-.svc p{color:var(--muted);margin:0 0 10px;font-size:15px}
-.svc .from{font-family:var(--f-mono);font-size:14px}
-@media (max-width:760px){.services{grid-template-columns:1fr}.svc + .svc{padding-left:0;border-left:0}}
+    .search {
+      width: 100%;
+      max-width: 360px;
+      font: inherit;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--fg);
+      margin-left: auto
+    }
 
-/* contato */
-.contact{background:var(--tile);color:var(--on-tile)}
-.contact .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
-.contact h2{font:800 clamp(30px,4vw,44px)/1 var(--f-display);text-transform:uppercase}
-.contact dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:20px 0 0}
-.contact dt{opacity:.75;font-size:13px;text-transform:uppercase;letter-spacing:.1em;padding-top:2px}
-.contact dd{margin:0;font-weight:600;min-width:0;overflow-wrap:anywhere}
-.contact .grid>*{min-width:0}
-.example{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--buoy);color:#fff;border-radius:4px;padding:2px 6px;margin-left:6px;vertical-align:middle}
-.copy{background:transparent;border:1px solid currentColor;color:inherit;border-radius:6px;padding:2px 8px;font-size:12px;margin-left:8px}
-@media (max-width:760px){.contact .grid{grid-template-columns:1fr}}
-footer{background:var(--fg);color:var(--bg);font-size:13px}
-footer .wrap{padding-block:22px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
+    .shop-tools {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 22px
+    }
 
-/* carrinho */
-.drawer-bg{position:fixed;inset:0;background:rgba(5,20,28,.5);z-index:20}
-.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--surface);color:var(--fg);z-index:21;display:flex;flex-direction:column;
-  padding:calc(18px + env(safe-area-inset-top,0px)) max(18px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) 18px;box-shadow:-10px 0 30px rgba(0,0,0,.2)}
-.drawer h2{font:800 30px/1 var(--f-display);text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
-.x{background:none;border:0;color:var(--fg);font-size:26px;line-height:1}
-.items{flex:none;margin:16px 0;display:grid;gap:12px;align-content:start}
-.item{display:grid;grid-template-columns:1fr auto;gap:6px 10px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.item .n{font-weight:600;min-width:0}
-.qty{display:flex;align-items:center;gap:6px}
-.qty button{width:28px;height:28px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
-.empty{color:var(--muted);text-align:center;padding:40px 0}
-.totals{display:grid;gap:6px;border-top:2px solid var(--fg);padding-top:12px}
-.totals .row{display:flex;justify-content:space-between}
-.totals .row.big{font:800 26px var(--f-display)}
-.drawer label{font-size:13px;color:var(--muted);display:grid;gap:4px;margin-top:10px}
-.drawer input,.drawer select{font:inherit;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%}
-.drawer .btn{justify-content:center;margin-top:12px;width:100%}
-.note{font-size:12px;color:var(--muted);margin-top:8px}
-@media (prefers-reduced-motion:reduce){.hero canvas{display:none}}
-/* formulários, checkout e diálogos */
-nav.links{flex-wrap:wrap;row-gap:4px}
-.aviso{background:var(--buoy);color:#fff;text-align:center;font-weight:600;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
-.drawer{overflow:auto;overscroll-behavior:contain}
-.drawer>*{flex-shrink:0}
-.drawer .items{flex:none}
-.fbox{display:grid;gap:10px}
-.fbox label{font-size:13px;color:var(--muted);display:grid;gap:4px;font-weight:600;margin:0}
-.fbox label small{font-weight:400}
-.fbox input,.fbox select,.fbox textarea{font:inherit;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
-.fbox textarea{min-height:64px;resize:vertical}
-.fbox input[aria-invalid="true"],.fbox select[aria-invalid="true"]{border-color:var(--bad);background:var(--bad-soft)}
-.fbox fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0;display:grid;gap:8px;min-width:0}
-.fbox legend{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:0 4px}
-.two-in{display:grid;grid-template-columns:1fr 1fr;gap:8px}.two-in.city{grid-template-columns:minmax(0,1fr) 64px}
-.hint{font-size:12px;font-weight:500;color:var(--muted)}.hint[data-erro="1"]{color:var(--bad);font-weight:600}
-.ferr{background:var(--bad-soft);color:var(--bad);border-radius:8px;padding:10px 12px;font-size:14px;font-weight:600}
-.ferr a{color:inherit}
-.fok{background:var(--water-soft);color:var(--fg);border-radius:8px;padding:10px 12px;font-size:14px}
-.drawer .btn{justify-content:center;width:100%}
-.drawer .btn:disabled,.fbox .btn:disabled{opacity:.6;cursor:progress}
-.okbox{display:grid;gap:12px;margin-top:8px}
-.okbox h3{font:800 28px/1.05 var(--f-display);text-transform:uppercase;color:var(--ok);margin:0}
-.pixbox{border:2px dashed var(--water);border-radius:10px;padding:12px;display:grid;gap:6px}
-.pixbox b.mono{word-break:break-all;font-size:15px}
-.btn.line{border:2px solid var(--tile);color:var(--tile);background:transparent;justify-content:center}
-.cform{background:var(--surface);color:var(--fg);border-radius:12px;padding:16px;margin-top:20px}
-.cform h3{font:800 20px var(--f-display);text-transform:uppercase;margin:0}
-.contact .cform .btn{justify-content:center}
-.tform{grid-template-columns:140px minmax(0,1fr) auto;align-items:end;max-width:620px;margin:16px 0}
-@media (max-width:560px){.tform{grid-template-columns:1fr}}
-.track{display:grid;gap:14px;margin-top:16px;max-width:640px}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.steps li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding-bottom:14px;position:relative;color:var(--muted)}
-.steps li::before{content:"";width:16px;height:16px;border-radius:50%;border:3px solid var(--line);background:var(--bg);margin-top:3px;box-sizing:border-box}
-.steps li:not(:last-child)::after{content:"";position:absolute;left:7px;top:22px;bottom:2px;width:2px;background:var(--line)}
-.steps li.feito{color:var(--fg)} .steps li.feito::before{background:var(--ok);border-color:var(--ok)}
-.steps li.atual{color:var(--fg);font-weight:700} .steps li.atual::before{background:var(--water);border-color:var(--water)}
-.sdlg{border:0;border-radius:14px;padding:18px;width:min(480px,calc(100% - 24px));background:var(--surface);color:var(--fg);box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.sdlg::backdrop{background:rgba(5,20,28,.55)}
-.sdlg .dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.sdlg h3{font:800 24px var(--f-display);text-transform:uppercase;margin:0}
-.sdlg .sub{margin:0;color:var(--muted)}
-.sdlg .btn{justify-content:center}
-</style>
+    .shop-tools .filters {
+      margin: 0
+    }
+
+    .no-res {
+      grid-column: 1/-1;
+      color: var(--muted);
+      padding: 24px 0
+    }
+
+    .faq {
+      display: grid;
+      gap: 0;
+      border-top: 2px solid var(--fg);
+      max-width: 820px
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0
+    }
+
+    .faq summary {
+      font-weight: 700;
+      font-size: 17px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px
+    }
+
+    .faq summary::after {
+      content: "+";
+      font: 800 24px/1 var(--f-display);
+      color: var(--water)
+    }
+
+    .faq details[open] summary::after {
+      content: "−"
+    }
+
+    .faq p {
+      color: var(--muted);
+      margin: 8px 0 0;
+      max-width: 65ch
+    }
+
+    [id] {
+      scroll-margin-top: 72px
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .gallery figure {
+      margin: 0;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--coping)
+    }
+
+    .gallery .ph {
+      aspect-ratio: 4/3;
+      width: 100%;
+      max-width: 100%;
+      display: block;
+      object-fit: cover
+    }
+
+    .gallery figure:first-child {
+      grid-column: span 2;
+      grid-row: span 2
+    }
+
+    .gallery figure:first-child .ph {
+      aspect-ratio: auto;
+      height: 100%;
+      min-height: 100%
+    }
+
+    .gallery figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 28px 14px 12px;
+      background: linear-gradient(transparent, rgba(4, 25, 36, .82));
+      color: #F2FAFD;
+      font-size: 14px
+    }
+
+    .gallery figcaption b {
+      display: block;
+      font: 800 20px/1.05 var(--f-display);
+      text-transform: uppercase;
+      letter-spacing: .02em
+    }
+
+    .gallery .ex {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: var(--buoy);
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 6px
+    }
+
+    @media (max-width:760px) {
+      .gallery {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .gallery figure:first-child {
+        grid-column: span 2;
+        grid-row: auto
+      }
+
+      .gallery figure:first-child .ph {
+        aspect-ratio: 16/10;
+        height: auto
+      }
+    }
+
+    .legal {
+      padding-block: 40px 64px
+    }
+
+    .legal .wrap {
+      max-width: 780px
+    }
+
+    .legal h1 {
+      font: 800 clamp(34px, 5vw, 52px)/1 var(--f-display);
+      text-transform: uppercase;
+      margin: 16px 0 6px
+    }
+
+    .legal h2 {
+      font: 800 22px/1.15 var(--f-display);
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      margin: 30px 0 8px;
+      color: var(--tile)
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) .legal h2 {
+        color: var(--water)
+      }
+    }
+
+    :root[data-theme="dark"] .legal h2 {
+      color: var(--water)
+    }
+
+    .legal p,
+    .legal li {
+      max-width: 68ch
+    }
+
+    .legal ul {
+      padding-left: 20px;
+      display: grid;
+      gap: 6px
+    }
+
+    .legal .upd {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 0
+    }
+
+    .back {
+      font-weight: 700;
+      color: var(--water);
+      text-decoration: none
+    }
+
+    footer a {
+      color: inherit
+    }
+
+    .wa-float {
+      position: fixed;
+      right: calc(16px + env(safe-area-inset-right, 0px));
+      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      z-index: 8;
+      background: var(--ok);
+      color: #fff;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .25)
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.55 var(--f-body);
+      overflow-x: hidden
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0 0 auto;
+      height: env(safe-area-inset-top, 0px);
+      z-index: 10;
+      background: var(--tile)
+    }
+
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px))
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-wrap: balance;
+      margin: 0
+    }
+
+    a {
+      color: inherit
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--water);
+      outline-offset: 2px
+    }
+
+    .mono {
+      font-family: var(--f-mono);
+      font-variant-numeric: tabular-nums
+    }
+
+    /* faixa de azulejo */
+    .tiles {
+      height: 14px;
+      background:
+        linear-gradient(90deg, var(--bg) 1px, transparent 1px) 0 0/14px 14px,
+        linear-gradient(var(--water), var(--tile))
+    }
+
+    .tiles.thin {
+      height: 8px;
+      background-size: 8px 8px, auto
+    }
+
+    /* header */
+    header.top {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 9;
+      background: var(--tile);
+      color: var(--on-tile)
+    }
+
+    header.top .wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-block: 10px;
+      flex-wrap: wrap
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      text-decoration: none;
+      margin-right: auto
+    }
+
+    .brand b {
+      font: 800 28px/1 var(--f-display);
+      letter-spacing: .02em;
+      text-transform: uppercase
+    }
+
+    .brand span {
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .8
+    }
+
+    nav.links {
+      display: flex;
+      gap: 18px;
+      font-weight: 600;
+      font-size: 15px
+    }
+
+    nav.links a {
+      text-decoration: none;
+      opacity: .9
+    }
+
+    nav.links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+      text-underline-offset: 4px
+    }
+
+    .cart-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--on-tile);
+      color: var(--tile);
+      border: 0;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 700
+    }
+
+    .cart-btn .count {
+      background: var(--buoy);
+      color: #fff;
+      border-radius: 999px;
+      min-width: 22px;
+      height: 22px;
+      display: inline-grid;
+      place-items: center;
+      font-size: 12px;
+      padding: 0 6px
+    }
+
+    @media (max-width:640px) {
+      nav.links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 14px
+      }
+    }
+
+    /* hero */
+    .hero {
+      background: var(--tile);
+      color: var(--on-tile);
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .35;
+      pointer-events: none
+    }
+
+    .hero .wrap {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 32px;
+      align-items: end;
+      padding-block: 56px 48px
+    }
+
+    .depth {
+      font: 800 clamp(44px, 10vw, 120px)/.85 var(--f-display);
+      letter-spacing: .01em;
+      text-transform: uppercase;
+      overflow-wrap: anywhere
+    }
+
+    .depth small {
+      font-size: clamp(13px, 2vw, 22px);
+      line-height: 1.25;
+      display: block;
+      letter-spacing: .06em;
+      margin-top: 8px;
+      opacity: .85
+    }
+
+    .hero h1 {
+      font: 800 clamp(34px, 5.4vw, 58px)/1 var(--f-display);
+      text-transform: uppercase;
+      letter-spacing: .01em;
+      margin-top: 24px
+    }
+
+    .hero p {
+      max-width: 52ch;
+      font-size: 18px;
+      opacity: .92;
+      margin: 14px 0 24px
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid transparent
+    }
+
+    .btn.primary {
+      background: var(--buoy);
+      color: #fff
+    }
+
+    .btn.ghost {
+      border-color: currentColor
+    }
+
+    .btn.wa {
+      background: var(--ok);
+      color: #fff
+    }
+
+    .hero-card {
+      background: var(--surface);
+      color: var(--fg);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25)
+    }
+
+    .hero-card h3 {
+      font: 800 22px/1.1 var(--f-display);
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      margin-bottom: 4px
+    }
+
+    .hero-card p.sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 14px
+    }
+
+    .calc {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px
+    }
+
+    .calc label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      display: grid;
+      gap: 4px
+    }
+
+    .calc input {
+      width: 100%;
+      font: 500 16px var(--f-mono);
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--fg)
+    }
+
+    .calc-out {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: var(--water-soft);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .calc-out b {
+      font: 800 32px/1 var(--f-display)
+    }
+
+    .calc-out span {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .rec {
+      margin-top: 14px;
+      border-top: 1px dashed var(--line);
+      padding-top: 12px
+    }
+
+    .rec-h {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+      margin-bottom: 6px
+    }
+
+    .rec ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 4px;
+      font-size: 14px
+    }
+
+    .rec li {
+      display: grid;
+      grid-template-columns: 2.2em 1fr auto;
+      gap: 6px;
+      align-items: baseline
+    }
+
+    .rec li .q {
+      font-family: var(--f-mono);
+      color: var(--water);
+      font-weight: 500
+    }
+
+    .rec li .v {
+      font-family: var(--f-mono);
+      font-variant-numeric: tabular-nums;
+      color: var(--muted)
+    }
+
+    .rec-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 8px;
+      font-weight: 600
+    }
+
+    .rec-total b {
+      font-size: 18px
+    }
+
+    .rec-add {
+      width: 100%;
+      justify-content: center;
+      margin-top: 10px;
+      border: 0
+    }
+
+    .rec-add.done {
+      background: var(--ok)
+    }
+
+    .rec-pump {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap
+    }
+
+    .rec-pump .add {
+      flex-shrink: 0
+    }
+
+    .hero .rec-note {
+      font-size: 12px;
+      opacity: 1;
+      color: var(--muted);
+      margin: 10px 0 0
+    }
+
+    @media (max-width:820px) {
+      .hero .wrap {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* seções */
+    section {
+      padding-block: 56px
+    }
+
+    .sec-head {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 28px
+    }
+
+    .marker {
+      font: 800 22px/1 var(--f-display);
+      color: var(--water);
+      border-left: 6px solid var(--water);
+      padding: 6px 0 6px 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      padding-block: 2px
+    }
+
+    .marker small {
+      display: block;
+      font-size: 14px;
+      letter-spacing: .12em;
+      color: var(--muted);
+      margin-top: 6px
+    }
+
+    .sec-head h2 {
+      font: 800 clamp(30px, 4vw, 42px)/1 var(--f-display);
+      text-transform: uppercase;
+      letter-spacing: .02em
+    }
+
+    .sec-head p {
+      color: var(--muted);
+      margin: 6px 0 0;
+      max-width: 60ch
+    }
+
+    /* piscinas */
+    .pools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .pool {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column
+    }
+
+    .pool .shape {
+      aspect-ratio: 16/9;
+      max-width: 100%;
+      background: var(--coping);
+      display: grid;
+      place-items: center;
+      padding: 18px
+    }
+
+    .pool .shape svg {
+      width: 100%;
+      height: 100%
+    }
+
+    .pool .body {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+      flex: 1;
+      align-content: start
+    }
+
+    .pool h3 {
+      font: 800 24px/1 var(--f-display);
+      text-transform: uppercase;
+      letter-spacing: .02em
+    }
+
+    .pool dl {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 4px 12px;
+      margin: 0;
+      font-size: 14px
+    }
+
+    .pool dt {
+      color: var(--muted)
+    }
+
+    .pool dd {
+      margin: 0;
+      font-family: var(--f-mono);
+      font-variant-numeric: tabular-nums
+    }
+
+    .pool .btn {
+      margin-top: auto;
+      justify-content: center
+    }
+
+    .pool .foot {
+      padding: 0 18px 18px
+    }
+
+    @media (max-width:900px) {
+      .pools {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media (max-width:600px) {
+      .pools {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* loja */
+    .shop-band {
+      background: var(--water-soft)
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 22px
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--fg);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-weight: 600;
+      font-size: 14px
+    }
+
+    .chip[aria-pressed="true"] {
+      background: var(--tile);
+      color: var(--on-tile);
+      border-color: var(--tile)
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px
+    }
+
+    .prod {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 14px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 8px;
+      border: 1px solid var(--line)
+    }
+
+    .prod .pic {
+      aspect-ratio: 1;
+      max-width: 100%;
+      border-radius: 8px;
+      background: var(--bg);
+      display: grid;
+      place-items: center
+    }
+
+    .prod .pic svg {
+      width: 58%;
+      height: 58%
+    }
+
+    .prod .cat {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .prod h3 {
+      font: 600 16px/1.3 var(--f-body)
+    }
+
+    .prod .meta {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .prod .buy {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .price {
+      font: 500 18px var(--f-mono);
+      font-variant-numeric: tabular-nums
+    }
+
+    .add {
+      background: var(--tile);
+      color: var(--on-tile);
+      border: 0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 14px
+    }
+
+    .add.done {
+      background: var(--ok);
+      color: #fff
+    }
+
+    .esg {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--buoy);
+      text-transform: uppercase;
+      letter-spacing: .06em
+    }
+
+    @media (max-width:1000px) {
+      .products {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media (max-width:720px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    /* serviços */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 2px solid var(--fg)
+    }
+
+    .svc {
+      padding: 22px 22px 22px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .svc+.svc {
+      padding-left: 22px;
+      border-left: 1px solid var(--line)
+    }
+
+    .svc h3 {
+      font: 800 24px/1.05 var(--f-display);
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .svc p {
+      color: var(--muted);
+      margin: 0 0 10px;
+      font-size: 15px
+    }
+
+    .svc .from {
+      font-family: var(--f-mono);
+      font-size: 14px
+    }
+
+    @media (max-width:760px) {
+      .services {
+        grid-template-columns: 1fr
+      }
+
+      .svc+.svc {
+        padding-left: 0;
+        border-left: 0
+      }
+    }
+
+    /* contato */
+    .contact {
+      background: var(--tile);
+      color: var(--on-tile)
+    }
+
+    .contact .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px
+    }
+
+    .contact h2 {
+      font: 800 clamp(30px, 4vw, 44px)/1 var(--f-display);
+      text-transform: uppercase
+    }
+
+    .contact dl {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 16px;
+      margin: 20px 0 0
+    }
+
+    .contact dt {
+      opacity: .75;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      padding-top: 2px
+    }
+
+    .contact dd {
+      margin: 0;
+      font-weight: 600;
+      min-width: 0;
+      overflow-wrap: anywhere
+    }
+
+    .contact .grid>* {
+      min-width: 0
+    }
+
+    .example {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: var(--buoy);
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin-left: 6px;
+      vertical-align: middle
+    }
+
+    .copy {
+      background: transparent;
+      border: 1px solid currentColor;
+      color: inherit;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 12px;
+      margin-left: 8px
+    }
+
+    @media (max-width:760px) {
+      .contact .grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    footer {
+      background: var(--fg);
+      color: var(--bg);
+      font-size: 13px
+    }
+
+    footer .wrap {
+      padding-block: 22px;
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      flex-wrap: wrap
+    }
+
+    /* carrinho */
+    .drawer-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 20, 28, .5);
+      z-index: 20
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(420px, 100%);
+      background: var(--surface);
+      color: var(--fg);
+      z-index: 21;
+      display: flex;
+      flex-direction: column;
+      padding: calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) calc(18px + env(safe-area-inset-bottom, 0px)) 18px;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, .2)
+    }
+
+    .drawer h2 {
+      font: 800 30px/1 var(--f-display);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .x {
+      background: none;
+      border: 0;
+      color: var(--fg);
+      font-size: 26px;
+      line-height: 1
+    }
+
+    .items {
+      flex: none;
+      margin: 16px 0;
+      display: grid;
+      gap: 12px;
+      align-content: start
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 6px 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .item .n {
+      font-weight: 600;
+      min-width: 0
+    }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .qty button {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--fg)
+    }
+
+    .empty {
+      color: var(--muted);
+      text-align: center;
+      padding: 40px 0
+    }
+
+    .totals {
+      display: grid;
+      gap: 6px;
+      border-top: 2px solid var(--fg);
+      padding-top: 12px
+    }
+
+    .totals .row {
+      display: flex;
+      justify-content: space-between
+    }
+
+    .totals .row.big {
+      font: 800 26px var(--f-display)
+    }
+
+    .drawer label {
+      font-size: 13px;
+      color: var(--muted);
+      display: grid;
+      gap: 4px;
+      margin-top: 10px
+    }
+
+    .drawer input,
+    .drawer select {
+      font: inherit;
+      padding: 9px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--fg);
+      width: 100%
+    }
+
+    .drawer .btn {
+      justify-content: center;
+      margin-top: 12px;
+      width: 100%
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .hero canvas {
+        display: none
+      }
+    }
+
+    /* formulários, checkout e diálogos */
+    nav.links {
+      flex-wrap: wrap;
+      row-gap: 4px
+    }
+
+    .aviso {
+      background: var(--buoy);
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+      padding: 8px max(16px, env(safe-area-inset-right, 0px)) 8px max(16px, env(safe-area-inset-left, 0px))
+    }
+
+    .drawer {
+      overflow: auto;
+      overscroll-behavior: contain
+    }
+
+    .drawer>* {
+      flex-shrink: 0
+    }
+
+    .drawer .items {
+      flex: none
+    }
+
+    .fbox {
+      display: grid;
+      gap: 10px
+    }
+
+    .fbox label {
+      font-size: 13px;
+      color: var(--muted);
+      display: grid;
+      gap: 4px;
+      font-weight: 600;
+      margin: 0
+    }
+
+    .fbox label small {
+      font-weight: 400
+    }
+
+    .fbox input,
+    .fbox select,
+    .fbox textarea {
+      font: inherit;
+      padding: 9px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--fg);
+      width: 100%;
+      min-width: 0
+    }
+
+    .fbox textarea {
+      min-height: 64px;
+      resize: vertical
+    }
+
+    .fbox input[aria-invalid="true"],
+    .fbox select[aria-invalid="true"] {
+      border-color: var(--bad);
+      background: var(--bad-soft)
+    }
+
+    .fbox fieldset {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      min-width: 0
+    }
+
+    .fbox legend {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      padding: 0 4px
+    }
+
+    .two-in {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px
+    }
+
+    .two-in.city {
+      grid-template-columns: minmax(0, 1fr) 64px
+    }
+
+    .hint {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted)
+    }
+
+    .hint[data-erro="1"] {
+      color: var(--bad);
+      font-weight: 600
+    }
+
+    .ferr {
+      background: var(--bad-soft);
+      color: var(--bad);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 600
+    }
+
+    .ferr a {
+      color: inherit
+    }
+
+    .fok {
+      background: var(--water-soft);
+      color: var(--fg);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px
+    }
+
+    .drawer .btn {
+      justify-content: center;
+      width: 100%
+    }
+
+    .drawer .btn:disabled,
+    .fbox .btn:disabled {
+      opacity: .6;
+      cursor: progress
+    }
+
+    .okbox {
+      display: grid;
+      gap: 12px;
+      margin-top: 8px
+    }
+
+    .okbox h3 {
+      font: 800 28px/1.05 var(--f-display);
+      text-transform: uppercase;
+      color: var(--ok);
+      margin: 0
+    }
+
+    .pixbox {
+      border: 2px dashed var(--water);
+      border-radius: 10px;
+      padding: 12px;
+      display: grid;
+      gap: 6px
+    }
+
+    .pixbox b.mono {
+      word-break: break-all;
+      font-size: 15px
+    }
+
+    .btn.line {
+      border: 2px solid var(--tile);
+      color: var(--tile);
+      background: transparent;
+      justify-content: center
+    }
+
+    .cform {
+      background: var(--surface);
+      color: var(--fg);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 20px
+    }
+
+    .cform h3 {
+      font: 800 20px var(--f-display);
+      text-transform: uppercase;
+      margin: 0
+    }
+
+    .contact .cform .btn {
+      justify-content: center
+    }
+
+    .tform {
+      grid-template-columns: 140px minmax(0, 1fr) auto;
+      align-items: end;
+      max-width: 620px;
+      margin: 16px 0
+    }
+
+    @media (max-width:560px) {
+      .tform {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .track {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+      max-width: 640px
+    }
+
+    .steps {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0
+    }
+
+    .steps li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding-bottom: 14px;
+      position: relative;
+      color: var(--muted)
+    }
+
+    .steps li::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 3px solid var(--line);
+      background: var(--bg);
+      margin-top: 3px;
+      box-sizing: border-box
+    }
+
+    .steps li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 22px;
+      bottom: 2px;
+      width: 2px;
+      background: var(--line)
+    }
+
+    .steps li.feito {
+      color: var(--fg)
+    }
+
+    .steps li.feito::before {
+      background: var(--ok);
+      border-color: var(--ok)
+    }
+
+    .steps li.atual {
+      color: var(--fg);
+      font-weight: 700
+    }
+
+    .steps li.atual::before {
+      background: var(--water);
+      border-color: var(--water)
+    }
+
+    .sdlg {
+      border: 0;
+      border-radius: 14px;
+      padding: 18px;
+      width: min(480px, calc(100% - 24px));
+      background: var(--surface);
+      color: var(--fg);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .35)
+    }
+
+    .sdlg::backdrop {
+      background: rgba(5, 20, 28, .55)
+    }
+
+    .sdlg .dh {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px
+    }
+
+    .sdlg h3 {
+      font: 800 24px var(--f-display);
+      text-transform: uppercase;
+      margin: 0
+    }
+
+    .sdlg .sub {
+      margin: 0;
+      color: var(--muted)
+    }
+
+    .sdlg .btn {
+      justify-content: center
+    }
+  </style>
 
 </head>
+
 <body>
-<header class="top"><div class="wrap">
-  <a class="brand" href="#inicio"><b>Meliah</b><span>Piscinas</span></a>
-  <nav class="links"><a href="#piscinas">Piscinas</a><a href="#loja">Loja</a><a href="#servicos">Serviços</a><a href="#contato">Contato</a><a href="#acompanhar">Meu pedido</a></nav>
-  <button class="cart-btn" id="openCart" aria-label="Abrir carrinho">Carrinho <span class="count" id="cartCount">0</span></button>
-</div></header>
-<div class="aviso" id="avisoSite" role="status" hidden></div>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#inicio"><b>VicxMoura</b><span>Piscinas</span></a>
+      <nav class="links"><a href="#piscinas">Piscinas</a><a href="#loja">Loja</a><a href="#servicos">Serviços</a><a
+          href="#contato">Contato</a><a href="#acompanhar">Meu pedido</a></nav>
+      <button class="cart-btn" id="openCart" aria-label="Abrir carrinho">Carrinho <span class="count"
+          id="cartCount">0</span></button>
+    </div>
+  </header>
+  <div class="aviso" id="avisoSite" role="status" hidden></div>
 
-<main id="home">
-<div class="hero" id="inicio">
-  <canvas id="caustics" aria-hidden="true"></canvas>
-  <div class="wrap">
-    <div>
-      <div class="depth">Meliah<small>PISCINAS · PRODUTOS · MANUTENÇÃO · CAMPINAS E REGIÃO</small></div>
-      <h1>Sua piscina pronta, do projeto ao cloro de todo mês</h1>
-      <p>Vendemos e instalamos piscinas e entregamos os produtos para manter a água limpa. Peça orçamento pelo WhatsApp ou compre os produtos aqui mesmo.</p>
-      <div class="cta-row">
-        <a class="btn primary" href="#loja">Comprar produtos</a>
-        <a class="btn ghost" href="#piscinas">Ver piscinas</a>
+  <main id="home">
+    <div class="hero" id="inicio">
+      <canvas id="caustics" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <div>
+          <div class="depth">VicxMoura<small>PISCINAS · PRODUTOS · MANUTENÇÃO · SÃO PAULO E REGIÃO</small></div>
+          <h1>Sua piscina pronta, do projeto ao cloro de todo mês</h1>
+          <p>Vendemos e instalamos piscinas e entregamos os produtos para manter a água limpa. Peça orçamento pelo
+            WhatsApp ou compre os produtos aqui mesmo.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#loja">Comprar produtos</a>
+            <a class="btn ghost" href="#piscinas">Ver piscinas</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-labelledby="calcT">
+          <h3 id="calcT">Quantos litros tem sua piscina?</h3>
+          <p class="sub">Comprimento × largura × profundidade média. Você usa esse número para dosar os produtos.</p>
+          <div class="calc">
+            <label>Compr. (m)<input id="cL" type="number" step="0.1" min="0" value="6"></label>
+            <label>Largura (m)<input id="cW" type="number" step="0.1" min="0" value="3"></label>
+            <label>Prof. (m)<input id="cD" type="number" step="0.05" min="0" value="1.4"></label>
+          </div>
+          <div class="calc-out"><b class="mono" id="cOut">25.200 L</b><span id="cM3">25,2 m³ de água</span></div>
+          <div class="rec" aria-live="polite">
+            <div class="rec-h">Kit de 1 mês para essa piscina</div>
+            <ul id="recList"></ul>
+            <div class="rec-total"><span>Total do kit</span><b class="mono" id="recTot">R$ 0,00</b></div>
+            <button class="btn primary rec-add" id="addKit">Adicionar kit ao carrinho</button>
+            <div class="rec-pump" id="recPump"></div>
+            <p class="rec-note">Sugestão de quantidade para manutenção. Use sempre a dose indicada no rótulo de cada
+              produto.</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-card" aria-labelledby="calcT">
-      <h3 id="calcT">Quantos litros tem sua piscina?</h3>
-      <p class="sub">Comprimento × largura × profundidade média. Você usa esse número para dosar os produtos.</p>
-      <div class="calc">
-        <label>Compr. (m)<input id="cL" type="number" step="0.1" min="0" value="6"></label>
-        <label>Largura (m)<input id="cW" type="number" step="0.1" min="0" value="3"></label>
-        <label>Prof. (m)<input id="cD" type="number" step="0.05" min="0" value="1.4"></label>
+    <div class="tiles"></div>
+
+    <section id="piscinas">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="marker">Modelos</div>
+          <div>
+            <h2>Piscinas</h2>
+            <p>Modelos mais pedidos. O valor final depende do terreno, do acesso para o caminhão e dos acessórios. Mande
+              a medida do seu espaço e respondemos com o orçamento.</p>
+          </div>
+        </div>
+        <div class="pools" id="poolGrid"></div>
       </div>
-      <div class="calc-out"><b class="mono" id="cOut">25.200 L</b><span id="cM3">25,2 m³ de água</span></div>
-      <div class="rec" aria-live="polite">
-        <div class="rec-h">Kit de 1 mês para essa piscina</div>
-        <ul id="recList"></ul>
-        <div class="rec-total"><span>Total do kit</span><b class="mono" id="recTot">R$ 0,00</b></div>
-        <button class="btn primary rec-add" id="addKit">Adicionar kit ao carrinho</button>
-        <div class="rec-pump" id="recPump"></div>
-        <p class="rec-note">Sugestão de quantidade para manutenção. Use sempre a dose indicada no rótulo de cada produto.</p>
+    </section>
+
+    <section id="galeria" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="marker">Obras</div>
+          <div>
+            <h2>Galeria de obras</h2>
+            <p>Piscinas instaladas pela nossa equipe.</p>
+          </div>
+        </div>
+        <div class="gallery" id="galGrid"></div>
       </div>
+    </section>
+
+    <div class="tiles thin"></div>
+    <section id="loja" class="shop-band">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="marker">Produtos</div>
+          <div>
+            <h2>Loja de produtos</h2>
+            <p>Adicione ao carrinho e finalize. O pedido chega pra gente pelo WhatsApp com a lista pronta e confirmamos
+              entrega e pagamento (Pix ou cartão).</p>
+          </div>
+        </div>
+        <div class="shop-tools">
+          <div class="filters" id="filters" role="group" aria-label="Filtrar produtos"></div>
+          <input class="search" id="search" type="search" placeholder="Buscar produto (ex.: cloro, bomba)"
+            aria-label="Buscar produto">
+        </div>
+        <div class="products" id="prodGrid"></div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="marker">Equipe</div>
+          <div>
+            <h2>Serviços</h2>
+            <p>Equipe própria para instalar, limpar e consertar.</p>
+          </div>
+        </div>
+        <div class="services">
+          <div class="svc">
+            <h3>Instalação</h3>
+            <p>Escavação, nivelamento, assentamento da piscina, casa de máquinas e hidráulica.</p>
+            <div class="from">Orçamento após visita</div>
+          </div>
+          <div class="svc">
+            <h3>Manutenção mensal</h3>
+            <p>Visitas semanais com aspiração, escovação, análise de pH e cloro e dosagem dos produtos.</p>
+            <div class="from">a partir de R$ 280/mês</div>
+          </div>
+          <div class="svc">
+            <h3>Água verde?</h3>
+            <p>Tratamento de choque, limpeza do filtro e recuperação da água em até 72 horas.</p>
+            <div class="from">a partir de R$ 350</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas" style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="marker">Ajuda</div>
+          <div>
+            <h2>Dúvidas frequentes</h2>
+          </div>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Vocês entregam em quais cidades?</summary>
+            <p>Atendemos São Paulo e região: Valinhos, Vinhedo, Paulínia, Hortolândia, Sumaré, Jaguariúna e Indaiatuba.
+              Informe seu CEP no carrinho e confirmamos o prazo pelo WhatsApp.</p>
+          </details>
+          <details>
+            <summary>Quanto tempo demora a entrega dos produtos?</summary>
+            <p>Pedidos confirmados até as 14h saem no mesmo dia útil para a região. Para outras cidades, informamos o
+              prazo junto com o frete.</p>
+          </details>
+          <details>
+            <summary>Quais as formas de pagamento?</summary>
+            <p>Pix, cartão de crédito, cartão de débito e dinheiro na entrega. Piscinas podem ser parceladas no cartão.
+            </p>
+          </details>
+          <details>
+            <summary>A piscina tem garantia?</summary>
+            <p>Sim. A garantia de fábrica vale para a estrutura da piscina, e a instalação feita pela nossa equipe tem
+              garantia própria. Os prazos vêm no orçamento.</p>
+          </details>
+          <details>
+            <summary>Minha água está verde. O que faço?</summary>
+            <p>Mande uma foto pelo WhatsApp com as medidas da piscina. Indicamos os produtos certos ou agendamos o
+              tratamento de choque com nossa equipe.</p>
+          </details>
+          <details>
+            <summary>Preciso de licença para instalar a piscina?</summary>
+            <p>Na maioria das casas não. Em condomínios, consulte as regras do condomínio antes. Na visita técnica
+              avaliamos o terreno e o acesso.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="privacidade" class="legal" hidden>
+    <div class="wrap">
+      <a class="back" href="#inicio">← Voltar ao site</a>
+      <h1>Política de Privacidade</h1>
+      <p class="upd">Última atualização: 20 de outubro de 2026</p>
+      <p>Esta política explica quais dados pessoais a <strong>VICXMOURA PISCINAS COMÉRCIO E SERVIÇOS LTDA</strong>, CNPJ
+        00.000.000/0000-00 ("VicxMoura"), coleta quando você usa este site, faz pedidos ou pede orçamentos, e como esses
+        dados são tratados, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 – LGPD).</p>
+
+      <h2>1. Quem é responsável pelos seus dados</h2>
+      <p>A VicxMoura é a controladora dos dados pessoais tratados por meio deste site. Para qualquer assunto sobre seus
+        dados, fale com nosso encarregado (DPO) pelo e-mail <span
+          class="mono">privacidade@vicxmourapiscinas.com.br</span><span class="example">exemplo</span> ou pelo WhatsApp
+        informado em Contato.</p>
+
+      <h2>2. Quais dados coletamos</h2>
+      <ul>
+        <li><strong>Dados que você nos envia:</strong> nome, telefone/WhatsApp, CEP e endereço de entrega, forma de
+          pagamento escolhida, medidas e fotos do local da piscina, e o conteúdo das mensagens trocadas conosco.</li>
+        <li><strong>Dados do pedido:</strong> produtos, quantidades, valores e histórico de compras e serviços.</li>
+        <li><strong>Dados guardados no seu navegador:</strong> os itens do carrinho ficam salvos apenas no seu aparelho
+          (armazenamento local do navegador). Eles não são enviados para nós até você enviar o pedido.</li>
+      </ul>
+      <p>Não coletamos dados de cartão neste site. Quando o pagamento é por cartão, os dados são tratados pela empresa
+        de pagamento ou pela maquininha usada no atendimento.</p>
+
+      <h2>3. Para que usamos os dados</h2>
+      <ul>
+        <li>Responder pedidos de orçamento e dúvidas (procedimentos preliminares a contrato, art. 7º, V, da LGPD).</li>
+        <li>Processar pedidos, entregar produtos e prestar serviços de instalação e manutenção (execução de contrato,
+          art. 7º, V).</li>
+        <li>Emitir nota fiscal e cumprir obrigações fiscais e legais (cumprimento de obrigação legal, art. 7º, II).</li>
+        <li>Atender garantia, trocas e devoluções, e exercer nossos direitos em eventuais processos (art. 7º, V e VI).
+        </li>
+        <li>Enviar ofertas e lembretes de manutenção, somente se você autorizar. Você pode cancelar a qualquer momento
+          (consentimento, art. 7º, I).</li>
+      </ul>
+
+      <h2>4. Com quem compartilhamos</h2>
+      <p>Compartilhamos apenas o necessário com: transportadoras e entregadores (nome, endereço e telefone para a
+        entrega); empresas de pagamento; contador e órgãos públicos, quando exigido por lei; e provedores de tecnologia
+        que usamos para atender você, como o WhatsApp. Não vendemos seus dados.</p>
+
+      <h2>5. Por quanto tempo guardamos</h2>
+      <p>Guardamos os dados enquanto durar o atendimento ou a relação comercial e, depois, pelo prazo exigido por lei
+        (por exemplo, documentos fiscais por no mínimo 5 anos) ou necessário para garantia e defesa de direitos. Depois
+        disso, os dados são apagados ou anonimizados.</p>
+
+      <h2>6. Seus direitos</h2>
+      <p>Pelo art. 18 da LGPD, você pode pedir a qualquer momento: confirmação de que tratamos seus dados; acesso aos
+        dados; correção de dados incompletos ou errados; anonimização, bloqueio ou eliminação de dados desnecessários;
+        portabilidade; informação sobre com quem compartilhamos; e revogação do consentimento. Responderemos em até 15
+        dias. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+      <h2>7. Segurança</h2>
+      <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acesso não autorizado, perda ou
+        vazamento. Se ocorrer um incidente que possa causar risco relevante, avisaremos você e a ANPD.</p>
+
+      <h2>8. Mudanças nesta política</h2>
+      <p>Podemos atualizar esta política. A data da última versão fica sempre no topo desta página.</p>
     </div>
-  </div>
-</div>
-<div class="tiles"></div>
+  </section>
 
-<section id="piscinas"><div class="wrap">
-  <div class="sec-head">
-    <div class="marker">Modelos</div>
-    <div><h2>Piscinas</h2><p>Modelos mais pedidos. O valor final depende do terreno, do acesso para o caminhão e dos acessórios. Mande a medida do seu espaço e respondemos com o orçamento.</p></div>
-  </div>
-  <div class="pools" id="poolGrid"></div>
-</div></section>
+  <section id="trocas" class="legal" hidden>
+    <div class="wrap">
+      <a class="back" href="#inicio">← Voltar ao site</a>
+      <h1>Política de Trocas e Devoluções</h1>
+      <p class="upd">Última atualização: 20 de outubro de 2026</p>
+      <p>Esta política vale para produtos e serviços comprados da <strong>VICXMOURA PISCINAS COMÉRCIO E SERVIÇOS
+          LTDA</strong>, CNPJ 00.000.000/0000-00, e segue o Código de Defesa do Consumidor (Lei nº 8.078/1990).</p>
 
-<section id="galeria" style="padding-top:0"><div class="wrap">
-  <div class="sec-head">
-    <div class="marker">Obras</div>
-    <div><h2>Galeria de obras</h2><p>Piscinas instaladas pela nossa equipe.</p></div>
-  </div>
-  <div class="gallery" id="galGrid"></div>
-</div></section>
+      <h2>1. Desistência da compra (direito de arrependimento)</h2>
+      <p>Compras feitas pelo site, WhatsApp ou telefone podem ser canceladas em até <strong>7 dias corridos</strong> a
+        partir do recebimento do produto ou da assinatura do contrato, sem precisar de motivo (art. 49 do CDC).
+        Devolvemos o valor total pago, incluindo o frete, pela mesma forma de pagamento.</p>
+      <p>Para pedir, fale com a gente pelo WhatsApp ou e-mail informando o número do pedido. Combinamos a retirada ou o
+        envio sem custo para você.</p>
 
-<div class="tiles thin"></div>
-<section id="loja" class="shop-band"><div class="wrap">
-  <div class="sec-head">
-    <div class="marker">Produtos</div>
-    <div><h2>Loja de produtos</h2><p>Adicione ao carrinho e finalize. O pedido chega pra gente pelo WhatsApp com a lista pronta e confirmamos entrega e pagamento (Pix ou cartão).</p></div>
-  </div>
-  <div class="shop-tools">
-    <div class="filters" id="filters" role="group" aria-label="Filtrar produtos"></div>
-    <input class="search" id="search" type="search" placeholder="Buscar produto (ex.: cloro, bomba)" aria-label="Buscar produto">
-  </div>
-  <div class="products" id="prodGrid"></div>
-</div></section>
+      <h2>2. Produto com defeito</h2>
+      <p>Se o produto apresentar defeito, você pode reclamar em até:</p>
+      <ul>
+        <li><strong>30 dias</strong> para produtos não duráveis, como cloro, algicida, clarificante e reguladores de pH;
+        </li>
+        <li><strong>90 dias</strong> para produtos duráveis, como bombas, filtros, aspiradores, peneiras e a própria
+          piscina.</li>
+      </ul>
+      <p>O prazo conta da entrega ou, se o defeito for oculto, do momento em que ele aparecer (art. 26 do CDC). Temos
+        até 30 dias para resolver. Se não resolvermos nesse prazo, você escolhe entre troca por outro produto, devolução
+        do valor ou abatimento no preço (art. 18). Esses prazos somam-se à garantia do fabricante, quando houver.</p>
 
-<section id="servicos"><div class="wrap">
-  <div class="sec-head">
-    <div class="marker">Equipe</div>
-    <div><h2>Serviços</h2><p>Equipe própria para instalar, limpar e consertar.</p></div>
-  </div>
-  <div class="services">
-    <div class="svc"><h3>Instalação</h3><p>Escavação, nivelamento, assentamento da piscina, casa de máquinas e hidráulica.</p><div class="from">Orçamento após visita</div></div>
-    <div class="svc"><h3>Manutenção mensal</h3><p>Visitas semanais com aspiração, escovação, análise de pH e cloro e dosagem dos produtos.</p><div class="from">a partir de R$ 280/mês</div></div>
-    <div class="svc"><h3>Água verde?</h3><p>Tratamento de choque, limpeza do filtro e recuperação da água em até 72 horas.</p><div class="from">a partir de R$ 350</div></div>
-  </div>
-</div></section>
+      <h2>3. Produto errado ou danificado na entrega</h2>
+      <p>Confira o pedido na entrega. Se vier errado, com embalagem violada ou vazando, recuse ou fale com a gente em
+        até 7 dias, com foto. Fazemos a troca sem custo.</p>
 
-<section id="duvidas" style="padding-top:0"><div class="wrap">
-  <div class="sec-head">
-    <div class="marker">Ajuda</div>
-    <div><h2>Dúvidas frequentes</h2></div>
-  </div>
-  <div class="faq">
-    <details><summary>Vocês entregam em quais cidades?</summary><p>Atendemos Campinas e região: Valinhos, Vinhedo, Paulínia, Hortolândia, Sumaré, Jaguariúna e Indaiatuba. Informe seu CEP no carrinho e confirmamos o prazo pelo WhatsApp.</p></details>
-    <details><summary>Quanto tempo demora a entrega dos produtos?</summary><p>Pedidos confirmados até as 14h saem no mesmo dia útil para a região. Para outras cidades, informamos o prazo junto com o frete.</p></details>
-    <details><summary>Quais as formas de pagamento?</summary><p>Pix, cartão de crédito, cartão de débito e dinheiro na entrega. Piscinas podem ser parceladas no cartão.</p></details>
-    <details><summary>A piscina tem garantia?</summary><p>Sim. A garantia de fábrica vale para a estrutura da piscina, e a instalação feita pela nossa equipe tem garantia própria. Os prazos vêm no orçamento.</p></details>
-    <details><summary>Minha água está verde. O que faço?</summary><p>Mande uma foto pelo WhatsApp com as medidas da piscina. Indicamos os produtos certos ou agendamos o tratamento de choque com nossa equipe.</p></details>
-    <details><summary>Preciso de licença para instalar a piscina?</summary><p>Na maioria das casas não. Em condomínios, consulte as regras do condomínio antes. Na visita técnica avaliamos o terreno e o acesso.</p></details>
-  </div>
-</div></section>
-</main>
+      <h2>4. Produtos químicos: cuidados na devolução</h2>
+      <p>Por segurança, não transfira, misture ou dilua o produto antes de devolver. Mantenha-o na embalagem original,
+        bem fechado, longe de crianças e do sol, até a retirada.</p>
 
-<section id="privacidade" class="legal" hidden><div class="wrap">
-  <a class="back" href="#inicio">← Voltar ao site</a>
-  <h1>Política de Privacidade</h1>
-  <p class="upd">Última atualização: 20 de outubro de 2026</p>
-  <p>Esta política explica quais dados pessoais a <strong>MELIAH PISCINAS COMÉRCIO E SERVIÇOS LTDA – ME</strong>, CNPJ 06.120.369/0001-14 ("Meliah"), coleta quando você usa este site, faz pedidos ou pede orçamentos, e como esses dados são tratados, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 – LGPD).</p>
+      <h2>5. Piscinas e serviços</h2>
+      <p>Para piscinas e serviços de instalação, o direito de arrependimento de 7 dias vale para contratos fechados fora
+        da loja e conta a partir da assinatura. Se você desistir depois que a obra começar, os valores de serviços já
+        executados e de materiais feitos sob medida para você serão tratados conforme o contrato assinado. A garantia de
+        estrutura, de instalação e de equipamentos vem descrita no orçamento e no contrato.</p>
 
-  <h2>1. Quem é responsável pelos seus dados</h2>
-  <p>A Meliah é a controladora dos dados pessoais tratados por meio deste site. Para qualquer assunto sobre seus dados, fale com nosso encarregado (DPO) pelo e-mail <span class="mono">privacidade@meliahpiscinas.com.br</span><span class="example">exemplo</span> ou pelo WhatsApp informado em Contato.</p>
+      <h2>6. Reembolso</h2>
+      <p>O reembolso é feito em até 10 dias úteis depois que recebermos o produto de volta: por Pix ou transferência
+        para compras pagas assim, ou por estorno no cartão, que aparece na fatura conforme o prazo da operadora.</p>
 
-  <h2>2. Quais dados coletamos</h2>
-  <ul>
-    <li><strong>Dados que você nos envia:</strong> nome, telefone/WhatsApp, CEP e endereço de entrega, forma de pagamento escolhida, medidas e fotos do local da piscina, e o conteúdo das mensagens trocadas conosco.</li>
-    <li><strong>Dados do pedido:</strong> produtos, quantidades, valores e histórico de compras e serviços.</li>
-    <li><strong>Dados guardados no seu navegador:</strong> os itens do carrinho ficam salvos apenas no seu aparelho (armazenamento local do navegador). Eles não são enviados para nós até você enviar o pedido.</li>
-  </ul>
-  <p>Não coletamos dados de cartão neste site. Quando o pagamento é por cartão, os dados são tratados pela empresa de pagamento ou pela maquininha usada no atendimento.</p>
+      <h2>7. Contato</h2>
+      <p>WhatsApp e endereço estão na seção Contato abaixo. Atendemos de segunda a sexta, das 8h às 18h, e aos sábados,
+        das 8h às 13h.</p>
+    </div>
+  </section>
 
-  <h2>3. Para que usamos os dados</h2>
-  <ul>
-    <li>Responder pedidos de orçamento e dúvidas (procedimentos preliminares a contrato, art. 7º, V, da LGPD).</li>
-    <li>Processar pedidos, entregar produtos e prestar serviços de instalação e manutenção (execução de contrato, art. 7º, V).</li>
-    <li>Emitir nota fiscal e cumprir obrigações fiscais e legais (cumprimento de obrigação legal, art. 7º, II).</li>
-    <li>Atender garantia, trocas e devoluções, e exercer nossos direitos em eventuais processos (art. 7º, V e VI).</li>
-    <li>Enviar ofertas e lembretes de manutenção, somente se você autorizar. Você pode cancelar a qualquer momento (consentimento, art. 7º, I).</li>
-  </ul>
+  <section id="acompanhar" class="legal" hidden>
+    <div class="wrap">
+      <a class="back" href="#inicio">← Voltar ao site</a>
+      <h1>Acompanhar pedido</h1>
+      <p>Informe o número do pedido e o WhatsApp usado na compra.</p>
+      <form id="fTrack" class="tform fbox" novalidate>
+        <label>Nº do pedido<input id="tNum" inputmode="numeric" maxlength="9" placeholder="Ex.: 12"></label>
+        <label>WhatsApp<input id="tTel" data-mask="tel" type="tel" inputmode="tel"
+            placeholder="(19) 99999-9999"></label>
+        <button class="btn primary" type="submit">Consultar</button>
+      </form>
+      <div class="ferr" id="tErr" role="alert" hidden></div>
+      <div id="tRes" aria-live="polite"></div>
+    </div>
+  </section>
 
-  <h2>4. Com quem compartilhamos</h2>
-  <p>Compartilhamos apenas o necessário com: transportadoras e entregadores (nome, endereço e telefone para a entrega); empresas de pagamento; contador e órgãos públicos, quando exigido por lei; e provedores de tecnologia que usamos para atender você, como o WhatsApp. Não vendemos seus dados.</p>
+  <div class="tiles"></div>
+  <section id="contato" class="contact">
+    <div class="wrap grid">
+      <div>
+        <h2>Fale com a VicxMoura</h2>
+        <p>Mande foto e medidas do espaço para orçamento de piscina. Para produtos, finalize pelo carrinho.</p>
+        <a class="btn wa" id="waMain" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <form id="fContato" class="cform fbox" novalidate>
+          <h3>Ou deixe uma mensagem</h3>
+          <label>Seu nome *<input id="ctNome" maxlength="120" autocomplete="name"></label>
+          <label>WhatsApp *<input id="ctTel" data-mask="tel" type="tel" inputmode="tel" autocomplete="tel"
+              placeholder="(19) 99999-9999"></label>
+          <label>Mensagem *<textarea id="ctMsg" maxlength="2000" placeholder="Como podemos ajudar?"></textarea></label>
+          <div class="ferr" id="ctErr" role="alert" hidden></div>
+          <div class="fok" id="ctOk" role="status" hidden></div>
+          <button class="btn primary" type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+      <dl>
+        <dt>WhatsApp</dt>
+        <dd><span id="phoneTxt">(19) 90000-0000</span><span class="example">exemplo</span><button class="copy"
+            data-copy="phoneTxt">copiar</button></dd>
+        <dt>Atendimento</dt>
+        <dd>Vamos até você em São Paulo e região</dd>
+        <dt>Sede</dt>
+        <dd>Av. das Águas, 1000 – Jardim Exemplo, São Paulo/SP · CEP 13000-000<span class="example">exemplo</span></dd>
+        <dt>Horário</dt>
+        <dd>Seg a sex 8h–18h · Sáb 8h–13h</dd>
+        <dt>E-mail</dt>
+        <dd><span id="mailTxt">contato@vicxmourapiscinas.com.br</span><span class="example">exemplo</span><button
+            class="copy" data-copy="mailTxt">copiar</button></dd>
+      </dl>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <span>VICXMOURA PISCINAS COMÉRCIO E SERVIÇOS LTDA · CNPJ 00.000.000/0000-00</span>
+      <span class="flinks"><a href="#privacidade">Política de Privacidade</a> · <a href="#trocas">Trocas e
+          Devoluções</a></span>
+      <span>Empresa, endereço e preços fictícios, para demonstração.</span>
+    </div>
+  </footer>
 
-  <h2>5. Por quanto tempo guardamos</h2>
-  <p>Guardamos os dados enquanto durar o atendimento ou a relação comercial e, depois, pelo prazo exigido por lei (por exemplo, documentos fiscais por no mínimo 5 anos) ou necessário para garantia e defesa de direitos. Depois disso, os dados são apagados ou anonimizados.</p>
-
-  <h2>6. Seus direitos</h2>
-  <p>Pelo art. 18 da LGPD, você pode pedir a qualquer momento: confirmação de que tratamos seus dados; acesso aos dados; correção de dados incompletos ou errados; anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade; informação sobre com quem compartilhamos; e revogação do consentimento. Responderemos em até 15 dias. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
-
-  <h2>7. Segurança</h2>
-  <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acesso não autorizado, perda ou vazamento. Se ocorrer um incidente que possa causar risco relevante, avisaremos você e a ANPD.</p>
-
-  <h2>8. Mudanças nesta política</h2>
-  <p>Podemos atualizar esta política. A data da última versão fica sempre no topo desta página.</p>
-</div></section>
-
-<section id="trocas" class="legal" hidden><div class="wrap">
-  <a class="back" href="#inicio">← Voltar ao site</a>
-  <h1>Política de Trocas e Devoluções</h1>
-  <p class="upd">Última atualização: 20 de outubro de 2026</p>
-  <p>Esta política vale para produtos e serviços comprados da <strong>MELIAH PISCINAS COMÉRCIO E SERVIÇOS LTDA – ME</strong>, CNPJ 06.120.369/0001-14, e segue o Código de Defesa do Consumidor (Lei nº 8.078/1990).</p>
-
-  <h2>1. Desistência da compra (direito de arrependimento)</h2>
-  <p>Compras feitas pelo site, WhatsApp ou telefone podem ser canceladas em até <strong>7 dias corridos</strong> a partir do recebimento do produto ou da assinatura do contrato, sem precisar de motivo (art. 49 do CDC). Devolvemos o valor total pago, incluindo o frete, pela mesma forma de pagamento.</p>
-  <p>Para pedir, fale com a gente pelo WhatsApp ou e-mail informando o número do pedido. Combinamos a retirada ou o envio sem custo para você.</p>
-
-  <h2>2. Produto com defeito</h2>
-  <p>Se o produto apresentar defeito, você pode reclamar em até:</p>
-  <ul>
-    <li><strong>30 dias</strong> para produtos não duráveis, como cloro, algicida, clarificante e reguladores de pH;</li>
-    <li><strong>90 dias</strong> para produtos duráveis, como bombas, filtros, aspiradores, peneiras e a própria piscina.</li>
-  </ul>
-  <p>O prazo conta da entrega ou, se o defeito for oculto, do momento em que ele aparecer (art. 26 do CDC). Temos até 30 dias para resolver. Se não resolvermos nesse prazo, você escolhe entre troca por outro produto, devolução do valor ou abatimento no preço (art. 18). Esses prazos somam-se à garantia do fabricante, quando houver.</p>
-
-  <h2>3. Produto errado ou danificado na entrega</h2>
-  <p>Confira o pedido na entrega. Se vier errado, com embalagem violada ou vazando, recuse ou fale com a gente em até 7 dias, com foto. Fazemos a troca sem custo.</p>
-
-  <h2>4. Produtos químicos: cuidados na devolução</h2>
-  <p>Por segurança, não transfira, misture ou dilua o produto antes de devolver. Mantenha-o na embalagem original, bem fechado, longe de crianças e do sol, até a retirada.</p>
-
-  <h2>5. Piscinas e serviços</h2>
-  <p>Para piscinas e serviços de instalação, o direito de arrependimento de 7 dias vale para contratos fechados fora da loja e conta a partir da assinatura. Se você desistir depois que a obra começar, os valores de serviços já executados e de materiais feitos sob medida para você serão tratados conforme o contrato assinado. A garantia de estrutura, de instalação e de equipamentos vem descrita no orçamento e no contrato.</p>
-
-  <h2>6. Reembolso</h2>
-  <p>O reembolso é feito em até 10 dias úteis depois que recebermos o produto de volta: por Pix ou transferência para compras pagas assim, ou por estorno no cartão, que aparece na fatura conforme o prazo da operadora.</p>
-
-  <h2>7. Contato</h2>
-  <p>WhatsApp e endereço estão na seção Contato abaixo. Atendemos de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 13h.</p>
-</div></section>
-
-<section id="acompanhar" class="legal" hidden><div class="wrap">
-  <a class="back" href="#inicio">← Voltar ao site</a>
-  <h1>Acompanhar pedido</h1>
-  <p>Informe o número do pedido e o WhatsApp usado na compra.</p>
-  <form id="fTrack" class="tform fbox" novalidate>
-    <label>Nº do pedido<input id="tNum" inputmode="numeric" maxlength="9" placeholder="Ex.: 12"></label>
-    <label>WhatsApp<input id="tTel" data-mask="tel" type="tel" inputmode="tel" placeholder="(19) 99999-9999"></label>
-    <button class="btn primary" type="submit">Consultar</button>
-  </form>
-  <div class="ferr" id="tErr" role="alert" hidden></div>
-  <div id="tRes" aria-live="polite"></div>
-</div></section>
-
-<div class="tiles"></div>
-<section id="contato" class="contact"><div class="wrap grid">
-  <div>
-    <h2>Fale com a Meliah</h2>
-    <p>Mande foto e medidas do espaço para orçamento de piscina. Para produtos, finalize pelo carrinho.</p>
-    <a class="btn wa" id="waMain" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-    <form id="fContato" class="cform fbox" novalidate>
-      <h3>Ou deixe uma mensagem</h3>
-      <label>Seu nome *<input id="ctNome" maxlength="120" autocomplete="name"></label>
-      <label>WhatsApp *<input id="ctTel" data-mask="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(19) 99999-9999"></label>
-      <label>Mensagem *<textarea id="ctMsg" maxlength="2000" placeholder="Como podemos ajudar?"></textarea></label>
-      <div class="ferr" id="ctErr" role="alert" hidden></div>
-      <div class="fok" id="ctOk" role="status" hidden></div>
-      <button class="btn primary" type="submit">Enviar mensagem</button>
+  <dialog id="dlgOrc" class="sdlg" aria-labelledby="dlgOrcT">
+    <div class="dh">
+      <h3 id="dlgOrcT">Pedir orçamento</h3><button type="button" class="x" data-close aria-label="Fechar">×</button>
+    </div>
+    <form id="fOrc" class="fbox" novalidate>
+      <p class="sub" id="orcRef"></p>
+      <label>Seu nome *<input id="oNome" maxlength="120" autocomplete="name"></label>
+      <label>WhatsApp *<input id="oTel" data-mask="tel" type="tel" inputmode="tel" autocomplete="tel"
+          placeholder="(19) 99999-9999"></label>
+      <div class="two-in"><label>CEP<input id="oCep" data-mask="cep" inputmode="numeric"
+            placeholder="00000-000"></label><label>Cidade<input id="oCidade" maxlength="80"></label></div>
+      <span class="hint" id="oCepMsg" hidden></span>
+      <label>Conte sobre o espaço<textarea id="oMsg" maxlength="2000"
+          placeholder="Medidas do terreno, se já tem piscina, prazo desejado…"></textarea></label>
+      <div class="ferr" id="oErr" role="alert" hidden></div>
+      <button class="btn primary" type="submit">Enviar pedido de orçamento</button>
     </form>
-  </div>
-  <dl>
-    <dt>WhatsApp</dt><dd><span id="phoneTxt">(19) 90000-0000</span><span class="example">exemplo</span><button class="copy" data-copy="phoneTxt">copiar</button></dd>
-    <dt>Atendimento</dt><dd>Vamos até você em Campinas e região</dd>
-    <dt>Sede</dt><dd>Av. Orosimbo Maia, 1806 – Cambuí, Campinas/SP · CEP 13024-045</dd>
-    <dt>Horário</dt><dd>Seg a sex 8h–18h · Sáb 8h–13h</dd>
-    <dt>E-mail</dt><dd><span id="mailTxt">contato@meliahpiscinas.com.br</span><span class="example">exemplo</span><button class="copy" data-copy="mailTxt">copiar</button></dd>
-  </dl>
-</div></section>
-<footer><div class="wrap">
-  <span>MELIAH PISCINAS COMÉRCIO E SERVIÇOS LTDA – ME · CNPJ 06.120.369/0001-14</span>
-  <span class="flinks"><a href="#privacidade">Política de Privacidade</a> · <a href="#trocas">Trocas e Devoluções</a></span>
-  <span>Preços de exemplo, sujeitos a alteração.</span>
-</div></footer>
+    <div id="oOk" hidden></div>
+  </dialog>
+  <a class="wa-float" id="waFloat" target="_blank" rel="noopener">WhatsApp</a>
+  <div class="drawer-bg" id="drawerBg" hidden></div>
+  <aside class="drawer" id="drawer" hidden aria-label="Carrinho">
+    <h2>Carrinho <button class="x" id="closeCart" aria-label="Fechar">×</button></h2>
+    <div class="items" id="items"></div>
+    <form id="checkout" class="fbox" novalidate>
+      <div class="totals">
+        <div class="row"><span>Subtotal</span><span class="mono" id="sub">R$ 0,00</span></div>
+        <div class="row"><span>Entrega</span><span class="mono" id="ship">—</span></div>
+        <div class="row big"><span>Total</span><span class="mono" id="tot">R$ 0,00</span></div>
+      </div>
+      <div class="ferr" id="pausa" hidden>No momento não estamos recebendo pedidos pelo site. Fale com a gente pelo
+        WhatsApp.</div>
+      <fieldset>
+        <legend>Seus dados</legend>
+        <label>Nome completo *<input id="cName" autocomplete="name" maxlength="120"
+            placeholder="Ex.: Ana Souza"></label>
+        <label>WhatsApp *<input id="cTel" data-mask="tel" type="tel" inputmode="tel" autocomplete="tel"
+            placeholder="(19) 99999-9999"></label>
+        <label>CPF ou CNPJ <small>(opcional, para a nota fiscal)</small><input id="cDoc" data-mask="doc"
+            inputmode="numeric" placeholder="000.000.000-00"><span class="hint" id="cDocMsg"></span></label>
+      </fieldset>
+      <fieldset>
+        <legend>Endereço de entrega</legend>
+        <label>CEP *<input id="cCep" data-mask="cep" inputmode="numeric" autocomplete="postal-code"
+            placeholder="00000-000"><span class="hint" id="cCepMsg" hidden></span></label>
+        <label>Rua / avenida *<input id="cRua" autocomplete="address-line1" maxlength="150"></label>
+        <div class="two-in"><label>Número *<input id="cNum" maxlength="20"></label><label>Complemento<input id="cComp"
+              maxlength="80" placeholder="Apto, bloco"></label></div>
+        <label>Bairro<input id="cBairro" maxlength="80"></label>
+        <div class="two-in city"><label>Cidade *<input id="cCidade" maxlength="80"></label><label>UF<input id="cUf"
+              maxlength="2"></label></div>
+      </fieldset>
+      <label>Pagamento<select id="cPay">
+          <option value="pix">Pix</option>
+          <option value="credito">Cartão de crédito (enviamos o link)</option>
+          <option value="debito">Cartão de débito na entrega</option>
+          <option value="dinheiro">Dinheiro na entrega</option>
+        </select></label>
+      <label>Observação<textarea id="cObs" maxlength="500"
+          placeholder="Ponto de referência, melhor horário…"></textarea></label>
+      <div class="ferr" id="coErr" role="alert" hidden></div>
+      <button type="submit" class="btn wa" id="sendOrder">Finalizar pedido</button>
+      <p class="note"><span id="freteNote">Frete grátis acima de R$ 300 na região. Abaixo disso, R$ 20.</span> Ao
+        enviar, você concorda com a <a href="#privacidade" class="closeLink">Política de Privacidade</a> e a <a
+          href="#trocas" class="closeLink">Política de Trocas</a>.</p>
+    </form>
+    <div id="confirmado" hidden></div>
+  </aside>
 
-<dialog id="dlgOrc" class="sdlg" aria-labelledby="dlgOrcT">
-  <div class="dh"><h3 id="dlgOrcT">Pedir orçamento</h3><button type="button" class="x" data-close aria-label="Fechar">×</button></div>
-  <form id="fOrc" class="fbox" novalidate>
-    <p class="sub" id="orcRef"></p>
-    <label>Seu nome *<input id="oNome" maxlength="120" autocomplete="name"></label>
-    <label>WhatsApp *<input id="oTel" data-mask="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(19) 99999-9999"></label>
-    <div class="two-in"><label>CEP<input id="oCep" data-mask="cep" inputmode="numeric" placeholder="00000-000"></label><label>Cidade<input id="oCidade" maxlength="80"></label></div>
-    <span class="hint" id="oCepMsg" hidden></span>
-    <label>Conte sobre o espaço<textarea id="oMsg" maxlength="2000" placeholder="Medidas do terreno, se já tem piscina, prazo desejado…"></textarea></label>
-    <div class="ferr" id="oErr" role="alert" hidden></div>
-    <button class="btn primary" type="submit">Enviar pedido de orçamento</button>
-  </form>
-  <div id="oOk" hidden></div>
-</dialog>
-<a class="wa-float" id="waFloat" target="_blank" rel="noopener">WhatsApp</a>
-<div class="drawer-bg" id="drawerBg" hidden></div>
-<aside class="drawer" id="drawer" hidden aria-label="Carrinho">
-  <h2>Carrinho <button class="x" id="closeCart" aria-label="Fechar">×</button></h2>
-  <div class="items" id="items"></div>
-  <form id="checkout" class="fbox" novalidate>
-    <div class="totals">
-      <div class="row"><span>Subtotal</span><span class="mono" id="sub">R$ 0,00</span></div>
-      <div class="row"><span>Entrega</span><span class="mono" id="ship">—</span></div>
-      <div class="row big"><span>Total</span><span class="mono" id="tot">R$ 0,00</span></div>
-    </div>
-    <div class="ferr" id="pausa" hidden>No momento não estamos recebendo pedidos pelo site. Fale com a gente pelo WhatsApp.</div>
-    <fieldset><legend>Seus dados</legend>
-      <label>Nome completo *<input id="cName" autocomplete="name" maxlength="120" placeholder="Ex.: Ana Souza"></label>
-      <label>WhatsApp *<input id="cTel" data-mask="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(19) 99999-9999"></label>
-      <label>CPF ou CNPJ <small>(opcional, para a nota fiscal)</small><input id="cDoc" data-mask="doc" inputmode="numeric" placeholder="000.000.000-00"><span class="hint" id="cDocMsg"></span></label>
-    </fieldset>
-    <fieldset><legend>Endereço de entrega</legend>
-      <label>CEP *<input id="cCep" data-mask="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000"><span class="hint" id="cCepMsg" hidden></span></label>
-      <label>Rua / avenida *<input id="cRua" autocomplete="address-line1" maxlength="150"></label>
-      <div class="two-in"><label>Número *<input id="cNum" maxlength="20"></label><label>Complemento<input id="cComp" maxlength="80" placeholder="Apto, bloco"></label></div>
-      <label>Bairro<input id="cBairro" maxlength="80"></label>
-      <div class="two-in city"><label>Cidade *<input id="cCidade" maxlength="80"></label><label>UF<input id="cUf" maxlength="2"></label></div>
-    </fieldset>
-    <label>Pagamento<select id="cPay"><option value="pix">Pix</option><option value="credito">Cartão de crédito (enviamos o link)</option><option value="debito">Cartão de débito na entrega</option><option value="dinheiro">Dinheiro na entrega</option></select></label>
-    <label>Observação<textarea id="cObs" maxlength="500" placeholder="Ponto de referência, melhor horário…"></textarea></label>
-    <div class="ferr" id="coErr" role="alert" hidden></div>
-    <button type="submit" class="btn wa" id="sendOrder">Finalizar pedido</button>
-    <p class="note"><span id="freteNote">Frete grátis acima de R$ 300 na região. Abaixo disso, R$ 20.</span> Ao enviar, você concorda com a <a href="#privacidade" class="closeLink">Política de Privacidade</a> e a <a href="#trocas" class="closeLink">Política de Trocas</a>.</p>
-  </form>
-  <div id="confirmado" hidden></div>
-</aside>
+  <script>
+    const CFG = window.LOJA_CONFIG || window.MELIAH_CONFIG || {};  // config.js (ver README)
+    let WA = String(CFG.whatsapp || "5519900000000").replace(/\D/g, ""); // o número real vem do painel (Configurações) ou do config.js
+    const escH = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const brl = v => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    const waLink = t => "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
 
-<script>
-const CFG = window.MELIAH_CONFIG || {};  // config.js (ver README)
-let WA = String(CFG.whatsapp || "5519900000000").replace(/\D/g,""); // o número real vem do painel (Configurações) ou do config.js
-const escH = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-const waLink = t => "https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+    /* calculadora */
+    const cIn = ["cL", "cW", "cD"].map(id => document.getElementById(id));
+    function calc() {
+      const [l, w, d] = cIn.map(i => parseFloat(i.value) || 0); const m3 = l * w * d;
+      document.getElementById("cOut").textContent = Math.round(m3 * 1000).toLocaleString("pt-BR") + " L";
+      document.getElementById("cM3").textContent = m3.toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " m³ de água";
+      if (typeof renderRec === "function") renderRec(m3 * 1000);
+    }
+    cIn.forEach(i => i.addEventListener("input", calc));
 
-/* calculadora */
-const cIn=["cL","cW","cD"].map(id=>document.getElementById(id));
-function calc(){const [l,w,d]=cIn.map(i=>parseFloat(i.value)||0);const m3=l*w*d;
-  document.getElementById("cOut").textContent=Math.round(m3*1000).toLocaleString("pt-BR")+" L";
-  document.getElementById("cM3").textContent=m3.toLocaleString("pt-BR",{maximumFractionDigits:1})+" m³ de água";
-  if(typeof renderRec==="function")renderRec(m3*1000);}
-cIn.forEach(i=>i.addEventListener("input",calc));
-
-/* piscinas */
-const pools=[
- {n:"Fibra Retangular",shape:"rect",d:[["Medidas","6,00 × 3,00 m"],["Profund.","1,40 m"],["Volume","25.200 L"],["Instalação","3 a 5 dias"]],from:"a partir de R$ 18.900"},
- {n:"Fibra com Prainha",shape:"beach",d:[["Medidas","7,00 × 3,20 m"],["Profund.","0,40 / 1,40 m"],["Volume","28.000 L"],["Instalação","4 a 6 dias"]],from:"a partir de R$ 24.500"},
- {n:"Vinil sob medida",shape:"free",d:[["Medidas","no seu projeto"],["Profund.","1,20 a 1,80 m"],["Bolsa","vinil 0,8 mm"],["Instalação","15 a 25 dias"]],from:"orçamento por m²"}
-];
-const shapes={
- rect:'<svg viewBox="0 0 160 90"><rect x="10" y="12" width="140" height="66" rx="4" fill="var(--tile)"/><rect x="16" y="18" width="128" height="54" rx="2" fill="var(--water)"/><path d="M24 40 q12 -6 24 0 t24 0 t24 0 t24 0" stroke="var(--on-tile)" stroke-width="2" fill="none" opacity=".6"/></svg>',
- beach:'<svg viewBox="0 0 160 90"><rect x="10" y="12" width="140" height="66" rx="4" fill="var(--tile)"/><rect x="16" y="18" width="128" height="54" rx="2" fill="var(--water)"/><rect x="16" y="18" width="34" height="54" fill="var(--water-soft)" opacity=".75"/><path d="M60 46 q12 -6 24 0 t24 0 t24 0" stroke="var(--on-tile)" stroke-width="2" fill="none" opacity=".6"/></svg>',
- free:'<svg viewBox="0 0 160 90"><path d="M20 30 C30 6 80 10 100 20 C130 30 150 40 140 62 C130 84 70 82 40 74 C14 66 12 46 20 30Z" fill="var(--tile)"/><path d="M27 32 C36 14 80 18 98 26 C124 35 140 44 132 60 C123 76 72 74 44 67 C22 61 20 46 27 32Z" fill="var(--water)"/></svg>'
-};
-document.getElementById("poolGrid").innerHTML=pools.map(p=>`
+    /* piscinas */
+    const pools = [
+      { n: "Fibra Retangular", shape: "rect", d: [["Medidas", "6,00 × 3,00 m"], ["Profund.", "1,40 m"], ["Volume", "25.200 L"], ["Instalação", "3 a 5 dias"]], from: "a partir de R$ 18.900" },
+      { n: "Fibra com Prainha", shape: "beach", d: [["Medidas", "7,00 × 3,20 m"], ["Profund.", "0,40 / 1,40 m"], ["Volume", "28.000 L"], ["Instalação", "4 a 6 dias"]], from: "a partir de R$ 24.500" },
+      { n: "Vinil sob medida", shape: "free", d: [["Medidas", "no seu projeto"], ["Profund.", "1,20 a 1,80 m"], ["Bolsa", "vinil 0,8 mm"], ["Instalação", "15 a 25 dias"]], from: "orçamento por m²" }
+    ];
+    const shapes = {
+      rect: '<svg viewBox="0 0 160 90"><rect x="10" y="12" width="140" height="66" rx="4" fill="var(--tile)"/><rect x="16" y="18" width="128" height="54" rx="2" fill="var(--water)"/><path d="M24 40 q12 -6 24 0 t24 0 t24 0 t24 0" stroke="var(--on-tile)" stroke-width="2" fill="none" opacity=".6"/></svg>',
+      beach: '<svg viewBox="0 0 160 90"><rect x="10" y="12" width="140" height="66" rx="4" fill="var(--tile)"/><rect x="16" y="18" width="128" height="54" rx="2" fill="var(--water)"/><rect x="16" y="18" width="34" height="54" fill="var(--water-soft)" opacity=".75"/><path d="M60 46 q12 -6 24 0 t24 0 t24 0" stroke="var(--on-tile)" stroke-width="2" fill="none" opacity=".6"/></svg>',
+      free: '<svg viewBox="0 0 160 90"><path d="M20 30 C30 6 80 10 100 20 C130 30 150 40 140 62 C130 84 70 82 40 74 C14 66 12 46 20 30Z" fill="var(--tile)"/><path d="M27 32 C36 14 80 18 98 26 C124 35 140 44 132 60 C123 76 72 74 44 67 C22 61 20 46 27 32Z" fill="var(--water)"/></svg>'
+    };
+    document.getElementById("poolGrid").innerHTML = pools.map(p => `
  <article class="pool"><div class="shape">${shapes[p.shape]}</div>
- <div class="body"><h3>${p.n}</h3><dl>${p.d.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join("")}</dl>
+ <div class="body"><h3>${p.n}</h3><dl>${p.d.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("")}</dl>
  <div class="mono" style="font-weight:500">${p.from}</div></div>
  <div class="foot"><button type="button" class="btn wa" style="width:100%;justify-content:center" data-orc="${p.n}">Pedir orçamento</button></div></article>`).join("");
 
-/* galeria
-   TROCAR: em "foto" coloque o caminho da imagem real (ex.: "fotos/obra-1.jpg").
-   Enquanto "foto" estiver vazio, aparece uma ilustração marcada como EXEMPLO. */
-const GALERIA=[
- {titulo:"Fibra 8 × 4 m com prainha",local:"Barão Geraldo – Campinas/SP",foto:"",forma:"beach",deck:"#D6CBB5",grama:"#7FA65A"},
- {titulo:"Vinil sob medida",local:"Sousas – Campinas/SP",foto:"",forma:"free",deck:"#CFC6B8",grama:"#6E9A4E"},
- {titulo:"Fibra 6 × 3 m",local:"Valinhos/SP",foto:"",forma:"rect",deck:"#E2D9C8",grama:"#88AE60"},
- {titulo:"Alvenaria com cascata",local:"Vinhedo/SP",foto:"",forma:"l",deck:"#C9BBA2",grama:"#76A055"},
- {titulo:"Fibra 5 × 2,5 m",local:"Paulínia/SP",foto:"",forma:"rect",deck:"#D9D0C0",grama:"#82A85B"},
- {titulo:"Reforma e troca de vinil",local:"Cambuí – Campinas/SP",foto:"",forma:"round",deck:"#D4C7AE",grama:"#719C51"}
-];
-function cena(g,i){
-  const pool={
-    rect:'<rect x="70" y="60" width="260" height="140" rx="6" fill="#0A4F78"/><rect x="78" y="68" width="244" height="124" rx="3" fill="#23A9D4"/>',
-    beach:'<rect x="60" y="55" width="280" height="150" rx="6" fill="#0A4F78"/><rect x="68" y="63" width="264" height="134" rx="3" fill="#23A9D4"/><rect x="68" y="63" width="70" height="134" fill="#9FDCEF"/>',
-    free:'<path d="M80 110 C90 50 210 45 260 70 C330 100 345 140 320 180 C290 225 160 220 110 200 C60 180 70 140 80 110Z" fill="#0A4F78"/><path d="M92 112 C101 62 208 58 254 80 C318 108 330 142 308 176 C282 212 162 208 116 190 C76 174 84 140 92 112Z" fill="#23A9D4"/>',
-    l:'<path d="M60 60h280v150H200v-70H60z" fill="#0A4F78"/><path d="M68 68h264v134H208v-70H68z" fill="#23A9D4"/>',
-    round:'<circle cx="200" cy="135" r="88" fill="#0A4F78"/><circle cx="200" cy="135" r="80" fill="#23A9D4"/>'
-  }[g.forma];
-  let waves="";for(let k=0;k<4;k++){const y=95+k*28;waves+=`<path d="M100 ${y} q15 -7 30 0 t30 0 t30 0 t30 0 t30 0 t30 0" stroke="#E6F7FC" stroke-width="2" fill="none" opacity=".45"/>`;}
-  return `<svg class="ph" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de exemplo: ${g.titulo}">
+    /* galeria
+       TROCAR: em "foto" coloque o caminho da imagem real (ex.: "fotos/obra-1.jpg").
+       Enquanto "foto" estiver vazio, aparece uma ilustração marcada como EXEMPLO. */
+    const GALERIA = [
+      { titulo: "Fibra 8 × 4 m com prainha", local: "Barão Geraldo – São Paulo/SP", foto: "", forma: "beach", deck: "#D6CBB5", grama: "#7FA65A" },
+      { titulo: "Vinil sob medida", local: "Sousas – São Paulo/SP", foto: "", forma: "free", deck: "#CFC6B8", grama: "#6E9A4E" },
+      { titulo: "Fibra 6 × 3 m", local: "Valinhos/SP", foto: "", forma: "rect", deck: "#E2D9C8", grama: "#88AE60" },
+      { titulo: "Alvenaria com cascata", local: "Vinhedo/SP", foto: "", forma: "l", deck: "#C9BBA2", grama: "#76A055" },
+      { titulo: "Fibra 5 × 2,5 m", local: "Paulínia/SP", foto: "", forma: "rect", deck: "#D9D0C0", grama: "#82A85B" },
+      { titulo: "Reforma e troca de vinil", local: "Taquaral – São Paulo/SP", foto: "", forma: "round", deck: "#D4C7AE", grama: "#719C51" }
+    ];
+    function cena(g, i) {
+      const pool = {
+        rect: '<rect x="70" y="60" width="260" height="140" rx="6" fill="#0A4F78"/><rect x="78" y="68" width="244" height="124" rx="3" fill="#23A9D4"/>',
+        beach: '<rect x="60" y="55" width="280" height="150" rx="6" fill="#0A4F78"/><rect x="68" y="63" width="264" height="134" rx="3" fill="#23A9D4"/><rect x="68" y="63" width="70" height="134" fill="#9FDCEF"/>',
+        free: '<path d="M80 110 C90 50 210 45 260 70 C330 100 345 140 320 180 C290 225 160 220 110 200 C60 180 70 140 80 110Z" fill="#0A4F78"/><path d="M92 112 C101 62 208 58 254 80 C318 108 330 142 308 176 C282 212 162 208 116 190 C76 174 84 140 92 112Z" fill="#23A9D4"/>',
+        l: '<path d="M60 60h280v150H200v-70H60z" fill="#0A4F78"/><path d="M68 68h264v134H208v-70H68z" fill="#23A9D4"/>',
+        round: '<circle cx="200" cy="135" r="88" fill="#0A4F78"/><circle cx="200" cy="135" r="80" fill="#23A9D4"/>'
+      }[g.forma];
+      let waves = ""; for (let k = 0; k < 4; k++) { const y = 95 + k * 28; waves += `<path d="M100 ${y} q15 -7 30 0 t30 0 t30 0 t30 0 t30 0 t30 0" stroke="#E6F7FC" stroke-width="2" fill="none" opacity=".45"/>`; }
+      return `<svg class="ph" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de exemplo: ${g.titulo}">
    <rect width="400" height="300" fill="${g.grama}"/><rect x="30" y="25" width="340" height="215" rx="8" fill="${g.deck}"/>
-   <g stroke="#00000014">${Array.from({length:12},(_,k)=>`<line x1="${30+k*30}" y1="25" x2="${30+k*30}" y2="240"/>`).join("")}</g>
+   <g stroke="#00000014">${Array.from({ length: 12 }, (_, k) => `<line x1="${30 + k * 30}" y1="25" x2="${30 + k * 30}" y2="240"/>`).join("")}</g>
    ${pool}${waves}
-   <circle cx="${i%2?350:52}" cy="${i%2?60:255}" r="26" fill="#E0533A"/><circle cx="${i%2?350:52}" cy="${i%2?60:255}" r="4" fill="#fff"/>
-   <rect x="${i%2?40:300}" y="250" width="48" height="16" rx="3" fill="#F2F2EE"/></svg>`;
-}
-document.getElementById("galGrid").innerHTML=GALERIA.map((g,i)=>`<figure>
-  ${g.foto?`<img class="ph" src="${g.foto}" alt="${g.titulo} – ${g.local}" loading="lazy">`:cena(g,i)+'<span class="ex">foto de exemplo</span>'}
+   <circle cx="${i % 2 ? 350 : 52}" cy="${i % 2 ? 60 : 255}" r="26" fill="#E0533A"/><circle cx="${i % 2 ? 350 : 52}" cy="${i % 2 ? 60 : 255}" r="4" fill="#fff"/>
+   <rect x="${i % 2 ? 40 : 300}" y="250" width="48" height="16" rx="3" fill="#F2F2EE"/></svg>`;
+    }
+    document.getElementById("galGrid").innerHTML = GALERIA.map((g, i) => `<figure>
+  ${g.foto ? `<img class="ph" src="${g.foto}" alt="${g.titulo} – ${g.local}" loading="lazy">` : cena(g, i) + '<span class="ex">foto de exemplo</span>'}
   <figcaption><b>${g.titulo}</b>${g.local}</figcaption></figure>`).join("");
 
-/* produtos */
-const icons={
- balde:'<svg viewBox="0 0 60 60"><path d="M12 16h36l-4 38H16z" fill="var(--water)"/><rect x="10" y="12" width="40" height="7" rx="2" fill="var(--tile)"/><rect x="18" y="28" width="24" height="12" rx="2" fill="var(--surface)"/></svg>',
- frasco:'<svg viewBox="0 0 60 60"><rect x="24" y="4" width="12" height="8" rx="2" fill="var(--tile)"/><path d="M18 14h24l4 8v32H14V22z" fill="var(--water)"/><rect x="20" y="28" width="20" height="14" rx="2" fill="var(--surface)"/></svg>',
- pastilha:'<svg viewBox="0 0 60 60"><ellipse cx="30" cy="38" rx="20" ry="8" fill="var(--tile)"/><rect x="10" y="24" width="40" height="14" fill="var(--water-soft)"/><ellipse cx="30" cy="24" rx="20" ry="8" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/></svg>',
- kit:'<svg viewBox="0 0 60 60"><rect x="10" y="10" width="40" height="44" rx="4" fill="var(--tile)"/><rect x="16" y="16" width="8" height="26" rx="3" fill="#F2D54A"/><rect x="26" y="16" width="8" height="26" rx="3" fill="var(--buoy)"/><rect x="36" y="16" width="8" height="26" rx="3" fill="var(--water)"/></svg>',
- equip:'<svg viewBox="0 0 60 60"><circle cx="30" cy="34" r="18" fill="var(--tile)"/><circle cx="30" cy="34" r="8" fill="var(--water)"/><rect x="26" y="4" width="8" height="14" fill="var(--muted)"/></svg>',
- rede:'<svg viewBox="0 0 60 60"><path d="M10 14h30v22a15 15 0 0 1-30 0z" fill="var(--water-soft)" stroke="var(--tile)" stroke-width="3"/><path d="M17 14v28M25 14v32M33 14v28M10 24h30M10 34h30" stroke="var(--tile)" stroke-width="1.5"/><rect x="38" y="10" width="20" height="5" rx="2" fill="var(--muted)"/></svg>'
-};
-let products=[
- {id:"clg10",n:"Cloro granulado estabilizado 10 kg",cat:"Tratamento",m:"Uso diário e choque",p:289.9,i:"balde"},
- {id:"clg25",n:"Cloro granulado 2,5 kg",cat:"Tratamento",m:"Para piscinas pequenas",p:84.9,i:"balde"},
- {id:"past",n:"Pastilha de cloro 200 g (pote c/ 5)",cat:"Tratamento",m:"Para clorador flutuante",p:59.9,i:"pastilha"},
- {id:"alg",n:"Algicida de manutenção 1 L",cat:"Tratamento",m:"Evita água verde",p:32.9,i:"frasco"},
- {id:"clar",n:"Clarificante 1 L",cat:"Tratamento",m:"Água turva → cristalina",p:29.9,i:"frasco"},
- {id:"phm",n:"Elevador de pH (barrilha) 2 kg",cat:"Equilíbrio",m:"Sobe pH e alcalinidade",p:38.9,i:"balde"},
- {id:"phme",n:"Redutor de pH 1 L",cat:"Equilíbrio",m:"Baixa pH alto",p:27.9,i:"frasco"},
- {id:"kit",n:"Estojo de teste pH e cloro",cat:"Equilíbrio",m:"Teste por gotas",p:44.9,i:"kit"},
- {id:"pen",n:"Peneira cata-folha com cabo",cat:"Limpeza",m:"Cabo telescópico 3 m",p:79.9,i:"rede"},
- {id:"asp",n:"Aspirador de 8 rodas",cat:"Limpeza",m:"Para fibra e vinil",p:119.9,i:"rede"},
- {id:"bomba14",n:"Motobomba 1/4 CV",cat:"Equipamentos",m:"Até 18.000 L",p:749,i:"equip"},
- {id:"bomba",n:"Motobomba 1/2 CV",cat:"Equipamentos",m:"Até 32.000 L",p:1149,i:"equip"},
- {id:"bomba34",n:"Motobomba 3/4 CV",cat:"Equipamentos",m:"Até 50.000 L",p:1489,i:"equip"},
- {id:"bomba1",n:"Motobomba 1 CV",cat:"Equipamentos",m:"Até 75.000 L",p:1790,i:"equip"},
- {id:"areia",n:"Areia para filtro 25 kg",cat:"Equipamentos",m:"Troca a cada 2 anos",p:69.9,i:"balde"}
-];
-const cats=()=>["Todos",...new Set(products.map(p=>p.cat))];
-let filter="Todos";
-const fEl=document.getElementById("filters");
-function renderFilters(){fEl.innerHTML=cats().map(c=>`<button class="chip" aria-pressed="${c===filter}" data-c="${c}">${c}</button>`).join("");}
-fEl.addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;filter=b.dataset.c;renderFilters();renderProducts();});
-const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
-document.getElementById("search").addEventListener("input",renderProducts);
-function renderProducts(){const q=norm(document.getElementById("search").value.trim());
-  const list=products.filter(p=>(filter==="Todos"||p.cat===filter)&&(!q||norm(p.n+" "+p.m+" "+p.cat).includes(q)));
-  document.getElementById("prodGrid").innerHTML=list.length?list.map(p=>`
- <article class="prod"><div class="pic">${icons[p.i]||icons.balde}</div><div class="cat">${escH(p.cat)}</div>
+    /* produtos */
+    const icons = {
+      balde: '<svg viewBox="0 0 60 60"><path d="M12 16h36l-4 38H16z" fill="var(--water)"/><rect x="10" y="12" width="40" height="7" rx="2" fill="var(--tile)"/><rect x="18" y="28" width="24" height="12" rx="2" fill="var(--surface)"/></svg>',
+      frasco: '<svg viewBox="0 0 60 60"><rect x="24" y="4" width="12" height="8" rx="2" fill="var(--tile)"/><path d="M18 14h24l4 8v32H14V22z" fill="var(--water)"/><rect x="20" y="28" width="20" height="14" rx="2" fill="var(--surface)"/></svg>',
+      pastilha: '<svg viewBox="0 0 60 60"><ellipse cx="30" cy="38" rx="20" ry="8" fill="var(--tile)"/><rect x="10" y="24" width="40" height="14" fill="var(--water-soft)"/><ellipse cx="30" cy="24" rx="20" ry="8" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/></svg>',
+      kit: '<svg viewBox="0 0 60 60"><rect x="10" y="10" width="40" height="44" rx="4" fill="var(--tile)"/><rect x="16" y="16" width="8" height="26" rx="3" fill="#F2D54A"/><rect x="26" y="16" width="8" height="26" rx="3" fill="var(--buoy)"/><rect x="36" y="16" width="8" height="26" rx="3" fill="var(--water)"/></svg>',
+      equip: '<svg viewBox="0 0 60 60"><circle cx="30" cy="34" r="18" fill="var(--tile)"/><circle cx="30" cy="34" r="8" fill="var(--water)"/><rect x="26" y="4" width="8" height="14" fill="var(--muted)"/></svg>',
+      rede: '<svg viewBox="0 0 60 60"><path d="M10 14h30v22a15 15 0 0 1-30 0z" fill="var(--water-soft)" stroke="var(--tile)" stroke-width="3"/><path d="M17 14v28M25 14v32M33 14v28M10 24h30M10 34h30" stroke="var(--tile)" stroke-width="1.5"/><rect x="38" y="10" width="20" height="5" rx="2" fill="var(--muted)"/></svg>'
+    };
+    let products = [
+      { id: "clg10", n: "Cloro granulado estabilizado 10 kg", cat: "Tratamento", m: "Uso diário e choque", p: 289.9, i: "balde" },
+      { id: "clg25", n: "Cloro granulado 2,5 kg", cat: "Tratamento", m: "Para piscinas pequenas", p: 84.9, i: "balde" },
+      { id: "past", n: "Pastilha de cloro 200 g (pote c/ 5)", cat: "Tratamento", m: "Para clorador flutuante", p: 59.9, i: "pastilha" },
+      { id: "alg", n: "Algicida de manutenção 1 L", cat: "Tratamento", m: "Evita água verde", p: 32.9, i: "frasco" },
+      { id: "clar", n: "Clarificante 1 L", cat: "Tratamento", m: "Água turva → cristalina", p: 29.9, i: "frasco" },
+      { id: "phm", n: "Elevador de pH (barrilha) 2 kg", cat: "Equilíbrio", m: "Sobe pH e alcalinidade", p: 38.9, i: "balde" },
+      { id: "phme", n: "Redutor de pH 1 L", cat: "Equilíbrio", m: "Baixa pH alto", p: 27.9, i: "frasco" },
+      { id: "kit", n: "Estojo de teste pH e cloro", cat: "Equilíbrio", m: "Teste por gotas", p: 44.9, i: "kit" },
+      { id: "pen", n: "Peneira cata-folha com cabo", cat: "Limpeza", m: "Cabo telescópico 3 m", p: 79.9, i: "rede" },
+      { id: "asp", n: "Aspirador de 8 rodas", cat: "Limpeza", m: "Para fibra e vinil", p: 119.9, i: "rede" },
+      { id: "bomba14", n: "Motobomba 1/4 CV", cat: "Equipamentos", m: "Até 18.000 L", p: 749, i: "equip" },
+      { id: "bomba", n: "Motobomba 1/2 CV", cat: "Equipamentos", m: "Até 32.000 L", p: 1149, i: "equip" },
+      { id: "bomba34", n: "Motobomba 3/4 CV", cat: "Equipamentos", m: "Até 50.000 L", p: 1489, i: "equip" },
+      { id: "bomba1", n: "Motobomba 1 CV", cat: "Equipamentos", m: "Até 75.000 L", p: 1790, i: "equip" },
+      { id: "areia", n: "Areia para filtro 25 kg", cat: "Equipamentos", m: "Troca a cada 2 anos", p: 69.9, i: "balde" }
+    ];
+    const cats = () => ["Todos", ...new Set(products.map(p => p.cat))];
+    let filter = "Todos";
+    const fEl = document.getElementById("filters");
+    function renderFilters() { fEl.innerHTML = cats().map(c => `<button class="chip" aria-pressed="${c === filter}" data-c="${c}">${c}</button>`).join(""); }
+    fEl.addEventListener("click", e => { const b = e.target.closest("[data-c]"); if (!b) return; filter = b.dataset.c; renderFilters(); renderProducts(); });
+    const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    document.getElementById("search").addEventListener("input", renderProducts);
+    function renderProducts() {
+      const q = norm(document.getElementById("search").value.trim());
+      const list = products.filter(p => (filter === "Todos" || p.cat === filter) && (!q || norm(p.n + " " + p.m + " " + p.cat).includes(q)));
+      document.getElementById("prodGrid").innerHTML = list.length ? list.map(p => `
+ <article class="prod"><div class="pic">${icons[p.i] || icons.balde}</div><div class="cat">${escH(p.cat)}</div>
  <div><h3>${escH(p.n)}</h3><div class="meta">${escH(p.m)}</div></div>
- <div class="buy"><span class="price">${brl(p.p)}</span>${p.ok===false?'<span class="esg">Esgotado</span>':`<button class="add" data-id="${escH(p.id)}">Adicionar</button>`}</div></article>`).join("")
-  :`<div class="no-res">Nenhum produto encontrado. Não achou o que procura? <a target="_blank" rel="noopener" href="${waLink("Olá! Procuro: "+document.getElementById("search").value)}">Pergunte no WhatsApp</a>.</div>`;}
-renderFilters();renderProducts();
+ <div class="buy"><span class="price">${brl(p.p)}</span>${p.ok === false ? '<span class="esg">Esgotado</span>' : `<button class="add" data-id="${escH(p.id)}">Adicionar</button>`}</div></article>`).join("")
+        : `<div class="no-res">Nenhum produto encontrado. Não achou o que procura? <a target="_blank" rel="noopener" href="${waLink("Olá! Procuro: " + document.getElementById("search").value)}">Pergunte no WhatsApp</a>.</div>`;
+    }
+    renderFilters(); renderProducts();
 
-/* carrinho */
-let cart={};
-try{cart=JSON.parse(localStorage.getItem("meliah-cart")||"{}")||{}}catch(e){cart={}}
-const save=()=>{try{localStorage.setItem("meliah-cart",JSON.stringify(cart))}catch(e){}};
-const byId=id=>products.find(p=>p.id===id);
-let FRETE={valor:20,gratis:300}, CIDADES=[], ACEITA=true, PIX={chave:"",nome:""};
-document.getElementById("prodGrid").addEventListener("click",e=>{const b=e.target.closest(".add");if(!b)return;
-  cart[b.dataset.id]=(cart[b.dataset.id]||0)+1;save();renderCart();b.textContent="Adicionado ✓";b.classList.add("done");
-  setTimeout(()=>{b.textContent="Adicionar";b.classList.remove("done")},1200);});
-function totals(){const sub=Object.entries(cart).filter(([id])=>byId(id)).reduce((s,[id,q])=>s+byId(id).p*q,0);
-  const ship=sub===0?0:(sub>=FRETE.gratis?0:FRETE.valor);return{sub,ship,tot:sub+ship};}
-function textoFrete(){ if(!(FRETE.valor>0)) return "Frete grátis."; if(!(FRETE.gratis>0)) return "Frete de "+brl(FRETE.valor)+".";
-  return "Frete grátis acima de "+brl(FRETE.gratis)+". Abaixo disso, "+brl(FRETE.valor)+"."; }
-function renderCart(){
-  const ids=Object.keys(cart).filter(id=>byId(id));const n=ids.reduce((s,id)=>s+cart[id],0);
-  document.getElementById("cartCount").textContent=n;
-  const box=document.getElementById("items");
-  box.innerHTML=ids.length?ids.map(id=>{const p=byId(id);return `<div class="item"><span class="n">${escH(p.n)}${p.ok===false?' <span class="esg">esgotado</span>':""}</span><span class="mono">${brl(p.p*cart[id])}</span>
-    <div class="qty"><button type="button" data-d="-1" data-id="${escH(id)}" aria-label="Diminuir">−</button><span class="mono">${cart[id]}</span><button type="button" data-d="1" data-id="${escH(id)}" aria-label="Aumentar">+</button></div><span></span></div>`}).join("")
-    :(document.getElementById("confirmado").hidden?`<div class="empty">Seu carrinho está vazio.<br>Escolha produtos na loja.</div>`:"");
-  document.getElementById("checkout").hidden=!ids.length;
-  if(ids.length) document.getElementById("confirmado").hidden=true;
-  const t=totals();document.getElementById("sub").textContent=brl(t.sub);
-  document.getElementById("ship").textContent=t.ship?brl(t.ship):"Grátis";document.getElementById("tot").textContent=brl(t.tot);
-  document.getElementById("freteNote").textContent=textoFrete();
-  document.getElementById("pausa").hidden=ACEITA; document.getElementById("sendOrder").disabled=!ACEITA;
-}
-document.getElementById("items").addEventListener("click",e=>{const b=e.target.closest("[data-d]");if(!b)return;
-  const id=b.dataset.id;cart[id]=(cart[id]||0)+(+b.dataset.d);if(cart[id]<=0)delete cart[id];if(cart[id]>100)cart[id]=100;save();renderCart();});
-const dr=document.getElementById("drawer"),bg=document.getElementById("drawerBg");
-const open=v=>{dr.hidden=bg.hidden=!v; if(v) document.getElementById("closeCart").focus();};
-document.getElementById("openCart").onclick=()=>open(true);
-document.getElementById("closeCart").onclick=()=>open(false);
-bg.onclick=()=>open(false);
-document.addEventListener("keydown",e=>{if(e.key==="Escape")open(false)});
-renderCart();
+    /* carrinho */
+    let cart = {};
+    try { cart = JSON.parse(localStorage.getItem("loja-cart") || "{}") || {} } catch (e) { cart = {} }
+    const save = () => { try { localStorage.setItem("loja-cart", JSON.stringify(cart)) } catch (e) { } };
+    const byId = id => products.find(p => p.id === id);
+    let FRETE = { valor: 20, gratis: 300 }, CIDADES = [], ACEITA = true, PIX = { chave: "", nome: "" };
+    document.getElementById("prodGrid").addEventListener("click", e => {
+      const b = e.target.closest(".add"); if (!b) return;
+      cart[b.dataset.id] = (cart[b.dataset.id] || 0) + 1; save(); renderCart(); b.textContent = "Adicionado ✓"; b.classList.add("done");
+      setTimeout(() => { b.textContent = "Adicionar"; b.classList.remove("done") }, 1200);
+    });
+    function totals() {
+      const sub = Object.entries(cart).filter(([id]) => byId(id)).reduce((s, [id, q]) => s + byId(id).p * q, 0);
+      const ship = sub === 0 ? 0 : (sub >= FRETE.gratis ? 0 : FRETE.valor); return { sub, ship, tot: sub + ship };
+    }
+    function textoFrete() {
+      if (!(FRETE.valor > 0)) return "Frete grátis."; if (!(FRETE.gratis > 0)) return "Frete de " + brl(FRETE.valor) + ".";
+      return "Frete grátis acima de " + brl(FRETE.gratis) + ". Abaixo disso, " + brl(FRETE.valor) + ".";
+    }
+    function renderCart() {
+      const ids = Object.keys(cart).filter(id => byId(id)); const n = ids.reduce((s, id) => s + cart[id], 0);
+      document.getElementById("cartCount").textContent = n;
+      const box = document.getElementById("items");
+      box.innerHTML = ids.length ? ids.map(id => {
+        const p = byId(id); return `<div class="item"><span class="n">${escH(p.n)}${p.ok === false ? ' <span class="esg">esgotado</span>' : ""}</span><span class="mono">${brl(p.p * cart[id])}</span>
+    <div class="qty"><button type="button" data-d="-1" data-id="${escH(id)}" aria-label="Diminuir">−</button><span class="mono">${cart[id]}</span><button type="button" data-d="1" data-id="${escH(id)}" aria-label="Aumentar">+</button></div><span></span></div>`
+      }).join("")
+        : (document.getElementById("confirmado").hidden ? `<div class="empty">Seu carrinho está vazio.<br>Escolha produtos na loja.</div>` : "");
+      document.getElementById("checkout").hidden = !ids.length;
+      if (ids.length) document.getElementById("confirmado").hidden = true;
+      const t = totals(); document.getElementById("sub").textContent = brl(t.sub);
+      document.getElementById("ship").textContent = t.ship ? brl(t.ship) : "Grátis"; document.getElementById("tot").textContent = brl(t.tot);
+      document.getElementById("freteNote").textContent = textoFrete();
+      document.getElementById("pausa").hidden = ACEITA; document.getElementById("sendOrder").disabled = !ACEITA;
+    }
+    document.getElementById("items").addEventListener("click", e => {
+      const b = e.target.closest("[data-d]"); if (!b) return;
+      const id = b.dataset.id; cart[id] = (cart[id] || 0) + (+b.dataset.d); if (cart[id] <= 0) delete cart[id]; if (cart[id] > 100) cart[id] = 100; save(); renderCart();
+    });
+    const dr = document.getElementById("drawer"), bg = document.getElementById("drawerBg");
+    const open = v => { dr.hidden = bg.hidden = !v; if (v) document.getElementById("closeCart").focus(); };
+    document.getElementById("openCart").onclick = () => open(true);
+    document.getElementById("closeCart").onclick = () => open(false);
+    bg.onclick = () => open(false);
+    document.addEventListener("keydown", e => { if (e.key === "Escape") open(false) });
+    renderCart();
 
-/* recomendação da calculadora
-   AJUSTAR: quantidades por faixa de volume conforme o rótulo dos produtos vendidos */
-const KIT_RULES=[
- {ate:15000, itens:{clg25:1,alg:1,clar:1,phm:1,kit:1}},
- {ate:35000, itens:{clg10:1,alg:2,clar:1,phm:1,kit:1}},
- {ate:60000, itens:{clg10:2,alg:3,clar:2,phm:2,kit:1}},
- {ate:Infinity, itens:{clg10:3,alg:4,clar:2,phm:3,kit:1}}
-];
-const PUMP_RULES=[{ate:18000,id:"bomba14"},{ate:32000,id:"bomba"},{ate:50000,id:"bomba34"},{ate:75000,id:"bomba1"}];
-let currentKit={};
-function renderRec(litros){
-  const list=document.getElementById("recList"),pump=document.getElementById("recPump"),btn=document.getElementById("addKit");
-  if(!(litros>0)){list.innerHTML='<li><span></span><span>Preencha as medidas acima.</span><span></span></li>';
-    document.getElementById("recTot").textContent=brl(0);btn.disabled=true;pump.hidden=true;currentKit={};return;}
-  btn.disabled=false;
-  currentKit=Object.fromEntries(Object.entries(KIT_RULES.find(r=>litros<=r.ate).itens).filter(([id])=>byId(id)&&byId(id).ok!==false));
-  let tot=0;
-  list.innerHTML=Object.entries(currentKit).map(([id,q])=>{const p=byId(id);tot+=p.p*q;
-    return `<li><span class="q">${q}×</span><span>${escH(p.n)}</span><span class="v">${brl(p.p*q)}</span></li>`}).join("");
-  document.getElementById("recTot").textContent=brl(tot);
-  const pr0=PUMP_RULES.find(r=>litros<=r.ate);const pr=pr0&&byId(pr0.id)&&byId(pr0.id).ok!==false?pr0:null;pump.hidden=false;
-  pump.innerHTML=pr?`<span>Para ${Math.round(litros).toLocaleString("pt-BR")} L, a <b>${byId(pr.id).n.replace("Motobomba ","bomba de ")}</b> atende.</span><button class="add" data-pump="${pr.id}">+ ${brl(byId(pr.id).p)}</button>`
-    :`<span>${pr0?"Consulte a bomba ideal para "+Math.round(litros).toLocaleString("pt-BR")+" L.":"Piscina acima de 75.000 L precisa de bomba dimensionada no projeto."}</span><a class="add" style="text-decoration:none" target="_blank" rel="noopener" href="${waLink("Olá! Minha piscina tem "+Math.round(litros).toLocaleString("pt-BR")+" L. Qual bomba e filtro vocês indicam?")}">Consultar</a>`;
-}
-document.getElementById("addKit").addEventListener("click",e=>{
-  Object.entries(currentKit).forEach(([id,q])=>{cart[id]=(cart[id]||0)+q});save();renderCart();
-  const b=e.currentTarget;b.textContent="Kit adicionado ✓";b.classList.add("done");
-  setTimeout(()=>{b.textContent="Adicionar kit ao carrinho";b.classList.remove("done")},1500);});
-document.getElementById("recPump").addEventListener("click",e=>{const b=e.target.closest("[data-pump]");if(!b)return;
-  cart[b.dataset.pump]=(cart[b.dataset.pump]||0)+1;save();renderCart();b.textContent="Adicionada ✓";b.classList.add("done");});
-calc();
+    /* recomendação da calculadora
+       AJUSTAR: quantidades por faixa de volume conforme o rótulo dos produtos vendidos */
+    const KIT_RULES = [
+      { ate: 15000, itens: { clg25: 1, alg: 1, clar: 1, phm: 1, kit: 1 } },
+      { ate: 35000, itens: { clg10: 1, alg: 2, clar: 1, phm: 1, kit: 1 } },
+      { ate: 60000, itens: { clg10: 2, alg: 3, clar: 2, phm: 2, kit: 1 } },
+      { ate: Infinity, itens: { clg10: 3, alg: 4, clar: 2, phm: 3, kit: 1 } }
+    ];
+    const PUMP_RULES = [{ ate: 18000, id: "bomba14" }, { ate: 32000, id: "bomba" }, { ate: 50000, id: "bomba34" }, { ate: 75000, id: "bomba1" }];
+    let currentKit = {};
+    function renderRec(litros) {
+      const list = document.getElementById("recList"), pump = document.getElementById("recPump"), btn = document.getElementById("addKit");
+      if (!(litros > 0)) {
+        list.innerHTML = '<li><span></span><span>Preencha as medidas acima.</span><span></span></li>';
+        document.getElementById("recTot").textContent = brl(0); btn.disabled = true; pump.hidden = true; currentKit = {}; return;
+      }
+      btn.disabled = false;
+      currentKit = Object.fromEntries(Object.entries(KIT_RULES.find(r => litros <= r.ate).itens).filter(([id]) => byId(id) && byId(id).ok !== false));
+      let tot = 0;
+      list.innerHTML = Object.entries(currentKit).map(([id, q]) => {
+        const p = byId(id); tot += p.p * q;
+        return `<li><span class="q">${q}×</span><span>${escH(p.n)}</span><span class="v">${brl(p.p * q)}</span></li>`
+      }).join("");
+      document.getElementById("recTot").textContent = brl(tot);
+      const pr0 = PUMP_RULES.find(r => litros <= r.ate); const pr = pr0 && byId(pr0.id) && byId(pr0.id).ok !== false ? pr0 : null; pump.hidden = false;
+      pump.innerHTML = pr ? `<span>Para ${Math.round(litros).toLocaleString("pt-BR")} L, a <b>${byId(pr.id).n.replace("Motobomba ", "bomba de ")}</b> atende.</span><button class="add" data-pump="${pr.id}">+ ${brl(byId(pr.id).p)}</button>`
+        : `<span>${pr0 ? "Consulte a bomba ideal para " + Math.round(litros).toLocaleString("pt-BR") + " L." : "Piscina acima de 75.000 L precisa de bomba dimensionada no projeto."}</span><a class="add" style="text-decoration:none" target="_blank" rel="noopener" href="${waLink("Olá! Minha piscina tem " + Math.round(litros).toLocaleString("pt-BR") + " L. Qual bomba e filtro vocês indicam?")}">Consultar</a>`;
+    }
+    document.getElementById("addKit").addEventListener("click", e => {
+      Object.entries(currentKit).forEach(([id, q]) => { cart[id] = (cart[id] || 0) + q }); save(); renderCart();
+      const b = e.currentTarget; b.textContent = "Kit adicionado ✓"; b.classList.add("done");
+      setTimeout(() => { b.textContent = "Adicionar kit ao carrinho"; b.classList.remove("done") }, 1500);
+    });
+    document.getElementById("recPump").addEventListener("click", e => {
+      const b = e.target.closest("[data-pump]"); if (!b) return;
+      cart[b.dataset.pump] = (cart[b.dataset.pump] || 0) + 1; save(); renderCart(); b.textContent = "Adicionada ✓"; b.classList.add("done");
+    });
+    calc();
 
-/* ============ ligação com o sistema de gestão (Supabase) ============
-   Funciona quando o config.js está preenchido. Sem ele, tudo vai pelo WhatsApp. */
-const $i=id=>document.getElementById(id);
-const ONLINE = !!(CFG.supabaseUrl && CFG.supabaseAnonKey);
-const fTel = v => MC.formatar.tel(v);
-async function apiRpc(fn, body){
-  const ctrl=new AbortController(); const t=setTimeout(()=>ctrl.abort(),15000); let r;
-  try{
-    r = await fetch(CFG.supabaseUrl.replace(/\/$/,"")+"/rest/v1/rpc/"+fn, {method:"POST", signal:ctrl.signal,
-      headers:Object.assign({"Content-Type":"application/json","apikey":CFG.supabaseAnonKey},
-        /^eyJ/.test(CFG.supabaseAnonKey)?{"Authorization":"Bearer "+CFG.supabaseAnonKey}:{}),  // chave antiga (anon) também vai no Authorization
-      body:JSON.stringify(body||{})});
-  }catch(e){ throw Object.assign(new Error("Não foi possível conectar agora. Verifique sua internet."),{rede:true}); }
-  finally{ clearTimeout(t); }
-  const txt=await r.text(); let j=null; try{ j=JSON.parse(txt); }catch(_){}
-  if(!r.ok) throw Object.assign(new Error((j&&j.message)||"O servidor não respondeu como esperado. Tente de novo em instantes."),{rede:r.status>=500});
-  return j;
-}
-MC.ligarMascaras(document);
-// ao corrigir um campo, tira o destaque vermelho dele
-document.addEventListener("input",e=>{ if(e.target.getAttribute && e.target.getAttribute("aria-invalid")) e.target.removeAttribute("aria-invalid"); });
-function erroCampo(boxId, msg, campoId){
-  const box=$i(boxId); box.innerHTML=msg; box.hidden=false;
-  box.closest("form")?.querySelectorAll("[aria-invalid]").forEach(x=>x.removeAttribute("aria-invalid"));
-  if(campoId){ const el=$i(campoId); el.setAttribute("aria-invalid","true"); el.focus(); } else box.scrollIntoView({block:"nearest"});
-}
-function limparErro(boxId){ const box=$i(boxId); box.hidden=true; box.closest("form")?.querySelectorAll("[aria-invalid]").forEach(x=>x.removeAttribute("aria-invalid")); }
-const cidadeAtendida = c => !CIDADES.length || CIDADES.some(x=>norm(x)===norm(String(c).trim()));
-const listaCidades = () => CIDADES.length>1 ? CIDADES.slice(0,-1).join(", ")+" e "+CIDADES[CIDADES.length-1] : CIDADES.join("");
+    /* ============ ligação com o sistema de gestão (Supabase) ============
+       Funciona quando o config.js está preenchido. Sem ele, tudo vai pelo WhatsApp. */
+    const $i = id => document.getElementById(id);
+    const ONLINE = !!(CFG.supabaseUrl && CFG.supabaseAnonKey);
+    const fTel = v => MC.formatar.tel(v);
+    async function apiRpc(fn, body) {
+      const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 15000); let r;
+      try {
+        r = await fetch(CFG.supabaseUrl.replace(/\/$/, "") + "/rest/v1/rpc/" + fn, {
+          method: "POST", signal: ctrl.signal,
+          headers: Object.assign({ "Content-Type": "application/json", "apikey": CFG.supabaseAnonKey },
+            /^eyJ/.test(CFG.supabaseAnonKey) ? { "Authorization": "Bearer " + CFG.supabaseAnonKey } : {}),  // chave antiga (anon) também vai no Authorization
+          body: JSON.stringify(body || {})
+        });
+      } catch (e) { throw Object.assign(new Error("Não foi possível conectar agora. Verifique sua internet."), { rede: true }); }
+      finally { clearTimeout(t); }
+      const txt = await r.text(); let j = null; try { j = JSON.parse(txt); } catch (_) { }
+      if (!r.ok) throw Object.assign(new Error((j && j.message) || "O servidor não respondeu como esperado. Tente de novo em instantes."), { rede: r.status >= 500 });
+      return j;
+    }
+    MC.ligarMascaras(document);
+    // ao corrigir um campo, tira o destaque vermelho dele
+    document.addEventListener("input", e => { if (e.target.getAttribute && e.target.getAttribute("aria-invalid")) e.target.removeAttribute("aria-invalid"); });
+    function erroCampo(boxId, msg, campoId) {
+      const box = $i(boxId); box.innerHTML = msg; box.hidden = false;
+      box.closest("form")?.querySelectorAll("[aria-invalid]").forEach(x => x.removeAttribute("aria-invalid"));
+      if (campoId) { const el = $i(campoId); el.setAttribute("aria-invalid", "true"); el.focus(); } else box.scrollIntoView({ block: "nearest" });
+    }
+    function limparErro(boxId) { const box = $i(boxId); box.hidden = true; box.closest("form")?.querySelectorAll("[aria-invalid]").forEach(x => x.removeAttribute("aria-invalid")); }
+    const cidadeAtendida = c => !CIDADES.length || CIDADES.some(x => norm(x) === norm(String(c).trim()));
+    const listaCidades = () => CIDADES.length > 1 ? CIDADES.slice(0, -1).join(", ") + " e " + CIDADES[CIDADES.length - 1] : CIDADES.join("");
 
-/* ---------- checkout ---------- */
-MC.ligarCep($i("cCep"),{logradouro:$i("cRua"),bairro:$i("cBairro"),cidade:$i("cCidade"),uf:$i("cUf"),numero:$i("cNum")},$i("cCepMsg"),()=>verificarCidade());
-function verificarCidade(){
-  const c=$i("cCidade").value.trim(), m=$i("cCepMsg");
-  if(c && !cidadeAtendida(c)){ m.hidden=false; m.dataset.erro="1";
-    m.innerHTML=`Ainda não entregamos em ${escH(c)}. Atendemos ${escH(listaCidades())}. <a target="_blank" rel="noopener" href="${waLink("Olá! Moro em "+c+". Vocês conseguem entregar aqui?")}">Pergunte no WhatsApp</a>.`; return false; }
-  if(m.dataset.erro==="1" && /entregamos/.test(m.textContent)){ m.hidden=true; m.dataset.erro=""; }
-  if(/entregamos/.test($i("coErr").textContent)) limparErro("coErr");
-  return true;
-}
-$i("cCidade").addEventListener("change",verificarCidade);
-$i("cDoc").addEventListener("input",()=>{ const v=$i("cDoc").value, m=$i("cDocMsg"), t=MC.tipoDoc(v);
-  if(!MC.digitos(v)){ m.textContent=""; m.dataset.erro=""; return; }
-  m.textContent = t ? (MC.docValido(v)?t+" válido ✓":t+" inválido, confira os números") : "CPF tem 11 números e CNPJ tem 14"; m.dataset.erro = t&&MC.docValido(v)?"":"1"; });
-const dadosCheckout = () => ({nome:$i("cName").value.trim(), telefone:$i("cTel").value, cpf_cnpj:$i("cDoc").value, cep:$i("cCep").value,
-  logradouro:$i("cRua").value.trim(), numero:$i("cNum").value.trim(), complemento:$i("cComp").value.trim(), bairro:$i("cBairro").value.trim(),
-  cidade:$i("cCidade").value.trim(), uf:$i("cUf").value.trim().toUpperCase(), forma_pagamento:$i("cPay").value, observacao:$i("cObs").value.trim()});
-function validarCheckout(d){
-  if(!ACEITA) return ["No momento não estamos recebendo pedidos pelo site. Fale com a gente pelo WhatsApp."];
-  if(d.nome.length<3) return ["Informe seu nome completo.","cName"];
-  if(!MC.telValido(d.telefone)) return ["Informe um WhatsApp válido com DDD, por exemplo (19) 99999-9999.","cTel"];
-  if(MC.digitos(d.cpf_cnpj) && !MC.docValido(d.cpf_cnpj)) return ["CPF ou CNPJ inválido. Confira os números ou deixe em branco.","cDoc"];
-  if(!MC.cepValido(d.cep)) return ["Informe o CEP com 8 números.","cCep"];
-  if(!d.logradouro) return ["Informe a rua ou avenida.","cRua"];
-  if(!d.numero) return ["Informe o número (use \"s/n\" se não tiver).","cNum"];
-  if(!d.cidade) return ["Informe a cidade.","cCidade"];
-  if(!cidadeAtendida(d.cidade)) return [`Ainda não entregamos em ${escH(d.cidade)}. Atendemos ${escH(listaCidades())}. <a target="_blank" rel="noopener" href="${waLink("Olá! Moro em "+d.cidade+". Vocês conseguem entregar aqui?")}">Fale com a gente no WhatsApp</a>.`,"cCidade"];
-  return null;
-}
-const NOMES_PAG={pix:"Pix",credito:"Cartão de crédito",debito:"Cartão de débito",dinheiro:"Dinheiro na entrega"};
-function textoPedido(d, numero, t, itens){
-  const end=[d.logradouro,d.numero,d.complemento,d.bairro,d.cidade+(d.uf?"/"+d.uf:"")].filter(Boolean).join(", ");
-  return `Olá, Meliah! ${numero?"Acabei de fazer o pedido nº "+numero+" pelo site":"Quero fazer este pedido"}:\n`+
-    itens.map(i=>`• ${i.quantidade}x ${i.descricao} — ${brl(i.total)}`).join("\n")+
-    `\n\nEntrega: ${t.ship?brl(t.ship):"Grátis"}\nTotal: ${brl(t.tot)}\nPagamento: ${NOMES_PAG[d.forma_pagamento]}\n\nNome: ${d.nome}\nWhatsApp: ${fTel(d.telefone)}${MC.digitos(d.cpf_cnpj)?"\nCPF/CNPJ: "+MC.formatar.doc(d.cpf_cnpj):""}\nEndereço: ${end} – CEP ${MC.formatar.cep(d.cep)}${d.observacao?"\nObs.: "+d.observacao:""}`;
-}
-$i("checkout").addEventListener("submit", async e=>{
-  e.preventDefault(); limparErro("coErr");
-  const ids=Object.keys(cart).filter(id=>byId(id));
-  if(!ids.length) return;
-  const esg=ids.map(byId).filter(p=>p.ok===false);
-  if(esg.length) return erroCampo("coErr",`${escH(esg.map(p=>p.n).join(", "))} esgotou. Remova do carrinho para continuar.`);
-  const d=dadosCheckout(), er=validarCheckout(d);
-  if(er) return erroCampo("coErr",er[0],er[1]);
-  const t=totals(), itensLocal=ids.map(id=>({descricao:byId(id).n,quantidade:cart[id],total:Math.round(byId(id).p*cart[id]*100)/100}));
-  if(!ONLINE){   // sem sistema: pedido segue pelo WhatsApp
-    window.open(waLink(textoPedido(d,null,t,itensLocal)),"_blank","noopener");
-    return erroCampo("coErr",'<span style="color:var(--fg);font-weight:500">Abrimos o WhatsApp com o seu pedido. Envie a mensagem para concluir.</span>');
-  }
-  const b=$i("sendOrder"); b.disabled=true; b.textContent="Enviando pedido…";
-  try{
-    const r=await apiRpc("registrar_pedido_site",{p:{...d, itens:ids.map(id=>({produto_id:id,quantidade:cart[id]}))}});
-    try{ localStorage.setItem("meliah-ultimo-pedido",JSON.stringify({id:r.id,tel:MC.digitos(d.telefone)})); }catch(_){}
-    cart={}; save(); mostrarConfirmacao(r,d); renderCart();
-  }catch(err){
-    let msg=escH(err.message);
-    if(err.rede) msg+=` Você pode <a target="_blank" rel="noopener" href="${waLink(textoPedido(d,null,t,itensLocal))}">enviar o pedido pelo WhatsApp</a>.`;
-    erroCampo("coErr",msg);
-    if(/esgotou|não está mais disponível/.test(err.message)) carregarCatalogo();
-  }finally{ b.disabled=!ACEITA; b.textContent="Finalizar pedido"; }
-});
-function mostrarConfirmacao(r,d){
-  const c=$i("confirmado"); const t={ship:Number(r.frete),tot:Number(r.total)};
-  const pix = d.forma_pagamento==="pix" && r.pix_chave;
-  c.innerHTML=`<div class="okbox"><h3>Pedido nº ${r.id} recebido!</h3>
-    <p>Total <b class="mono">${brl(Number(r.total))}</b> (entrega ${Number(r.frete)?brl(Number(r.frete)):"grátis"}). Vamos confirmar a entrega pelo WhatsApp <b>${escH(fTel(d.telefone))}</b>.</p>
-    ${pix?`<div class="pixbox"><span>Pague com Pix para agilizar:</span><b class="mono" id="pixChave">${escH(r.pix_chave)}</b><span class="hint">${escH(r.pix_nome||"")} · valor ${brl(Number(r.total))}</span><button type="button" class="btn line" id="copPix">Copiar chave Pix</button><span class="hint">Depois envie o comprovante pelo WhatsApp.</span></div>`:""}
-    <a class="btn wa" target="_blank" rel="noopener" href="${waLink(textoPedido(d,r.id,t,r.itens))}">Avisar a loja no WhatsApp</a>
+    /* ---------- checkout ---------- */
+    MC.ligarCep($i("cCep"), { logradouro: $i("cRua"), bairro: $i("cBairro"), cidade: $i("cCidade"), uf: $i("cUf"), numero: $i("cNum") }, $i("cCepMsg"), () => verificarCidade());
+    function verificarCidade() {
+      const c = $i("cCidade").value.trim(), m = $i("cCepMsg");
+      if (c && !cidadeAtendida(c)) {
+        m.hidden = false; m.dataset.erro = "1";
+        m.innerHTML = `Ainda não entregamos em ${escH(c)}. Atendemos ${escH(listaCidades())}. <a target="_blank" rel="noopener" href="${waLink("Olá! Moro em " + c + ". Vocês conseguem entregar aqui?")}">Pergunte no WhatsApp</a>.`; return false;
+      }
+      if (m.dataset.erro === "1" && /entregamos/.test(m.textContent)) { m.hidden = true; m.dataset.erro = ""; }
+      if (/entregamos/.test($i("coErr").textContent)) limparErro("coErr");
+      return true;
+    }
+    $i("cCidade").addEventListener("change", verificarCidade);
+    $i("cDoc").addEventListener("input", () => {
+      const v = $i("cDoc").value, m = $i("cDocMsg"), t = MC.tipoDoc(v);
+      if (!MC.digitos(v)) { m.textContent = ""; m.dataset.erro = ""; return; }
+      m.textContent = t ? (MC.docValido(v) ? t + " válido ✓" : t + " inválido, confira os números") : "CPF tem 11 números e CNPJ tem 14"; m.dataset.erro = t && MC.docValido(v) ? "" : "1";
+    });
+    const dadosCheckout = () => ({
+      nome: $i("cName").value.trim(), telefone: $i("cTel").value, cpf_cnpj: $i("cDoc").value, cep: $i("cCep").value,
+      logradouro: $i("cRua").value.trim(), numero: $i("cNum").value.trim(), complemento: $i("cComp").value.trim(), bairro: $i("cBairro").value.trim(),
+      cidade: $i("cCidade").value.trim(), uf: $i("cUf").value.trim().toUpperCase(), forma_pagamento: $i("cPay").value, observacao: $i("cObs").value.trim()
+    });
+    function validarCheckout(d) {
+      if (!ACEITA) return ["No momento não estamos recebendo pedidos pelo site. Fale com a gente pelo WhatsApp."];
+      if (d.nome.length < 3) return ["Informe seu nome completo.", "cName"];
+      if (!MC.telValido(d.telefone)) return ["Informe um WhatsApp válido com DDD, por exemplo (19) 99999-9999.", "cTel"];
+      if (MC.digitos(d.cpf_cnpj) && !MC.docValido(d.cpf_cnpj)) return ["CPF ou CNPJ inválido. Confira os números ou deixe em branco.", "cDoc"];
+      if (!MC.cepValido(d.cep)) return ["Informe o CEP com 8 números.", "cCep"];
+      if (!d.logradouro) return ["Informe a rua ou avenida.", "cRua"];
+      if (!d.numero) return ["Informe o número (use \"s/n\" se não tiver).", "cNum"];
+      if (!d.cidade) return ["Informe a cidade.", "cCidade"];
+      if (!cidadeAtendida(d.cidade)) return [`Ainda não entregamos em ${escH(d.cidade)}. Atendemos ${escH(listaCidades())}. <a target="_blank" rel="noopener" href="${waLink("Olá! Moro em " + d.cidade + ". Vocês conseguem entregar aqui?")}">Fale com a gente no WhatsApp</a>.`, "cCidade"];
+      return null;
+    }
+    const NOMES_PAG = { pix: "Pix", credito: "Cartão de crédito", debito: "Cartão de débito", dinheiro: "Dinheiro na entrega" };
+    function textoPedido(d, numero, t, itens) {
+      const end = [d.logradouro, d.numero, d.complemento, d.bairro, d.cidade + (d.uf ? "/" + d.uf : "")].filter(Boolean).join(", ");
+      return `Olá, VicxMoura! ${numero ? "Acabei de fazer o pedido nº " + numero + " pelo site" : "Quero fazer este pedido"}:\n` +
+        itens.map(i => `• ${i.quantidade}x ${i.descricao} — ${brl(i.total)}`).join("\n") +
+        `\n\nEntrega: ${t.ship ? brl(t.ship) : "Grátis"}\nTotal: ${brl(t.tot)}\nPagamento: ${NOMES_PAG[d.forma_pagamento]}\n\nNome: ${d.nome}\nWhatsApp: ${fTel(d.telefone)}${MC.digitos(d.cpf_cnpj) ? "\nCPF/CNPJ: " + MC.formatar.doc(d.cpf_cnpj) : ""}\nEndereço: ${end} – CEP ${MC.formatar.cep(d.cep)}${d.observacao ? "\nObs.: " + d.observacao : ""}`;
+    }
+    $i("checkout").addEventListener("submit", async e => {
+      e.preventDefault(); limparErro("coErr");
+      const ids = Object.keys(cart).filter(id => byId(id));
+      if (!ids.length) return;
+      const esg = ids.map(byId).filter(p => p.ok === false);
+      if (esg.length) return erroCampo("coErr", `${escH(esg.map(p => p.n).join(", "))} esgotou. Remova do carrinho para continuar.`);
+      const d = dadosCheckout(), er = validarCheckout(d);
+      if (er) return erroCampo("coErr", er[0], er[1]);
+      const t = totals(), itensLocal = ids.map(id => ({ descricao: byId(id).n, quantidade: cart[id], total: Math.round(byId(id).p * cart[id] * 100) / 100 }));
+      if (!ONLINE) {   // sem sistema: pedido segue pelo WhatsApp
+        window.open(waLink(textoPedido(d, null, t, itensLocal)), "_blank", "noopener");
+        return erroCampo("coErr", '<span style="color:var(--fg);font-weight:500">Abrimos o WhatsApp com o seu pedido. Envie a mensagem para concluir.</span>');
+      }
+      const b = $i("sendOrder"); b.disabled = true; b.textContent = "Enviando pedido…";
+      try {
+        const r = await apiRpc("registrar_pedido_site", { p: { ...d, itens: ids.map(id => ({ produto_id: id, quantidade: cart[id] })) } });
+        try { localStorage.setItem("loja-ultimo-pedido", JSON.stringify({ id: r.id, tel: MC.digitos(d.telefone) })); } catch (_) { }
+        cart = {}; save(); mostrarConfirmacao(r, d); renderCart();
+      } catch (err) {
+        let msg = escH(err.message);
+        if (err.rede) msg += ` Você pode <a target="_blank" rel="noopener" href="${waLink(textoPedido(d, null, t, itensLocal))}">enviar o pedido pelo WhatsApp</a>.`;
+        erroCampo("coErr", msg);
+        if (/esgotou|não está mais disponível/.test(err.message)) carregarCatalogo();
+      } finally { b.disabled = !ACEITA; b.textContent = "Finalizar pedido"; }
+    });
+    function mostrarConfirmacao(r, d) {
+      const c = $i("confirmado"); const t = { ship: Number(r.frete), tot: Number(r.total) };
+      const pix = d.forma_pagamento === "pix" && r.pix_chave;
+      c.innerHTML = `<div class="okbox"><h3>Pedido nº ${r.id} recebido!</h3>
+    <p>Total <b class="mono">${brl(Number(r.total))}</b> (entrega ${Number(r.frete) ? brl(Number(r.frete)) : "grátis"}). Vamos confirmar a entrega pelo WhatsApp <b>${escH(fTel(d.telefone))}</b>.</p>
+    ${pix ? `<div class="pixbox"><span>Pague com Pix para agilizar:</span><b class="mono" id="pixChave">${escH(r.pix_chave)}</b><span class="hint">${escH(r.pix_nome || "")} · valor ${brl(Number(r.total))}</span><button type="button" class="btn line" id="copPix">Copiar chave Pix</button><span class="hint">Depois envie o comprovante pelo WhatsApp.</span></div>` : ""}
+    <a class="btn wa" target="_blank" rel="noopener" href="${waLink(textoPedido(d, r.id, t, r.itens))}">Avisar a loja no WhatsApp</a>
     <a class="btn line" href="#acompanhar" id="irTrack">Acompanhar pedido</a>
     <p class="note">Guarde o número do pedido: <b>${r.id}</b>.</p></div>`;
-  c.hidden=false; $i("checkout").hidden=true;
-  $i("irTrack").onclick=()=>{ open(false); setTimeout(()=>{ $i("tNum").value=r.id; $i("tTel").value=fTel(d.telefone); consultar(); },50); };
-  const cp=$i("copPix"); if(cp) cp.onclick=()=>copiar(r.pix_chave, cp, $i("pixChave"));
-  ["cName","cTel","cDoc","cCep","cRua","cNum","cComp","cBairro","cCidade","cUf","cObs"].forEach(id=>$i(id).value="");
-}
-function copiar(texto, btn, alvo){
-  const ok=()=>{ const o=btn.textContent; btn.textContent="Copiado ✓"; setTimeout(()=>btn.textContent=o,1800); };
-  const manual=()=>{ if(!alvo) return; const r=document.createRange(); r.selectNodeContents(alvo); getSelection().removeAllRanges(); getSelection().addRange(r); btn.textContent="Selecionado: use Ctrl+C"; };
-  try{ navigator.clipboard.writeText(texto).then(ok,manual); }catch(_){ manual(); }
-}
+      c.hidden = false; $i("checkout").hidden = true;
+      $i("irTrack").onclick = () => { open(false); setTimeout(() => { $i("tNum").value = r.id; $i("tTel").value = fTel(d.telefone); consultar(); }, 50); };
+      const cp = $i("copPix"); if (cp) cp.onclick = () => copiar(r.pix_chave, cp, $i("pixChave"));
+      ["cName", "cTel", "cDoc", "cCep", "cRua", "cNum", "cComp", "cBairro", "cCidade", "cUf", "cObs"].forEach(id => $i(id).value = "");
+    }
+    function copiar(texto, btn, alvo) {
+      const ok = () => { const o = btn.textContent; btn.textContent = "Copiado ✓"; setTimeout(() => btn.textContent = o, 1800); };
+      const manual = () => { if (!alvo) return; const r = document.createRange(); r.selectNodeContents(alvo); getSelection().removeAllRanges(); getSelection().addRange(r); btn.textContent = "Selecionado: use Ctrl+C"; };
+      try { navigator.clipboard.writeText(texto).then(ok, manual); } catch (_) { manual(); }
+    }
 
-/* ---------- acompanhar pedido ---------- */
-const ETAPAS=[["recebido","Pedido recebido"],["confirmado","Pedido confirmado"],["separando","Separando os produtos"],["em_rota","Saiu para entrega"],["entregue","Entregue"]];
-async function consultar(){
-  limparErro("tErr"); $i("tRes").innerHTML="";
-  const n=parseInt(MC.digitos($i("tNum").value)), tel=$i("tTel").value;
-  if(!n) return erroCampo("tErr","Informe o número do pedido.","tNum");
-  if(!MC.telValido(tel)) return erroCampo("tErr","Informe o WhatsApp usado no pedido, com DDD.","tTel");
-  if(!ONLINE) return erroCampo("tErr",`O acompanhamento online ainda não está ativo. <a target="_blank" rel="noopener" href="${waLink("Olá! Quero saber do meu pedido nº "+n+".")}">Pergunte no WhatsApp</a>.`);
-  const b=$i("fTrack").querySelector("button"); b.disabled=true; b.textContent="Consultando…";
-  try{
-    const r=await apiRpc("consultar_pedido",{p_id:n,p_telefone:MC.digitos(tel)});
-    const idx=ETAPAS.findIndex(x=>x[0]===r.etapa);
-    $i("tRes").innerHTML=`<div class="track"><h2 class="mono" style="font-size:20px">Pedido nº ${r.id} · ${new Date(r.criado_em).toLocaleDateString("pt-BR")}</h2>
-      ${r.etapa==="cancelado"?`<div class="ferr">Este pedido foi cancelado. Se tiver dúvidas, <a target="_blank" rel="noopener" href="${waLink("Olá! Sobre o meu pedido nº "+r.id+".")}">fale com a gente</a>.</div>`:
-      `<ol class="steps">${ETAPAS.map((x,i)=>`<li class="${i<idx?"feito":i===idx?"atual":""}"><span>${x[1]}${i===idx&&r.atualizado_em?` <span class="hint">· ${new Date(r.atualizado_em).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}</span>`:""}</span></li>`).join("")}</ol>`}
-      ${r.pagamento==="pago"?'<div class="fok">Pagamento confirmado ✓</div>':r.pagamento==="aguardando"?`<div class="fok">Aguardando pagamento${PIX.chave?` · Pix: <b class="mono">${escH(PIX.chave)}</b>`:""}</div>`:""}
-      <div>${(r.itens||[]).map(i=>`<div class="li" style="display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed var(--line)"><span>${i.quantidade}× ${escH(i.descricao)}</span><span class="mono">${brl(Number(i.total))}</span></div>`).join("")}
-      <div style="display:flex;justify-content:space-between;padding-top:6px;font-weight:700"><span>Total (com entrega ${Number(r.frete)?brl(Number(r.frete)):"grátis"})</span><span class="mono">${brl(Number(r.total))}</span></div></div>
-      <a class="btn wa" target="_blank" rel="noopener" href="${waLink("Olá! Sobre o meu pedido nº "+r.id+".")}">Falar sobre este pedido</a></div>`;
-  }catch(err){ erroCampo("tErr",escH(err.message)); }
-  finally{ b.disabled=false; b.textContent="Consultar"; }
-}
-$i("fTrack").addEventListener("submit",e=>{e.preventDefault();consultar();});
+    /* ---------- acompanhar pedido ---------- */
+    const ETAPAS = [["recebido", "Pedido recebido"], ["confirmado", "Pedido confirmado"], ["separando", "Separando os produtos"], ["em_rota", "Saiu para entrega"], ["entregue", "Entregue"]];
+    async function consultar() {
+      limparErro("tErr"); $i("tRes").innerHTML = "";
+      const n = parseInt(MC.digitos($i("tNum").value)), tel = $i("tTel").value;
+      if (!n) return erroCampo("tErr", "Informe o número do pedido.", "tNum");
+      if (!MC.telValido(tel)) return erroCampo("tErr", "Informe o WhatsApp usado no pedido, com DDD.", "tTel");
+      if (!ONLINE) return erroCampo("tErr", `O acompanhamento online ainda não está ativo. <a target="_blank" rel="noopener" href="${waLink("Olá! Quero saber do meu pedido nº " + n + ".")}">Pergunte no WhatsApp</a>.`);
+      const b = $i("fTrack").querySelector("button"); b.disabled = true; b.textContent = "Consultando…";
+      try {
+        const r = await apiRpc("consultar_pedido", { p_id: n, p_telefone: MC.digitos(tel) });
+        const idx = ETAPAS.findIndex(x => x[0] === r.etapa);
+        $i("tRes").innerHTML = `<div class="track"><h2 class="mono" style="font-size:20px">Pedido nº ${r.id} · ${new Date(r.criado_em).toLocaleDateString("pt-BR")}</h2>
+      ${r.etapa === "cancelado" ? `<div class="ferr">Este pedido foi cancelado. Se tiver dúvidas, <a target="_blank" rel="noopener" href="${waLink("Olá! Sobre o meu pedido nº " + r.id + ".")}">fale com a gente</a>.</div>` :
+            `<ol class="steps">${ETAPAS.map((x, i) => `<li class="${i < idx ? "feito" : i === idx ? "atual" : ""}"><span>${x[1]}${i === idx && r.atualizado_em ? ` <span class="hint">· ${new Date(r.atualizado_em).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}</span>` : ""}</span></li>`).join("")}</ol>`}
+      ${r.pagamento === "pago" ? '<div class="fok">Pagamento confirmado ✓</div>' : r.pagamento === "aguardando" ? `<div class="fok">Aguardando pagamento${PIX.chave ? ` · Pix: <b class="mono">${escH(PIX.chave)}</b>` : ""}</div>` : ""}
+      <div>${(r.itens || []).map(i => `<div class="li" style="display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed var(--line)"><span>${i.quantidade}× ${escH(i.descricao)}</span><span class="mono">${brl(Number(i.total))}</span></div>`).join("")}
+      <div style="display:flex;justify-content:space-between;padding-top:6px;font-weight:700"><span>Total (com entrega ${Number(r.frete) ? brl(Number(r.frete)) : "grátis"})</span><span class="mono">${brl(Number(r.total))}</span></div></div>
+      <a class="btn wa" target="_blank" rel="noopener" href="${waLink("Olá! Sobre o meu pedido nº " + r.id + ".")}">Falar sobre este pedido</a></div>`;
+      } catch (err) { erroCampo("tErr", escH(err.message)); }
+      finally { b.disabled = false; b.textContent = "Consultar"; }
+    }
+    $i("fTrack").addEventListener("submit", e => { e.preventDefault(); consultar(); });
 
-/* ---------- pedir orçamento ---------- */
-const dlg=$i("dlgOrc");
-MC.ligarCep($i("oCep"),{cidade:$i("oCidade")},$i("oCepMsg"));
-function abrirOrcamento(ref){
-  $i("orcRef").textContent = ref ? "Modelo: "+ref : "Conte o que você precisa e respondemos pelo WhatsApp.";
-  dlg.dataset.ref=ref||""; $i("fOrc").hidden=false; $i("oOk").hidden=true; limparErro("oErr");
-  if(dlg.showModal) dlg.showModal(); else dlg.setAttribute("open",""); setTimeout(()=>$i("oNome").focus(),30);
-}
-dlg.querySelector("[data-close]").onclick=()=>dlg.close();
-dlg.addEventListener("click",e=>{ if(e.target===dlg) dlg.close(); });
-document.getElementById("poolGrid").addEventListener("click",e=>{ const b=e.target.closest("[data-orc]"); if(b) abrirOrcamento(b.dataset.orc); });
-$i("fOrc").addEventListener("submit",async e=>{
-  e.preventDefault(); limparErro("oErr");
-  const d={tipo:"orcamento",nome:$i("oNome").value.trim(),telefone:$i("oTel").value,cep:$i("oCep").value,cidade:$i("oCidade").value.trim(),referencia:dlg.dataset.ref||"",mensagem:$i("oMsg").value.trim()};
-  if(d.nome.length<2) return erroCampo("oErr","Informe seu nome.","oNome");
-  if(!MC.telValido(d.telefone)) return erroCampo("oErr","Informe um WhatsApp válido com DDD.","oTel");
-  if(MC.digitos(d.cep) && !MC.cepValido(d.cep)) return erroCampo("oErr","CEP incompleto. Use os 8 números ou deixe em branco.","oCep");
-  const txt=`Olá, Meliah! Quero um orçamento${d.referencia?" da piscina "+d.referencia:""}.\nNome: ${d.nome}${d.cidade?"\nCidade: "+d.cidade:""}${d.mensagem?"\n"+d.mensagem:""}`;
-  if(!ONLINE){ window.open(waLink(txt),"_blank","noopener"); dlg.close(); return; }
-  const b=$i("fOrc").querySelector("button[type=submit]"); b.disabled=true; b.textContent="Enviando…";
-  try{
-    const id=await apiRpc("registrar_solicitacao",{p:d});
-    $i("fOrc").hidden=true; $i("oOk").hidden=false;
-    $i("oOk").innerHTML=`<div class="okbox"><h3>Recebemos!</h3><p>Seu pedido de orçamento nº ${id} chegou para a equipe. Vamos responder no WhatsApp <b>${escH(fTel(d.telefone))}</b> em horário comercial.</p><a class="btn wa" target="_blank" rel="noopener" href="${waLink(txt+"\n(Pedido de orçamento nº "+id+")")}">Quer adiantar? Chame no WhatsApp</a></div>`;
-    $i("fOrc").reset();
-  }catch(err){ erroCampo("oErr",escH(err.message)+(err.rede?` <a target="_blank" rel="noopener" href="${waLink(txt)}">Enviar pelo WhatsApp</a>.`:"")); }
-  finally{ b.disabled=false; b.textContent="Enviar pedido de orçamento"; }
-});
+    /* ---------- pedir orçamento ---------- */
+    const dlg = $i("dlgOrc");
+    MC.ligarCep($i("oCep"), { cidade: $i("oCidade") }, $i("oCepMsg"));
+    function abrirOrcamento(ref) {
+      $i("orcRef").textContent = ref ? "Modelo: " + ref : "Conte o que você precisa e respondemos pelo WhatsApp.";
+      dlg.dataset.ref = ref || ""; $i("fOrc").hidden = false; $i("oOk").hidden = true; limparErro("oErr");
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", ""); setTimeout(() => $i("oNome").focus(), 30);
+    }
+    dlg.querySelector("[data-close]").onclick = () => dlg.close();
+    dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+    document.getElementById("poolGrid").addEventListener("click", e => { const b = e.target.closest("[data-orc]"); if (b) abrirOrcamento(b.dataset.orc); });
+    $i("fOrc").addEventListener("submit", async e => {
+      e.preventDefault(); limparErro("oErr");
+      const d = { tipo: "orcamento", nome: $i("oNome").value.trim(), telefone: $i("oTel").value, cep: $i("oCep").value, cidade: $i("oCidade").value.trim(), referencia: dlg.dataset.ref || "", mensagem: $i("oMsg").value.trim() };
+      if (d.nome.length < 2) return erroCampo("oErr", "Informe seu nome.", "oNome");
+      if (!MC.telValido(d.telefone)) return erroCampo("oErr", "Informe um WhatsApp válido com DDD.", "oTel");
+      if (MC.digitos(d.cep) && !MC.cepValido(d.cep)) return erroCampo("oErr", "CEP incompleto. Use os 8 números ou deixe em branco.", "oCep");
+      const txt = `Olá, VicxMoura! Quero um orçamento${d.referencia ? " da piscina " + d.referencia : ""}.\nNome: ${d.nome}${d.cidade ? "\nCidade: " + d.cidade : ""}${d.mensagem ? "\n" + d.mensagem : ""}`;
+      if (!ONLINE) { window.open(waLink(txt), "_blank", "noopener"); dlg.close(); return; }
+      const b = $i("fOrc").querySelector("button[type=submit]"); b.disabled = true; b.textContent = "Enviando…";
+      try {
+        const id = await apiRpc("registrar_solicitacao", { p: d });
+        $i("fOrc").hidden = true; $i("oOk").hidden = false;
+        $i("oOk").innerHTML = `<div class="okbox"><h3>Recebemos!</h3><p>Seu pedido de orçamento nº ${id} chegou para a equipe. Vamos responder no WhatsApp <b>${escH(fTel(d.telefone))}</b> em horário comercial.</p><a class="btn wa" target="_blank" rel="noopener" href="${waLink(txt + "\n(Pedido de orçamento nº " + id + ")")}">Quer adiantar? Chame no WhatsApp</a></div>`;
+        $i("fOrc").reset();
+      } catch (err) { erroCampo("oErr", escH(err.message) + (err.rede ? ` <a target="_blank" rel="noopener" href="${waLink(txt)}">Enviar pelo WhatsApp</a>.` : "")); }
+      finally { b.disabled = false; b.textContent = "Enviar pedido de orçamento"; }
+    });
 
-/* ---------- mensagem de contato ---------- */
-$i("fContato").addEventListener("submit",async e=>{
-  e.preventDefault(); limparErro("ctErr"); $i("ctOk").hidden=true;
-  const d={tipo:"contato",nome:$i("ctNome").value.trim(),telefone:$i("ctTel").value,mensagem:$i("ctMsg").value.trim()};
-  if(d.nome.length<2) return erroCampo("ctErr","Informe seu nome.","ctNome");
-  if(!MC.telValido(d.telefone)) return erroCampo("ctErr","Informe um WhatsApp válido com DDD.","ctTel");
-  if(d.mensagem.length<3) return erroCampo("ctErr","Escreva sua mensagem.","ctMsg");
-  const txt=`Olá, Meliah! Sou ${d.nome}.\n${d.mensagem}`;
-  if(!ONLINE){ window.open(waLink(txt),"_blank","noopener"); return; }
-  const b=$i("fContato").querySelector("button"); b.disabled=true; b.textContent="Enviando…";
-  try{ await apiRpc("registrar_solicitacao",{p:d}); $i("fContato").reset(); const ok=$i("ctOk"); ok.textContent="Mensagem enviada! Vamos responder no seu WhatsApp em horário comercial."; ok.hidden=false; }
-  catch(err){ erroCampo("ctErr",escH(err.message)+(err.rede?` <a target="_blank" rel="noopener" href="${waLink(txt)}">Enviar pelo WhatsApp</a>.`:"")); }
-  finally{ b.disabled=false; b.textContent="Enviar mensagem"; }
-});
+    /* ---------- mensagem de contato ---------- */
+    $i("fContato").addEventListener("submit", async e => {
+      e.preventDefault(); limparErro("ctErr"); $i("ctOk").hidden = true;
+      const d = { tipo: "contato", nome: $i("ctNome").value.trim(), telefone: $i("ctTel").value, mensagem: $i("ctMsg").value.trim() };
+      if (d.nome.length < 2) return erroCampo("ctErr", "Informe seu nome.", "ctNome");
+      if (!MC.telValido(d.telefone)) return erroCampo("ctErr", "Informe um WhatsApp válido com DDD.", "ctTel");
+      if (d.mensagem.length < 3) return erroCampo("ctErr", "Escreva sua mensagem.", "ctMsg");
+      const txt = `Olá, VicxMoura! Sou ${d.nome}.\n${d.mensagem}`;
+      if (!ONLINE) { window.open(waLink(txt), "_blank", "noopener"); return; }
+      const b = $i("fContato").querySelector("button"); b.disabled = true; b.textContent = "Enviando…";
+      try { await apiRpc("registrar_solicitacao", { p: d }); $i("fContato").reset(); const ok = $i("ctOk"); ok.textContent = "Mensagem enviada! Vamos responder no seu WhatsApp em horário comercial."; ok.hidden = false; }
+      catch (err) { erroCampo("ctErr", escH(err.message) + (err.rede ? ` <a target="_blank" rel="noopener" href="${waLink(txt)}">Enviar pelo WhatsApp</a>.` : "")); }
+      finally { b.disabled = false; b.textContent = "Enviar mensagem"; }
+    });
 
-/* ---------- catálogo e configurações vindos do painel ---------- */
-function aplicarWhats(){
-  $i("waMain").href=$i("waFloat").href=waLink("Olá, Meliah! Vim pelo site.");
-}
-function aplicarConfig(c){
-  if(!c) return;
-  const w=MC.digitos(c.whatsapp);
-  if(w.length>=12){ WA=w; const loc=w.replace(/^55/,""); $i("phoneTxt").textContent=fTel(loc); $i("phoneTxt").nextElementSibling?.classList.contains("example") && $i("phoneTxt").nextElementSibling.remove(); }
-  FRETE={valor:Number(c.frete_valor),gratis:Number(c.frete_gratis_acima)};
-  CIDADES=Array.isArray(c.cidades)?c.cidades:[]; ACEITA=c.aceita_pedidos!==false; PIX={chave:c.pix_chave||"",nome:c.pix_nome||""};
-  const av=$i("avisoSite"); av.textContent=c.aviso||""; av.hidden=!c.aviso;
-  aplicarWhats(); renderCart();
-}
-function carregarCatalogo(){
-  return apiRpc("produtos_site").then(rows=>{
-    if(!Array.isArray(rows)||!rows.length) return;
-    products = rows.map(r=>({id:r.id,n:r.nome,cat:r.categoria,m:r.descricao||"",p:Number(r.preco),i:r.icone,ok:r.disponivel}));
-    if(!cats().includes(filter)) filter="Todos";
-    renderFilters();renderProducts();renderCart();calc();
-  }).catch(e=>console.warn("Catálogo do sistema indisponível, usando a lista do site.",e));
-}
-aplicarWhats();
-if (ONLINE) {
-  carregarCatalogo();
-  apiRpc("config_publica").then(aplicarConfig).catch(e=>console.warn("Configurações do sistema indisponíveis.",e));
-}
+    /* ---------- catálogo e configurações vindos do painel ---------- */
+    function aplicarWhats() {
+      $i("waMain").href = $i("waFloat").href = waLink("Olá, VicxMoura! Vim pelo site.");
+    }
+    function aplicarConfig(c) {
+      if (!c) return;
+      const w = MC.digitos(c.whatsapp);
+      if (w.length >= 12) { WA = w; const loc = w.replace(/^55/, ""); $i("phoneTxt").textContent = fTel(loc); $i("phoneTxt").nextElementSibling?.classList.contains("example") && $i("phoneTxt").nextElementSibling.remove(); }
+      FRETE = { valor: Number(c.frete_valor), gratis: Number(c.frete_gratis_acima) };
+      CIDADES = Array.isArray(c.cidades) ? c.cidades : []; ACEITA = c.aceita_pedidos !== false; PIX = { chave: c.pix_chave || "", nome: c.pix_nome || "" };
+      const av = $i("avisoSite"); av.textContent = c.aviso || ""; av.hidden = !c.aviso;
+      aplicarWhats(); renderCart();
+    }
+    function carregarCatalogo() {
+      return apiRpc("produtos_site").then(rows => {
+        if (!Array.isArray(rows) || !rows.length) return;
+        products = rows.map(r => ({ id: r.id, n: r.nome, cat: r.categoria, m: r.descricao || "", p: Number(r.preco), i: r.icone, ok: r.disponivel }));
+        if (!cats().includes(filter)) filter = "Todos";
+        renderFilters(); renderProducts(); renderCart(); calc();
+      }).catch(e => console.warn("Catálogo do sistema indisponível, usando a lista do site.", e));
+    }
+    aplicarWhats();
+    if (ONLINE) {
+      carregarCatalogo();
+      apiRpc("config_publica").then(aplicarConfig).catch(e => console.warn("Configurações do sistema indisponíveis.", e));
+    }
 
-/* ---------- páginas: #privacidade, #trocas, #acompanhar ---------- */
-const PAGINAS=["privacidade","trocas","acompanhar"];
-function route(){const h=location.hash.slice(1);const pag=PAGINAS.includes(h);
-  if(pag) open(false);
-  document.getElementById("home").hidden=pag;
-  PAGINAS.forEach(id=>document.getElementById(id).hidden=id!==h);
-  if(h==="acompanhar" && !$i("tNum").value){ try{ const u=JSON.parse(localStorage.getItem("meliah-ultimo-pedido")||"null"); if(u){ $i("tNum").value=u.id; $i("tTel").value=fTel(u.tel); } }catch(_){} }
-  if(pag){scrollTo(0,0);}else if(h){const el=document.getElementById(h);if(el)el.scrollIntoView();}}
-addEventListener("hashchange",route);route();
-document.querySelectorAll(".closeLink").forEach(a=>a.addEventListener("click",()=>open(false)));
-document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>copiar(document.getElementById(b.dataset.copy).textContent,b,document.getElementById(b.dataset.copy))));
+    /* ---------- páginas: #privacidade, #trocas, #acompanhar ---------- */
+    const PAGINAS = ["privacidade", "trocas", "acompanhar"];
+    function route() {
+      const h = location.hash.slice(1); const pag = PAGINAS.includes(h);
+      if (pag) open(false);
+      document.getElementById("home").hidden = pag;
+      PAGINAS.forEach(id => document.getElementById(id).hidden = id !== h);
+      if (h === "acompanhar" && !$i("tNum").value) { try { const u = JSON.parse(localStorage.getItem("loja-ultimo-pedido") || "null"); if (u) { $i("tNum").value = u.id; $i("tTel").value = fTel(u.tel); } } catch (_) { } }
+      if (pag) { scrollTo(0, 0); } else if (h) { const el = document.getElementById(h); if (el) el.scrollIntoView(); }
+    }
+    addEventListener("hashchange", route); route();
+    document.querySelectorAll(".closeLink").forEach(a => a.addEventListener("click", () => open(false)));
+    document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(document.getElementById(b.dataset.copy).textContent, b, document.getElementById(b.dataset.copy))));
 
-/* reflexo da água no hero */
-(function(){const c=document.getElementById("caustics");if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
- const x=c.getContext("2d");let w,h;function rs(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight}rs();addEventListener("resize",rs);
- let t=0;(function draw(){x.clearRect(0,0,w,h);x.strokeStyle="rgba(140,220,245,.55)";x.lineWidth=1.5;
-  for(let r=0;r<h+40;r+=26){x.beginPath();for(let i=0;i<=w;i+=12){const y=r+Math.sin(i*.018+t+r*.05)*7+Math.sin(i*.007-t*.6)*5;i?x.lineTo(i,y):x.moveTo(i,y)}x.stroke()}
-  t+=.012;requestAnimationFrame(draw)})();})();
-</script>
+    /* reflexo da água no hero */
+    (function () {
+      const c = document.getElementById("caustics"); if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const x = c.getContext("2d"); let w, h; function rs() { w = c.width = c.offsetWidth; h = c.height = c.offsetHeight } rs(); addEventListener("resize", rs);
+      let t = 0; (function draw() {
+        x.clearRect(0, 0, w, h); x.strokeStyle = "rgba(140,220,245,.55)"; x.lineWidth = 1.5;
+        for (let r = 0; r < h + 40; r += 26) { x.beginPath(); for (let i = 0; i <= w; i += 12) { const y = r + Math.sin(i * .018 + t + r * .05) * 7 + Math.sin(i * .007 - t * .6) * 5; i ? x.lineTo(i, y) : x.moveTo(i, y) } x.stroke() }
+        t += .012; requestAnimationFrame(draw)
+      })();
+    })();
+  </script>
 
 </body>
+
 </html>
